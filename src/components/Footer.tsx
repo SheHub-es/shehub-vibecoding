@@ -16,7 +16,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <div className="lg:col-span-2">
             <PixelLogo className="mb-4" />
             <p className="text-muted-foreground mb-6 max-w-md">
-              SheHub connects tech bootcamp alumni from different roles who want to build a career in the tech industry, guided by expert mentors.
+              SheHub conecta a graduadas de bootcamps tecnológicos de diferentes roles que quieren construir una carrera en la industria tech, guiadas por mentoras expertas.
             </p>
             <div className="flex space-x-4">
               <SocialLink href="#" icon={<Instagram size={20} />} label="Instagram" />
@@ -27,18 +27,18 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           </div>
           
           <div>
-            <h4 className="font-medium text-lg mb-4">Quick Links</h4>
+            <h4 className="font-medium text-lg mb-4">Enlaces Rápidos</h4>
             <nav className="flex flex-col space-y-3">
-              <FooterLink href="#features">About Us</FooterLink>
-              <FooterLink href="#projects">Projects</FooterLink>
-              <FooterLink href="#mentorship">Mentorship</FooterLink>
-              <FooterLink href="#waitlist">Join Waitlist</FooterLink>
+              <FooterLink href="#features">Acerca de Nosotras</FooterLink>
+              <FooterLink href="#projects">Proyectos</FooterLink>
+              <FooterLink href="#mentorship">Mentoría</FooterLink>
+              <FooterLink href="#waitlist">Unirse a la Lista de Espera</FooterLink>
             </nav>
           </div>
           
           <div>
-            <h4 className="font-medium text-lg mb-4">Contact</h4>
-            <p className="text-muted-foreground mb-2">Have questions?</p>
+            <h4 className="font-medium text-lg mb-4">Contacto</h4>
+            <p className="text-muted-foreground mb-2">¿Tienes preguntas?</p>
             <a href="mailto:hello@shehub.com" className="text-shehub-purple hover:underline">
               hello@shehub.com
             </a>
@@ -47,14 +47,14 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} SheHub. All rights reserved.
+            &copy; {new Date().getFullYear()} SheHub. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 text-sm">
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Privacy Policy
+              Política de Privacidad
             </a>
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Terms of Service
+              Términos de Servicio
             </a>
           </div>
         </div>

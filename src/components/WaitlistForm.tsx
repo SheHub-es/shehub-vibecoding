@@ -26,8 +26,8 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
       setSubmitting(false);
       setSubmitted(true);
       toast({
-        title: "Success!",
-        description: "You've been added to our waitlist. We'll be in touch soon!",
+        title: "¡Éxito!",
+        description: "Has sido añadida a nuestra lista de espera. ¡Nos pondremos en contacto pronto!",
         duration: 5000,
       });
       
@@ -50,72 +50,72 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
           <FadeIn direction="left">
             <div>
               <span className="px-4 py-1.5 bg-shehub-purple/20 text-shehub-purple font-pixel text-sm rounded-full font-medium mb-6 inline-block uppercase tracking-wider">
-                Ready to join?
+                ¿Lista para unirte?
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Join Our Waiting List
+                Únete a Nuestra Lista de Espera
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                We're launching soon! Join our waiting list and be the first to know when we open registration for our initial cohort of collaborative tech professionals.
+                ¡Pronto lanzamos! Únete a nuestra lista de espera y sé la primera en saber cuándo abrimos la inscripción para nuestra cohorte inicial de profesionales tecnológicas colaborativas.
               </p>
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <Check size={18} className="text-shehub-purple" />
-                <span>Work on real-world projects</span>
+                <span>Trabaja en proyectos del mundo real</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground mt-3">
                 <Check size={18} className="text-shehub-purple" />
-                <span>Collaborate with multidisciplinary teams</span>
+                <span>Colabora con equipos multidisciplinarios</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground mt-3">
                 <Check size={18} className="text-shehub-purple" />
-                <span>Get mentorship from industry experts</span>
+                <span>Recibe mentoría de expertas de la industria</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground mt-3">
                 <Check size={18} className="text-shehub-purple" />
-                <span>Build your portfolio and network</span>
+                <span>Construye tu portafolio y red de contactos</span>
               </div>
             </div>
           </FadeIn>
           
           <FadeIn direction="right">
             <div className="glass-card p-8 md:p-10">
-              <h3 className="text-2xl font-bold mb-6">Request an Invitation</h3>
+              <h3 className="text-2xl font-bold mb-6">Solicita una Invitación</h3>
               <form onSubmit={handleSubmit}>
                 <div className="mb-5">
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">Nombre Completo</label>
                   <input
                     type="text"
                     id="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
-                    placeholder="Your name"
+                    placeholder="Tu nombre"
                     required
                   />
                 </div>
                 
                 <div className="mb-5">
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address</label>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">Correo Electrónico</label>
                   <input
                     type="email"
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
-                    placeholder="you@example.com"
+                    placeholder="tu@ejemplo.com"
                     required
                   />
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="profession" className="block text-sm font-medium mb-2">Your Background/Role</label>
+                  <label htmlFor="profession" className="block text-sm font-medium mb-2">Tu Experiencia/Rol</label>
                   <input
                     type="text"
                     id="profession"
                     value={profession}
                     onChange={(e) => setProfession(e.target.value)}
                     className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
-                    placeholder="e.g. UX/UI Designer, Frontend Developer"
+                    placeholder="ej. Diseñadora UX/UI, Desarrolladora Frontend"
                     required
                   />
                 </div>
@@ -131,23 +131,23 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                   {submitting ? (
                     <>
                       <Loader2 size={20} className="mr-2 animate-spin" />
-                      Submitting...
+                      Enviando...
                     </>
                   ) : submitted ? (
                     <>
                       <Check size={20} className="mr-2" />
-                      Submitted!
+                      ¡Enviado!
                     </>
                   ) : (
                     <>
                       <Mail size={20} className="mr-2" />
-                      Join Waiting List
+                      Unirse a la Lista de Espera
                     </>
                   )}
                 </button>
                 
                 <p className="text-xs text-muted-foreground mt-4 text-center">
-                  By signing up, you agree to our privacy policy and terms of service.
+                  Al registrarte, aceptas nuestra política de privacidad y términos de servicio.
                 </p>
               </form>
             </div>

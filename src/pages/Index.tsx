@@ -41,25 +41,25 @@ const Index = () => {
             <div className="md:col-span-3">
               <FadeIn>
                 <span className="px-4 py-1.5 bg-shehub-purple/20 text-shehub-purple font-pixel text-sm rounded-full font-medium mb-6 inline-block uppercase tracking-wider">
-                  Real-World Projects
+                  Proyectos Reales
                 </span>
               </FadeIn>
               
               <FadeIn delay={0.1}>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Gain valuable experience through collaboration
+                  Obtén experiencia valiosa a través de la colaboración
                 </h2>
               </FadeIn>
               
               <FadeIn delay={0.2}>
                 <p className="text-lg text-muted-foreground mb-6">
-                  At SheHub, you'll work on real projects that solve actual problems. This hands-on experience is invaluable for your professional growth and portfolio.
+                  En SheHub, trabajarás en proyectos reales que resuelven problemas actuales. Esta experiencia práctica es invaluable para tu crecimiento profesional y portafolio.
                 </p>
               </FadeIn>
               
               <FadeIn delay={0.3}>
                 <p className="text-lg text-muted-foreground mb-8">
-                  Collaborate with team members from different disciplines, just like in a real workplace, and learn how to effectively communicate and work together.
+                  Colabora con miembros del equipo de diferentes disciplinas, igual que en un entorno laboral real, y aprende a comunicarte y trabajar juntas de manera efectiva.
                 </p>
               </FadeIn>
               
@@ -68,7 +68,7 @@ const Index = () => {
                   href="#waitlist" 
                   className="inline-flex items-center text-shehub-purple font-medium hover:underline"
                 >
-                  Join our platform <ArrowRight size={18} className="ml-2" />
+                  Únete a nuestra plataforma <ArrowRight size={18} className="ml-2" />
                 </a>
               </FadeIn>
             </div>
@@ -86,16 +86,16 @@ const Index = () => {
                         <Users size={20} className="text-shehub-purple" />
                       </div>
                       <div>
-                        <h3 className="font-bold">Diverse Teams</h3>
-                        <p className="text-sm text-muted-foreground">Collaborate across disciplines</p>
+                        <h3 className="font-bold">Equipos Diversos</h3>
+                        <p className="text-sm text-muted-foreground">Colabora entre disciplinas</p>
                       </div>
                     </div>
                   </div>
                   
                   <div className="space-y-4">
-                    <Stat number="15+" label="Active Projects" />
-                    <Stat number="5+" label="Industry Partners" />
-                    <Stat number="100+" label="Tech Professionals" />
+                    <Stat number="15+" label="Proyectos Activos" />
+                    <Stat number="5+" label="Socios de la Industria" />
+                    <Stat number="100+" label="Profesionales Tech" />
                   </div>
                 </div>
               </FadeIn>
@@ -112,15 +112,15 @@ const Index = () => {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <FadeIn>
               <span className="px-4 py-1.5 bg-shehub-purple/20 text-shehub-purple font-pixel text-sm rounded-full font-medium mb-6 inline-block uppercase tracking-wider">
-                Expert Guidance
+                Orientación Experta
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Learn from Industry Mentors</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Aprende de Mentoras de la Industria</h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-lg text-muted-foreground">
-                Our mentors are experienced professionals who will guide you, provide feedback, and help you grow in your career.
+                Nuestras mentoras son profesionales experimentadas que te guiarán, te darán feedback y te ayudarán a crecer en tu carrera.
               </p>
             </FadeIn>
           </div>
@@ -129,24 +129,24 @@ const Index = () => {
             <FadeIn direction="up">
               <MentorCard 
                 icon={<Star size={20} className="text-shehub-purple" />}
-                title="Expert Feedback"
-                description="Get personalized feedback on your work from professionals in your field."
+                title="Feedback Experto"
+                description="Recibe retroalimentación personalizada sobre tu trabajo de profesionales en tu campo."
               />
             </FadeIn>
             
             <FadeIn direction="up" delay={0.1}>
               <MentorCard 
                 icon={<Users size={20} className="text-shehub-purple" />}
-                title="Career Guidance"
-                description="Receive advice on your career path and how to achieve your professional goals."
+                title="Orientación Profesional"
+                description="Recibe consejos sobre tu trayectoria profesional y cómo alcanzar tus metas."
               />
             </FadeIn>
             
             <FadeIn direction="up" delay={0.2}>
               <MentorCard 
                 icon={<Network size={20} className="text-shehub-purple" />}
-                title="Industry Connections"
-                description="Connect with professionals who can help you expand your network."
+                title="Conexiones en la Industria"
+                description="Conecta con profesionales que pueden ayudarte a expandir tu red de contactos."
               />
             </FadeIn>
           </div>

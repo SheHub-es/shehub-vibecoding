@@ -20,20 +20,20 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           
           <FadeIn delay={0.1}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Work in <span className="gradient-text">real projects</span><br />
-              with diverse teams
+              Trabaja en <span className="gradient-text">proyectos reales</span><br />
+              con equipos diversos
             </h1>
           </FadeIn>
           
           <FadeIn delay={0.2}>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl">
-              SheHub connects tech <span className="font-semibold">bootcamp alumni</span> from <span className="font-semibold">different roles</span> who want to <span className="font-semibold">build a career</span> in the tech industry, guided by <span className="font-semibold">expert mentors</span>.
+              SheHub conecta a <span className="font-semibold">graduadas de bootcamps tecnológicos</span> de <span className="font-semibold">diferentes roles</span> que quieren <span className="font-semibold">construir una carrera</span> en la industria tech, guiadas por <span className="font-semibold">mentoras expertas</span>.
             </p>
           </FadeIn>
           
           <FadeIn delay={0.3}>
             <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl">
-              Are you ready to gain experience in projects by collaborating with multidisciplinary teams in the Tech sector?
+              ¿Estás lista para ganar experiencia en proyectos colaborando con equipos multidisciplinarios en el sector tecnológico?
             </p>
           </FadeIn>
           
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 href="#waitlist" 
                 className="px-8 py-3 rounded-full bg-shehub-gradient text-white text-lg font-medium transition-all hover:shadow-glow-purple hover:scale-105 w-full sm:w-auto"
               >
-                Join Waiting List
+                Unirse a la Lista de Espera
               </a>
             </div>
           </FadeIn>
@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float">
         <a href="#features" className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors">
-          <span className="text-sm font-medium mb-2">Discover More</span>
+          <span className="text-sm font-medium mb-2">Descubre Más</span>
           <ArrowDown size={20} />
         </a>
       </div>

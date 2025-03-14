@@ -15,17 +15,17 @@ const Features: React.FC<FeaturesProps> = ({ className }) => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn>
             <span className="px-4 py-1.5 bg-shehub-purple/20 text-shehub-purple font-pixel text-sm rounded-full font-medium mb-6 inline-block uppercase tracking-wider">
-              Our Platform
+              Nuestra Plataforma
             </span>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Build your career in the tech industry
+              Construye tu carrera en la industria tecnológica
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-lg text-muted-foreground">
-              Join SheHub and gain real-world experience working on projects with multidisciplinary teams
+              Únete a SheHub y obtén experiencia real trabajando en proyectos con equipos multidisciplinarios
             </p>
           </FadeIn>
         </div>
@@ -34,24 +34,24 @@ const Features: React.FC<FeaturesProps> = ({ className }) => {
           <FadeIn direction="up">
             <FeatureCard 
               icon={<Users className="text-shehub-purple" />}
-              title="Multidisciplinary Teams"
-              description="Collaborate with professionals from different fields and learn how cross-functional teams operate"
+              title="Equipos Multidisciplinarios"
+              description="Colabora con profesionales de diferentes campos y aprende cómo operan los equipos multifuncionales"
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.1}>
             <FeatureCard 
               icon={<Rocket className="text-shehub-purple" />}
-              title="Real-World Projects"
-              description="Work on actual projects that solve real problems and build your professional portfolio"
+              title="Proyectos Reales"
+              description="Trabaja en proyectos actuales que resuelven problemas reales y construye tu portafolio profesional"
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.2}>
             <FeatureCard 
               icon={<Star className="text-shehub-purple" />}
-              title="Expert Mentorship"
-              description="Get guidance from industry professionals who will help you grow and improve your skills"
+              title="Mentoría Experta"
+              description="Recibe orientación de profesionales de la industria que te ayudarán a crecer y mejorar tus habilidades"
             />
           </FadeIn>
           
@@ -59,7 +59,7 @@ const Features: React.FC<FeaturesProps> = ({ className }) => {
             <FeatureCard 
               icon={<Network className="text-shehub-purple" />}
               title="Networking"
-              description="Connect with other professionals and build relationships that can lead to future opportunities"
+              description="Conecta con otras profesionales y construye relaciones que pueden llevarte a futuras oportunidades"
             />
           </FadeIn>
         </div>

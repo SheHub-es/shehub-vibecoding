@@ -44,14 +44,14 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <NavLink href="#features">About</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#mentorship">Mentorship</NavLink>
+          <NavLink href="#features">Acerca de</NavLink>
+          <NavLink href="#projects">Proyectos</NavLink>
+          <NavLink href="#mentorship">Mentoría</NavLink>
           <a 
             href="#waitlist" 
             className="px-5 py-2 rounded-full bg-shehub-gradient text-white font-medium transition-all hover:shadow-glow-purple hover:scale-105"
           >
-            Join Waiting List
+            Unirse a la Lista de Espera
           </a>
         </nav>
 
@@ -59,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <button 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden text-foreground p-2"
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -69,15 +69,15 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-0 top-[72px] bg-white/95 backdrop-blur-sm z-40 flex flex-col p-6 animate-fade-in">
           <nav className="flex flex-col space-y-6 pt-6">
-            <MobileNavLink href="#features" onClick={() => setMobileMenuOpen(false)}>About</MobileNavLink>
-            <MobileNavLink href="#projects" onClick={() => setMobileMenuOpen(false)}>Projects</MobileNavLink>
-            <MobileNavLink href="#mentorship" onClick={() => setMobileMenuOpen(false)}>Mentorship</MobileNavLink>
+            <MobileNavLink href="#features" onClick={() => setMobileMenuOpen(false)}>Acerca de</MobileNavLink>
+            <MobileNavLink href="#projects" onClick={() => setMobileMenuOpen(false)}>Proyectos</MobileNavLink>
+            <MobileNavLink href="#mentorship" onClick={() => setMobileMenuOpen(false)}>Mentoría</MobileNavLink>
             <a 
               href="#waitlist" 
               className="mt-4 px-5 py-3 rounded-full bg-shehub-gradient text-white font-medium text-center transition-all"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Join Waiting List
+              Unirse a la Lista de Espera
             </a>
           </nav>
         </div>
