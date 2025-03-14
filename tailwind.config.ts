@@ -22,6 +22,7 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 				serif: ['Playfair Display', 'serif'],
+				pixel: ['IBM Plex Mono', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -85,6 +86,12 @@ export default {
 				blush: '#FCDBD7',
 				mauve: '#D9C6CF',
 				lavender: '#E1D5F5',
+				shehub: {
+					purple: '#9b87f5',
+					'light-purple': '#D6BCFA',
+					orange: '#F97316',
+					'soft-orange': '#FEC6A1',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -150,7 +157,11 @@ export default {
 				'soft': '0 10px 25px -3px rgba(0, 0, 0, 0.03)',
 				'glow': '0 0 15px rgba(255, 255, 255, 0.5)',
 				'glow-rose': '0 0 15px rgba(244, 63, 94, 0.25)',
+				'glow-purple': '0 0 15px rgba(155, 135, 245, 0.25)',
 			},
+			backgroundImage: {
+				'shehub-gradient': 'linear-gradient(135deg, #9b87f5 0%, #F97316 100%)',
+			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

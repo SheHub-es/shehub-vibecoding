@@ -49,26 +49,30 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <FadeIn direction="left">
             <div>
-              <span className="px-4 py-1.5 bg-accent/70 text-accent-foreground text-sm rounded-full font-medium mb-6 inline-block">
-                Be Among The First
+              <span className="px-4 py-1.5 bg-shehub-purple/20 text-shehub-purple font-pixel text-sm rounded-full font-medium mb-6 inline-block uppercase tracking-wider">
+                Ready to join?
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Join Our Waitlist
+                Join Our Waiting List
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                We're launching soon! Sign up to get early access and be part of our founding community of collaborative women.
+                We're launching soon! Join our waiting list and be the first to know when we open registration for our initial cohort of collaborative tech professionals.
               </p>
               <div className="flex items-center space-x-2 text-muted-foreground">
-                <Check size={18} className="text-primary" />
-                <span>Early access to community features</span>
+                <Check size={18} className="text-shehub-purple" />
+                <span>Work on real-world projects</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground mt-3">
-                <Check size={18} className="text-primary" />
-                <span>Founding member benefits</span>
+                <Check size={18} className="text-shehub-purple" />
+                <span>Collaborate with multidisciplinary teams</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground mt-3">
-                <Check size={18} className="text-primary" />
-                <span>Exclusive events and opportunities</span>
+                <Check size={18} className="text-shehub-purple" />
+                <span>Get mentorship from industry experts</span>
+              </div>
+              <div className="flex items-center space-x-2 text-muted-foreground mt-3">
+                <Check size={18} className="text-shehub-purple" />
+                <span>Build your portfolio and network</span>
               </div>
             </div>
           </FadeIn>
@@ -84,7 +88,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                     id="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
                     placeholder="Your name"
                     required
                   />
@@ -97,21 +101,21 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
                     placeholder="you@example.com"
                     required
                   />
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="profession" className="block text-sm font-medium mb-2">Profession / Industry</label>
+                  <label htmlFor="profession" className="block text-sm font-medium mb-2">Your Background/Role</label>
                   <input
                     type="text"
                     id="profession"
                     value={profession}
                     onChange={(e) => setProfession(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-primary focus:ring-1 focus:ring-primary transition-all"
-                    placeholder="e.g. Software Engineer, Marketing"
+                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
+                    placeholder="e.g. UX/UI Designer, Frontend Developer"
                     required
                   />
                 </div>
@@ -121,7 +125,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                   disabled={submitting || submitted}
                   className={cn(
                     "w-full py-3 rounded-lg font-medium text-white flex items-center justify-center transition-all",
-                    submitting ? "bg-primary/80" : submitted ? "bg-green-500" : "bg-primary hover:shadow-glow-rose"
+                    submitting ? "bg-shehub-purple/80" : submitted ? "bg-green-500" : "bg-shehub-gradient hover:shadow-glow-purple"
                   )}
                 >
                   {submitting ? (
@@ -137,7 +141,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                   ) : (
                     <>
                       <Mail size={20} className="mr-2" />
-                      Join Waitlist
+                      Join Waiting List
                     </>
                   )}
                 </button>

@@ -12,10 +12,10 @@ const AnimatedGradient: React.FC<AnimatedGradientProps> = ({ className }) => {
       <div className="absolute -z-10 h-full w-full bg-background opacity-80" />
       
       {/* Gradient orbs */}
-      <div className="blur-circle w-96 h-96 bg-blush top-[-15%] right-[-10%] animate-float opacity-40" />
-      <div className="blur-circle w-80 h-80 bg-lavender bottom-[-10%] left-[5%] animate-float opacity-40" style={{ animationDelay: '-2s' }} />
-      <div className="blur-circle w-64 h-64 bg-mauve top-[25%] left-[-5%] animate-float opacity-30" style={{ animationDelay: '-4s' }} />
-      <div className="blur-circle w-72 h-72 bg-cream bottom-[10%] right-[15%] animate-float opacity-30" style={{ animationDelay: '-6s' }} />
+      <div className="blur-circle w-96 h-96 bg-shehub-purple/60 top-[-15%] right-[-10%] animate-float opacity-40" />
+      <div className="blur-circle w-80 h-80 bg-shehub-soft-orange bottom-[-10%] left-[5%] animate-float opacity-40" style={{ animationDelay: '-2s' }} />
+      <div className="blur-circle w-64 h-64 bg-shehub-orange/30 top-[25%] left-[-5%] animate-float opacity-30" style={{ animationDelay: '-4s' }} />
+      <div className="blur-circle w-72 h-72 bg-shehub-light-purple bottom-[10%] right-[15%] animate-float opacity-30" style={{ animationDelay: '-6s' }} />
       
       {/* Noise texture overlay */}
       <div 

@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Heart, Mail, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Instagram, Linkedin, Twitter } from 'lucide-react';
+import PixelLogo from './PixelLogo';
 
 interface FooterProps {
   className?: string;
@@ -13,11 +14,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
       <div className="container max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-serif font-medium mb-4">
-              <span className="gradient-text">Sisterhood</span>
-            </h3>
+            <PixelLogo className="mb-4" />
             <p className="text-muted-foreground mb-6 max-w-md">
-              Building a community of women who work together, support each other, and create opportunities for collective success.
+              SheHub connects tech bootcamp alumni from different roles who want to build a career in the tech industry, guided by expert mentors.
             </p>
             <div className="flex space-x-4">
               <SocialLink href="#" icon={<Instagram size={20} />} label="Instagram" />
@@ -31,7 +30,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             <h4 className="font-medium text-lg mb-4">Quick Links</h4>
             <nav className="flex flex-col space-y-3">
               <FooterLink href="#features">About Us</FooterLink>
-              <FooterLink href="#mission">Our Mission</FooterLink>
+              <FooterLink href="#projects">Projects</FooterLink>
+              <FooterLink href="#mentorship">Mentorship</FooterLink>
               <FooterLink href="#waitlist">Join Waitlist</FooterLink>
             </nav>
           </div>
@@ -39,15 +39,15 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <div>
             <h4 className="font-medium text-lg mb-4">Contact</h4>
             <p className="text-muted-foreground mb-2">Have questions?</p>
-            <a href="mailto:hello@sisterhood.com" className="text-primary hover:underline">
-              hello@sisterhood.com
+            <a href="mailto:hello@shehub.com" className="text-shehub-purple hover:underline">
+              hello@shehub.com
             </a>
           </div>
         </div>
         
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Sisterhood. All rights reserved.
+            &copy; {new Date().getFullYear()} SheHub. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -57,12 +57,6 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               Terms of Service
             </a>
           </div>
-        </div>
-        
-        <div className="flex items-center justify-center mt-8 text-sm text-muted-foreground">
-          <p className="flex items-center">
-            Made with <Heart size={14} className="mx-1 text-primary" /> for women who collaborate
-          </p>
         </div>
       </div>
     </footer>
@@ -79,7 +73,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => {
   return (
     <a 
       href={href} 
-      className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground transition-colors hover:bg-primary hover:text-white"
+      className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground transition-colors hover:bg-shehub-purple hover:text-white"
       aria-label={label}
     >
       {icon}

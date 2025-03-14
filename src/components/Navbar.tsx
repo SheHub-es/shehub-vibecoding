@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
+import PixelLogo from './PixelLogo';
 
 interface NavbarProps {
   className?: string;
@@ -37,20 +38,20 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="text-2xl font-serif font-medium text-foreground">
-          <span className="gradient-text">Sisterhood</span>
+        <a href="/" className="flex items-center">
+          <PixelLogo size="sm" />
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <NavLink href="#features">About</NavLink>
-          <NavLink href="#mission">Mission</NavLink>
-          <NavLink href="#join">Join Us</NavLink>
+          <NavLink href="#projects">Projects</NavLink>
+          <NavLink href="#mentorship">Mentorship</NavLink>
           <a 
             href="#waitlist" 
-            className="px-5 py-2 rounded-full bg-primary text-white font-medium transition-all hover:shadow-glow-rose hover:scale-105"
+            className="px-5 py-2 rounded-full bg-shehub-gradient text-white font-medium transition-all hover:shadow-glow-purple hover:scale-105"
           >
-            Join Waitlist
+            Join Waiting List
           </a>
         </nav>
 
@@ -69,14 +70,14 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <div className="md:hidden fixed inset-0 top-[72px] bg-white/95 backdrop-blur-sm z-40 flex flex-col p-6 animate-fade-in">
           <nav className="flex flex-col space-y-6 pt-6">
             <MobileNavLink href="#features" onClick={() => setMobileMenuOpen(false)}>About</MobileNavLink>
-            <MobileNavLink href="#mission" onClick={() => setMobileMenuOpen(false)}>Mission</MobileNavLink>
-            <MobileNavLink href="#join" onClick={() => setMobileMenuOpen(false)}>Join Us</MobileNavLink>
+            <MobileNavLink href="#projects" onClick={() => setMobileMenuOpen(false)}>Projects</MobileNavLink>
+            <MobileNavLink href="#mentorship" onClick={() => setMobileMenuOpen(false)}>Mentorship</MobileNavLink>
             <a 
               href="#waitlist" 
-              className="mt-4 px-5 py-3 rounded-full bg-primary text-white font-medium text-center transition-all"
+              className="mt-4 px-5 py-3 rounded-full bg-shehub-gradient text-white font-medium text-center transition-all"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Join Waitlist
+              Join Waiting List
             </a>
           </nav>
         </div>
@@ -98,7 +99,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
       className="text-foreground/80 hover:text-foreground font-medium transition-colors relative group"
     >
       {children}
-      <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+      <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-shehub-purple group-hover:w-full transition-all duration-300" />
     </a>
   );
 };
