@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import PixelLogo from './PixelLogo';
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface NavbarProps {
   className?: string;
@@ -11,6 +13,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,40 +47,44 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <NavLink href="#features">Acerca de</NavLink>
-          <NavLink href="#projects">Proyectos</NavLink>
-          <NavLink href="#mentorship">Mentoría</NavLink>
+          <NavLink href="#features">{t('nav.about')}</NavLink>
+          <NavLink href="#projects">{t('nav.projects')}</NavLink>
+          <NavLink href="#mentorship">{t('nav.mentorship')}</NavLink>
+          <LanguageToggle className="mr-4" />
           <a 
             href="#waitlist" 
             className="px-5 py-2 rounded-full bg-shehub-gradient text-white font-medium transition-all hover:shadow-glow-purple hover:scale-105"
           >
-            Unirse a la Lista de Espera
+            {t('nav.waitlist')}
           </a>
         </nav>
 
-        {/* Mobile menu button */}
-        <button 
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-foreground p-2"
-          aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile menu button and language toggle */}
+        <div className="md:hidden flex items-center space-x-3">
+          <LanguageToggle />
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-foreground p-2"
+            aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-0 top-[72px] bg-white/95 backdrop-blur-sm z-40 flex flex-col p-6 animate-fade-in">
           <nav className="flex flex-col space-y-6 pt-6">
-            <MobileNavLink href="#features" onClick={() => setMobileMenuOpen(false)}>Acerca de</MobileNavLink>
-            <MobileNavLink href="#projects" onClick={() => setMobileMenuOpen(false)}>Proyectos</MobileNavLink>
-            <MobileNavLink href="#mentorship" onClick={() => setMobileMenuOpen(false)}>Mentoría</MobileNavLink>
+            <MobileNavLink href="#features" onClick={() => setMobileMenuOpen(false)}>{t('nav.about')}</MobileNavLink>
+            <MobileNavLink href="#projects" onClick={() => setMobileMenuOpen(false)}>{t('nav.projects')}</MobileNavLink>
+            <MobileNavLink href="#mentorship" onClick={() => setMobileMenuOpen(false)}>{t('nav.mentorship')}</MobileNavLink>
             <a 
               href="#waitlist" 
               className="mt-4 px-5 py-3 rounded-full bg-shehub-gradient text-white font-medium text-center transition-all"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Unirse a la Lista de Espera
+              {t('nav.waitlist')}
             </a>
           </nav>
         </div>

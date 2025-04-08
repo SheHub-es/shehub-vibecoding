@@ -1,0 +1,465 @@
+
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+
+type Language = 'es' | 'en' | 'ca';
+
+type LanguageContextType = {
+  language: Language;
+  setLanguage: (language: Language) => void;
+  t: (key: string) => string;
+};
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+// Translations for all the text on the website
+const translations = {
+  // Navbar translations
+  'nav.about': {
+    en: 'About',
+    es: 'Acerca de',
+    ca: 'Sobre nosaltres',
+  },
+  'nav.projects': {
+    en: 'Projects',
+    es: 'Proyectos',
+    ca: 'Projectes',
+  },
+  'nav.mentorship': {
+    en: 'Mentorship',
+    es: 'Mentoría',
+    ca: 'Mentoria',
+  },
+  'nav.waitlist': {
+    en: 'Join Waitlist',
+    es: 'Unirse a la Lista de Espera',
+    ca: 'Uneix-te a la Llista d\'Espera',
+  },
+  
+  // Hero section translations
+  'hero.title1': {
+    en: 'Work on',
+    es: 'Trabaja en',
+    ca: 'Treballa en',
+  },
+  'hero.title2': {
+    en: 'real projects',
+    es: 'proyectos reales',
+    ca: 'projectes reals',
+  },
+  'hero.title3': {
+    en: 'with diverse teams',
+    es: 'con equipos diversos',
+    ca: 'amb equips diversos',
+  },
+  'hero.subtitle1': {
+    en: 'SheHub connects',
+    es: 'SheHub conecta a',
+    ca: 'SheHub connecta',
+  },
+  'hero.subtitle2': {
+    en: 'tech bootcamp graduates',
+    es: 'graduadas de bootcamps tecnológicos',
+    ca: 'graduades de bootcamps tecnològics',
+  },
+  'hero.subtitle3': {
+    en: 'from different roles',
+    es: 'de diferentes roles',
+    ca: 'de diferents rols',
+  },
+  'hero.subtitle4': {
+    en: 'who want to build a career',
+    es: 'que quieren construir una carrera',
+    ca: 'que volen construir una carrera',
+  },
+  'hero.subtitle5': {
+    en: 'in the tech industry, guided by',
+    es: 'en la industria tech, guiadas por',
+    ca: 'en la indústria tech, guiades per',
+  },
+  'hero.subtitle6': {
+    en: 'expert mentors',
+    es: 'mentoras expertas',
+    ca: 'mentores expertes',
+  },
+  'hero.question': {
+    en: 'Are you ready to gain experience in projects collaborating with multidisciplinary teams in the tech sector?',
+    es: '¿Estás lista para ganar experiencia en proyectos colaborando con equipos multidisciplinarios en el sector tecnológico?',
+    ca: 'Estàs preparada per guanyar experiència en projectes col·laborant amb equips multidisciplinaris en el sector tecnològic?',
+  },
+  'hero.cta': {
+    en: 'Join the Waitlist',
+    es: 'Unirse a la Lista de Espera',
+    ca: 'Uneix-te a la Llista d\'Espera',
+  },
+  'hero.discover': {
+    en: 'Discover More',
+    es: 'Descubre Más',
+    ca: 'Descobreix Més',
+  },
+  
+  // Features section translations
+  'features.title': {
+    en: 'Our Platform',
+    es: 'Nuestra Plataforma',
+    ca: 'La Nostra Plataforma',
+  },
+  'features.headline': {
+    en: 'Build your career in the tech industry',
+    es: 'Construye tu carrera en la industria tecnológica',
+    ca: 'Construeix la teva carrera a la indústria tecnològica',
+  },
+  'features.description': {
+    en: 'Join SheHub and gain real experience working on projects with multidisciplinary teams',
+    es: 'Únete a SheHub y obtén experiencia real trabajando en proyectos con equipos multidisciplinarios',
+    ca: 'Uneix-te a SheHub i obté experiència real treballant en projectes amb equips multidisciplinaris',
+  },
+  'features.teams.title': {
+    en: 'Multidisciplinary Teams',
+    es: 'Equipos Multidisciplinarios',
+    ca: 'Equips Multidisciplinaris',
+  },
+  'features.teams.description': {
+    en: 'Collaborate with professionals from different fields and learn how cross-functional teams operate',
+    es: 'Colabora con profesionales de diferentes campos y aprende cómo operan los equipos multifuncionales',
+    ca: 'Col·labora amb professionals de diferents camps i aprèn com operen els equips multifuncionals',
+  },
+  'features.projects.title': {
+    en: 'Real Projects',
+    es: 'Proyectos Reales',
+    ca: 'Projectes Reals',
+  },
+  'features.projects.description': {
+    en: 'Work on current projects that solve real problems and build your professional portfolio',
+    es: 'Trabaja en proyectos actuales que resuelven problemas reales y construye tu portafolio profesional',
+    ca: 'Treballa en projectes actuals que resolen problemes reals i construeix el teu portfoli professional',
+  },
+  'features.mentorship.title': {
+    en: 'Expert Mentorship',
+    es: 'Mentoría Experta',
+    ca: 'Mentoria Experta',
+  },
+  'features.mentorship.description': {
+    en: 'Receive guidance from industry professionals who will help you grow and improve your skills',
+    es: 'Recibe orientación de profesionales de la industria que te ayudarán a crecer y mejorar tus habilidades',
+    ca: 'Rep orientació de professionals de la indústria que t\'ajudaran a créixer i millorar les teves habilitats',
+  },
+  'features.networking.title': {
+    en: 'Networking',
+    es: 'Networking',
+    ca: 'Networking',
+  },
+  'features.networking.description': {
+    en: 'Connect with other professionals and build relationships that can lead to future opportunities',
+    es: 'Conecta con otras profesionales y construye relaciones que pueden llevarte a futuras oportunidades',
+    ca: 'Connecta amb altres professionals i construeix relacions que poden portar-te a futures oportunitats',
+  },
+  
+  // Projects section translations
+  'projects.title': {
+    en: 'Real Projects',
+    es: 'Proyectos Reales',
+    ca: 'Projectes Reals',
+  },
+  'projects.headline': {
+    en: 'Gain valuable experience through collaboration',
+    es: 'Obtén experiencia valiosa a través de la colaboración',
+    ca: 'Obté experiència valuosa a través de la col·laboració',
+  },
+  'projects.description1': {
+    en: 'At SheHub, you will work on real projects that solve current problems. This hands-on experience is invaluable for your professional growth and portfolio.',
+    es: 'En SheHub, trabajarás en proyectos reales que resuelven problemas actuales. Esta experiencia práctica es invaluable para tu crecimiento profesional y portafolio.',
+    ca: 'A SheHub, treballaràs en projectes reals que resolen problemes actuals. Aquesta experiència pràctica és invaluable per al teu creixement professional i portfoli.',
+  },
+  'projects.description2': {
+    en: 'Collaborate with team members from different disciplines, just like in a real work environment, and learn to communicate and work together effectively.',
+    es: 'Colabora con miembros del equipo de diferentes disciplinas, igual que en un entorno laboral real, y aprende a comunicarte y trabajar juntas de manera efectiva.',
+    ca: 'Col·labora amb membres de l\'equip de diferents disciplines, igual que en un entorn laboral real, i aprèn a comunicar-te i treballar juntes de manera efectiva.',
+  },
+  'projects.cta': {
+    en: 'Join our platform',
+    es: 'Únete a nuestra plataforma',
+    ca: 'Uneix-te a la nostra plataforma',
+  },
+  'projects.diverse': {
+    en: 'Diverse Teams',
+    es: 'Equipos Diversos',
+    ca: 'Equips Diversos',
+  },
+  'projects.collaboration': {
+    en: 'Cross-discipline collaboration',
+    es: 'Colabora entre disciplinas',
+    ca: 'Col·labora entre disciplines',
+  },
+  'projects.stats.active': {
+    en: 'Active Projects',
+    es: 'Proyectos Activos',
+    ca: 'Projectes Actius',
+  },
+  'projects.stats.partners': {
+    en: 'Industry Partners',
+    es: 'Socios de la Industria',
+    ca: 'Socis de la Indústria',
+  },
+  'projects.stats.professionals': {
+    en: 'Tech Professionals',
+    es: 'Profesionales Tech',
+    ca: 'Professionals Tech',
+  },
+  
+  // Mentorship section translations
+  'mentorship.title': {
+    en: 'Expert Guidance',
+    es: 'Orientación Experta',
+    ca: 'Orientació Experta',
+  },
+  'mentorship.headline': {
+    en: 'Learn from Industry Mentors',
+    es: 'Aprende de Mentoras de la Industria',
+    ca: 'Aprèn de Mentores de la Indústria',
+  },
+  'mentorship.description': {
+    en: 'Our mentors are experienced professionals who will guide you, give you feedback, and help you grow in your career.',
+    es: 'Nuestras mentoras son profesionales experimentadas que te guiarán, te darán feedback y te ayudarán a crecer en tu carrera.',
+    ca: 'Les nostres mentores són professionals experimentades que et guiaran, et donaran feedback i t\'ajudaran a créixer en la teva carrera.',
+  },
+  'mentorship.feedback.title': {
+    en: 'Expert Feedback',
+    es: 'Feedback Experto',
+    ca: 'Feedback Expert',
+  },
+  'mentorship.feedback.description': {
+    en: 'Receive personalized feedback on your work from professionals in your field.',
+    es: 'Recibe retroalimentación personalizada sobre tu trabajo de profesionales en tu campo.',
+    ca: 'Rep retroalimentació personalitzada sobre el teu treball de professionals en el teu camp.',
+  },
+  'mentorship.guidance.title': {
+    en: 'Career Guidance',
+    es: 'Orientación Profesional',
+    ca: 'Orientació Professional',
+  },
+  'mentorship.guidance.description': {
+    en: 'Receive advice on your career path and how to achieve your goals.',
+    es: 'Recibe consejos sobre tu trayectoria profesional y cómo alcanzar tus metas.',
+    ca: 'Rep consells sobre la teva trajectòria professional i com assolir els teus objectius.',
+  },
+  'mentorship.connections.title': {
+    en: 'Industry Connections',
+    es: 'Conexiones en la Industria',
+    ca: 'Connexions a la Indústria',
+  },
+  'mentorship.connections.description': {
+    en: 'Connect with professionals who can help you expand your network.',
+    es: 'Conecta con profesionales que pueden ayudarte a expandir tu red de contactos.',
+    ca: 'Connecta amb professionals que poden ajudar-te a expandir la teva xarxa de contactes.',
+  },
+  
+  // Waitlist section translations
+  'waitlist.title': {
+    en: 'Ready to join?',
+    es: '¿Lista para unirte?',
+    ca: 'Preparada per unir-te?',
+  },
+  'waitlist.headline': {
+    en: 'Join Our Waitlist',
+    es: 'Únete a Nuestra Lista de Espera',
+    ca: 'Uneix-te a la Nostra Llista d\'Espera',
+  },
+  'waitlist.description': {
+    en: 'We\'re launching soon! Join our waitlist and be the first to know when we open registration for our initial cohort of collaborative tech professionals.',
+    es: '¡Pronto lanzamos! Únete a nuestra lista de espera y sé la primera en saber cuándo abrimos la inscripción para nuestra cohorte inicial de profesionales tecnológicas colaborativas.',
+    ca: 'Aviat llancem! Uneix-te a la nostra llista d\'espera i sigues la primera en saber quan obrim la inscripció per a la nostra cohort inicial de professionals tecnològiques col·laboratives.',
+  },
+  'waitlist.benefit1': {
+    en: 'Work on real-world projects',
+    es: 'Trabaja en proyectos del mundo real',
+    ca: 'Treballa en projectes del món real',
+  },
+  'waitlist.benefit2': {
+    en: 'Collaborate with multidisciplinary teams',
+    es: 'Colabora con equipos multidisciplinarios',
+    ca: 'Col·labora amb equips multidisciplinaris',
+  },
+  'waitlist.benefit3': {
+    en: 'Receive mentorship from industry experts',
+    es: 'Recibe mentoría de expertas de la industria',
+    ca: 'Rep mentoria d\'expertes de la indústria',
+  },
+  'waitlist.benefit4': {
+    en: 'Build your portfolio and network',
+    es: 'Construye tu portafolio y red de contactos',
+    ca: 'Construeix el teu portfoli i xarxa de contactes',
+  },
+  'waitlist.form.title': {
+    en: 'Request an Invitation',
+    es: 'Solicita una Invitación',
+    ca: 'Sol·licita una Invitació',
+  },
+  'waitlist.form.name': {
+    en: 'Full Name',
+    es: 'Nombre Completo',
+    ca: 'Nom Complet',
+  },
+  'waitlist.form.email': {
+    en: 'Email',
+    es: 'Correo Electrónico',
+    ca: 'Correu Electrònic',
+  },
+  'waitlist.form.role': {
+    en: 'Your Experience/Role',
+    es: 'Tu Experiencia/Rol',
+    ca: 'La Teva Experiència/Rol',
+  },
+  'waitlist.form.placeholder.name': {
+    en: 'Your name',
+    es: 'Tu nombre',
+    ca: 'El teu nom',
+  },
+  'waitlist.form.placeholder.email': {
+    en: 'you@example.com',
+    es: 'tu@ejemplo.com',
+    ca: 'tu@exemple.com',
+  },
+  'waitlist.form.placeholder.role': {
+    en: 'e.g. UX/UI Designer, Frontend Developer',
+    es: 'ej. Diseñadora UX/UI, Desarrolladora Frontend',
+    ca: 'ex. Dissenyadora UX/UI, Desenvolupadora Frontend',
+  },
+  'waitlist.form.submit': {
+    en: 'Join the Waitlist',
+    es: 'Unirse a la Lista de Espera',
+    ca: 'Uneix-te a la Llista d\'Espera',
+  },
+  'waitlist.form.sending': {
+    en: 'Sending...',
+    es: 'Enviando...',
+    ca: 'Enviant...',
+  },
+  'waitlist.form.success': {
+    en: 'Submitted!',
+    es: '¡Enviado!',
+    ca: 'Enviat!',
+  },
+  'waitlist.form.privacy': {
+    en: 'By registering, you agree to our privacy policy and terms of service.',
+    es: 'Al registrarte, aceptas nuestra política de privacidad y términos de servicio.',
+    ca: 'En registrar-te, acceptes la nostra política de privacitat i condicions de servei.',
+  },
+  
+  // Footer translations
+  'footer.description': {
+    en: 'SheHub connects tech bootcamp graduates from different roles who want to build a career in the tech industry, guided by expert mentors.',
+    es: 'SheHub conecta a graduadas de bootcamps tecnológicos de diferentes roles que quieren construir una carrera en la industria tech, guiadas por mentoras expertas.',
+    ca: 'SheHub connecta graduades de bootcamps tecnològics de diferents rols que volen construir una carrera a la indústria tech, guiades per mentores expertes.',
+  },
+  'footer.quicklinks': {
+    en: 'Quick Links',
+    es: 'Enlaces Rápidos',
+    ca: 'Enllaços Ràpids',
+  },
+  'footer.about': {
+    en: 'About Us',
+    es: 'Acerca de Nosotras',
+    ca: 'Sobre Nosaltres',
+  },
+  'footer.projects': {
+    en: 'Projects',
+    es: 'Proyectos',
+    ca: 'Projectes',
+  },
+  'footer.mentorship': {
+    en: 'Mentorship',
+    es: 'Mentoría',
+    ca: 'Mentoria',
+  },
+  'footer.waitlist': {
+    en: 'Join the Waitlist',
+    es: 'Unirse a la Lista de Espera',
+    ca: 'Uneix-te a la Llista d\'Espera',
+  },
+  'footer.contact': {
+    en: 'Contact',
+    es: 'Contacto',
+    ca: 'Contacte',
+  },
+  'footer.questions': {
+    en: 'Have questions?',
+    es: '¿Tienes preguntas?',
+    ca: 'Tens preguntes?',
+  },
+  'footer.rights': {
+    en: 'All rights reserved.',
+    es: 'Todos los derechos reservados.',
+    ca: 'Tots els drets reservats.',
+  },
+  'footer.privacy': {
+    en: 'Privacy Policy',
+    es: 'Política de Privacidad',
+    ca: 'Política de Privacitat',
+  },
+  'footer.terms': {
+    en: 'Terms of Service',
+    es: 'Términos de Servicio',
+    ca: 'Condicions de Servei',
+  },
+  'toast.success.title': {
+    en: 'Success!',
+    es: '¡Éxito!',
+    ca: 'Èxit!',
+  },
+  'toast.success.description': {
+    en: 'You have been added to our waitlist. We will contact you soon!',
+    es: 'Has sido añadida a nuestra lista de espera. ¡Nos pondremos en contacto pronto!',
+    ca: 'Has estat afegida a la nostra llista d\'espera. Ens posarem en contacte aviat!',
+  },
+};
+
+type TranslationsType = typeof translations;
+
+export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  // Try to get the language from localStorage, default to Spanish
+  const [language, setLanguage] = useState<Language>(() => {
+    const storedLanguage = localStorage.getItem('language');
+    return (storedLanguage as Language) || 'es';
+  });
+
+  // Update localStorage when language changes
+  useEffect(() => {
+    localStorage.setItem('language', language);
+    // Also update the html lang attribute
+    document.documentElement.lang = language;
+  }, [language]);
+
+  // Helper function to get translations
+  const t = (key: string): string => {
+    const keyParts = key.split('.');
+    
+    // Type assertion to help TypeScript understand our structure
+    const translationObj = translations as Record<string, Record<string, string>>;
+    
+    if (translationObj[key] && translationObj[key][language]) {
+      return translationObj[key][language];
+    }
+    
+    // Fallback to Spanish if translation is missing
+    if (translationObj[key] && translationObj[key]['es']) {
+      return translationObj[key]['es'];
+    }
+    
+    console.warn(`Translation missing for key: ${key}`);
+    return key;
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export const useLanguage = (): LanguageContextType => {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+};
