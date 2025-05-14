@@ -15,17 +15,17 @@ const Features: React.FC<FeaturesProps> = ({ className }) => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn>
             <span className="px-4 py-1.5 bg-shehub-purple/20 text-shehub-purple font-pixel text-sm rounded-full font-medium mb-6 inline-block uppercase tracking-wider">
-              Nuestra Plataforma
+              🚀 Why SheHub?
             </span>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Construye tu carrera en la industria tecnológica
+              Because talent is not lacking—opportunity is.
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-lg text-muted-foreground">
-              Únete a SheHub y obtén experiencia real trabajando en proyectos con equipos multidisciplinarios
+              SheHub is the bridge between talent and opportunity.
             </p>
           </FadeIn>
         </div>
@@ -34,32 +34,32 @@ const Features: React.FC<FeaturesProps> = ({ className }) => {
           <FadeIn direction="up">
             <FeatureCard 
               icon={<Users className="text-shehub-purple" />}
-              title="Equipos Multidisciplinarios"
-              description="Colabora con profesionales de diferentes campos y aprende cómo operan los equipos multifuncionales"
+              title="74% Struggle Post-Bootcamp"
+              description="Most women face challenges landing tech jobs after completing bootcamps"
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.1}>
             <FeatureCard 
               icon={<Rocket className="text-shehub-purple" />}
-              title="Proyectos Reales"
-              description="Trabaja en proyectos actuales que resuelven problemas reales y construye tu portafolio profesional"
+              title="Experience Gap"
+              description="Many lack real-world experience and exposure to cross-functional teamwork"
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.2}>
             <FeatureCard 
               icon={<Star className="text-shehub-purple" />}
-              title="Mentoría Experta"
-              description="Recibe orientación de profesionales de la industria que te ayudarán a crecer y mejorar tus habilidades"
+              title="Companies Need Diversity"
+              description="Businesses seek diverse talent but struggle to find qualified candidates"
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.3}>
             <FeatureCard 
               icon={<Network className="text-shehub-purple" />}
-              title="Networking"
-              description="Conecta con otras profesionales y construye relaciones que pueden llevarte a futuras oportunidades"
+              title="SheHub Bridge"
+              description="We connect talented women with real experience to make them job-ready"
             />
           </FadeIn>
         </div>

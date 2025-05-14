@@ -50,72 +50,72 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
           <FadeIn direction="left">
             <div>
               <span className="px-4 py-1.5 bg-shehub-purple/20 text-shehub-purple font-pixel text-sm rounded-full font-medium mb-6 inline-block uppercase tracking-wider">
-                ¿Lista para unirte?
+                📥 Join the Waitlist
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Únete a Nuestra Lista de Espera
+                Ready to grow your tech career?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                ¡Pronto lanzamos! Únete a nuestra lista de espera y sé la primera en saber cuándo abrimos la inscripción para nuestra cohorte inicial de profesionales tecnológicas colaborativas.
+                Interested in joining SheHub as a contributor or mentor? Drop your name and email and we'll get in touch as new teams open.
               </p>
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <Check size={18} className="text-shehub-purple" />
-                <span>Trabaja en proyectos del mundo real</span>
+                <span>Work on real projects that solve real problems</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground mt-3">
                 <Check size={18} className="text-shehub-purple" />
-                <span>Colabora con equipos multidisciplinarios</span>
+                <span>Collaborate with cross-functional teams</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground mt-3">
                 <Check size={18} className="text-shehub-purple" />
-                <span>Recibe mentoría de expertas de la industria</span>
+                <span>Get mentored by industry professionals</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground mt-3">
                 <Check size={18} className="text-shehub-purple" />
-                <span>Construye tu portafolio y red de contactos</span>
+                <span>Build your portfolio and network</span>
               </div>
             </div>
           </FadeIn>
           
           <FadeIn direction="right">
             <div className="glass-card p-8 md:p-10">
-              <h3 className="text-2xl font-bold mb-6">Solicita una Invitación</h3>
+              <h3 className="text-2xl font-bold mb-6">Request an Invitation</h3>
               <form onSubmit={handleSubmit}>
                 <div className="mb-5">
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">Nombre Completo</label>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name</label>
                   <input
                     type="text"
                     id="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
-                    placeholder="Tu nombre"
+                    placeholder="Your name"
                     required
                   />
                 </div>
                 
                 <div className="mb-5">
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">Correo Electrónico</label>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address</label>
                   <input
                     type="email"
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
-                    placeholder="tu@ejemplo.com"
+                    placeholder="you@example.com"
                     required
                   />
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="profession" className="block text-sm font-medium mb-2">Tu Experiencia/Rol</label>
+                  <label htmlFor="profession" className="block text-sm font-medium mb-2">Your Role/Experience</label>
                   <input
                     type="text"
                     id="profession"
                     value={profession}
                     onChange={(e) => setProfession(e.target.value)}
                     className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
-                    placeholder="ej. Diseñadora UX/UI, Desarrolladora Frontend"
+                    placeholder="e.g. UX/UI Designer, Frontend Developer"
                     required
                   />
                 </div>
@@ -131,23 +131,23 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                   {submitting ? (
                     <>
                       <Loader2 size={20} className="mr-2 animate-spin" />
-                      Enviando...
+                      Submitting...
                     </>
                   ) : submitted ? (
                     <>
                       <Check size={20} className="mr-2" />
-                      ¡Enviado!
+                      Submitted!
                     </>
                   ) : (
                     <>
                       <Mail size={20} className="mr-2" />
-                      Unirse a la Lista de Espera
+                      👉 Join the Waitlist
                     </>
                   )}
                 </button>
                 
                 <p className="text-xs text-muted-foreground mt-4 text-center">
-                  Al registrarte, aceptas nuestra política de privacidad y términos de servicio.
+                  By signing up, you agree to our privacy policy and terms of service.
                 </p>
               </form>
             </div>

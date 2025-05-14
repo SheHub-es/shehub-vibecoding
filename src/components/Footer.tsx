@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Mail, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Instagram, Linkedin, MessageSquare } from 'lucide-react';
 import PixelLogo from './PixelLogo';
 
 interface FooterProps {
@@ -16,45 +16,49 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <div className="lg:col-span-2">
             <PixelLogo className="mb-4" />
             <p className="text-muted-foreground mb-6 max-w-md">
-              SheHub conecta a graduadas de bootcamps tecnológicos de diferentes roles que quieren construir una carrera en la industria tech, guiadas por mentoras expertas.
+              SheHub connects women bootcamp graduates from different roles who want to build a career in tech, guided by expert mentors.
             </p>
             <div className="flex space-x-4">
               <SocialLink href="#" icon={<Instagram size={20} />} label="Instagram" />
-              <SocialLink href="#" icon={<Twitter size={20} />} label="Twitter" />
               <SocialLink href="#" icon={<Linkedin size={20} />} label="LinkedIn" />
-              <SocialLink href="#" icon={<Mail size={20} />} label="Email" />
+              <SocialLink href="#" icon={<MessageSquare size={20} />} label="Discord" />
+              <SocialLink href="mailto:info@shehub.es" icon={<Mail size={20} />} label="Email" />
             </div>
           </div>
           
           <div>
-            <h4 className="font-medium text-lg mb-4">Enlaces Rápidos</h4>
+            <h4 className="font-medium text-lg mb-4">Quick Links</h4>
             <nav className="flex flex-col space-y-3">
-              <FooterLink href="#features">Acerca de Nosotras</FooterLink>
-              <FooterLink href="#projects">Proyectos</FooterLink>
-              <FooterLink href="#mentorship">Mentoría</FooterLink>
-              <FooterLink href="#waitlist">Unirse a la Lista de Espera</FooterLink>
+              <FooterLink href="#features">About Us</FooterLink>
+              <FooterLink href="#projects">How It Works</FooterLink>
+              <FooterLink href="#mentorship">For Mentors</FooterLink>
+              <FooterLink href="#vision">Our Vision</FooterLink>
+              <FooterLink href="#waitlist">Join the Waitlist</FooterLink>
             </nav>
           </div>
           
           <div>
-            <h4 className="font-medium text-lg mb-4">Contacto</h4>
-            <p className="text-muted-foreground mb-2">¿Tienes preguntas?</p>
-            <a href="mailto:hello@shehub.com" className="text-shehub-purple hover:underline">
-              hello@shehub.com
+            <h4 className="font-medium text-lg mb-4">Contact</h4>
+            <p className="text-muted-foreground mb-2">Have questions?</p>
+            <a href="mailto:info@shehub.es" className="text-shehub-purple hover:underline">
+              info@shehub.es
             </a>
+            <p className="text-muted-foreground mt-4 mb-1">
+              Based in Spain — Building across Europe
+            </p>
           </div>
         </div>
         
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} SheHub. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} SheHub. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Política de Privacidad
+              Privacy Policy
             </a>
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Términos de Servicio
+              Terms of Service
             </a>
           </div>
         </div>
