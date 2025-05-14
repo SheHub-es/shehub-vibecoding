@@ -32,9 +32,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-8',
         scrolled 
-          ? 'bg-white/80 backdrop-blur-md shadow-sm' 
-          : 'bg-transparent',
-        className
+         ? 'bg-white shadow-sm' // solid background, no transparency or blur
+      : 'bg-transparent',
+    className
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
