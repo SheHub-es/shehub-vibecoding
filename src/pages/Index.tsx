@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -8,6 +9,7 @@ import ForMentors from '@/components/ForMentors';
 import OurImpact from '@/components/OurImpact';
 import FaqSection from '@/components/FaqSection';
 import JoinWaitlist from '@/components/JoinWaitlist';
+import WaitlistForm from '@/components/WaitlistForm';
 
 const Index = () => {
   useEffect(() => {
