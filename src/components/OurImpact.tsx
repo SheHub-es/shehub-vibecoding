@@ -25,7 +25,7 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
           </FadeIn>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <FadeIn direction="up">
             <ImpactStat 
               icon={<Users size={22} />}
@@ -39,6 +39,14 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
               icon={<CheckCircle size={22} />}
               number="3+"
               label="active teams already working across UX, dev, product, and more"
+            />
+          </FadeIn>
+             
+          <FadeIn direction="up" delay={0.2}>
+            <ImpactStat 
+              icon={<Trophy size={22} />}
+              number="760+"
+              label="hours invested by contributors in real workflows"
             />
           </FadeIn>
           
