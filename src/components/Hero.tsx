@@ -53,7 +53,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         <div className="absolute -left-40 md:-left-20 bottom-1/4 w-80 h-80 rounded-full bg-shehub-orange/10 blur-3xl animate-pulse-light" style={{ animationDelay: '-1.5s' }} />
       </div>
       
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float">
+      <div className="absolute bottom-8 left-0 right-0 mx-auto flex justify-center animate-float">
         <a href="#features" className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors">
           <span className="text-sm font-medium mb-2">Discover More</span>
           <ArrowDown size={20} />
