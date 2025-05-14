@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
@@ -18,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       <div className="container max-w-7xl mx-auto px-6 md:px-8">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <FadeIn>
-            <PixelLogo size="lg" className="mb-8" />
+            <PixelLogo size="lg" variant="hero" className="mb-8" />
           </FadeIn>
           
           <FadeIn delay={0.1}>
