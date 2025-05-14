@@ -53,10 +53,10 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                 📥 Join the Waitlist
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to grow your tech career?
+                Ready to gain experience or guide others?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Interested in joining SheHub as a contributor or mentor? Drop your name and email and we'll get in touch as new teams open.
+                Whether you're pivoting into tech or growing as a leader, SheHub is your space to contribute and thrive. We'll reach out as new teams open.
               </p>
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <Check size={18} className="text-shehub-purple" />
@@ -141,7 +141,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                   ) : (
                     <>
                       <Mail size={20} className="mr-2" />
-                      👉 Join the Waitlist
+                      Join the Waitlist
                     </>
                   )}
                 </button>

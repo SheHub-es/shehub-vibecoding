@@ -47,13 +47,13 @@ const Index = () => {
               
               <FadeIn delay={0.1}>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Simulated tech teams. Real deliverables. Mentored support.
+                  SheHub replicates the dynamics of a real tech company
                 </h2>
               </FadeIn>
               
               <FadeIn delay={0.2}>
                 <p className="text-lg text-muted-foreground mb-6">
-                  We bring women together in cross-functional teams — UX/UI, dev, product, data, marketing — to build real solutions and iterate like any real product team.
+                  So women gain not just skills, but experience that counts. It's not just about learning — it's about working, growing, and being seen.
                 </p>
               </FadeIn>
               
@@ -61,31 +61,25 @@ const Index = () => {
                 <div className="space-y-3 mb-8">
                   <div className="flex items-start">
                     <span className="text-shehub-purple font-bold mr-2">✅</span>
-                    <p className="text-muted-foreground">Agile structure & team roles</p>
+                    <p className="text-muted-foreground">Agile team structure with real roles: UX/UI, Dev, Product, Data, Marketing</p>
                   </div>
                   <div className="flex items-start">
                     <span className="text-shehub-purple font-bold mr-2">✅</span>
-                    <p className="text-muted-foreground">Mentorship from industry pros</p>
+                    <p className="text-muted-foreground">4–8 week projects with real deliverables</p>
                   </div>
                   <div className="flex items-start">
                     <span className="text-shehub-purple font-bold mr-2">✅</span>
-                    <p className="text-muted-foreground">4–8 week projects with impact</p>
+                    <p className="text-muted-foreground">Mentorship from professionals in tech</p>
                   </div>
                   <div className="flex items-start">
                     <span className="text-shehub-purple font-bold mr-2">✅</span>
-                    <p className="text-muted-foreground">End-to-end product cycle</p>
+                    <p className="text-muted-foreground">Planning, retrospectives, and demo moments</p>
                   </div>
                   <div className="flex items-start">
                     <span className="text-shehub-purple font-bold mr-2">✅</span>
-                    <p className="text-muted-foreground">Access to enterprise tools (Notion, Genially, Genway.ai...)</p>
+                    <p className="text-muted-foreground">Access to tools used in top companies: Notion, Genway.ai</p>
                   </div>
                 </div>
-              </FadeIn>
-              
-              <FadeIn delay={0.4}>
-                <p className="text-lg font-medium text-shehub-purple">
-                  Participants walk away with job-ready experience, portfolio pieces, and confidence.
-                </p>
               </FadeIn>
             </div>
             
@@ -109,11 +103,11 @@ const Index = () => {
                   </div>
                   
                   <div className="space-y-4">
-                    <Stat number="100+" label="Sign-ups in 30 days, 0€ spent" />
-                    <Stat number="14" label="Women working in 2 cross-functional teams" />
-                    <Stat number="760+" label="Hours of real work" />
-                    <Stat number="€7,500+" label="In mentor time" />
-                    <Stat number="7" label="Interviews landed by contributors since April" />
+                    <Stat number="100+" label="Women joined the community in the first month" />
+                    <Stat number="2+" label="Cross-functional teams already working" />
+                    <Stat number="10+" label="Mentors from across the tech industry" />
+                    <Stat number="4+" label="Professional tools like Notion and Genway.ai" />
+                    <Stat number="7+" label="Contributors securing interview opportunities" />
                   </div>
                 </div>
               </FadeIn>
@@ -134,11 +128,11 @@ const Index = () => {
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Give back, grow as a leader, and shape the future</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Lead. Inspire. Grow — while helping women break into tech</h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-lg text-muted-foreground">
-                Empower women in tech while growing your own leadership skills
+                Support cross-functional teams in real product simulations and build the kind of leadership experience that companies look for.
               </p>
             </FadeIn>
           </div>
@@ -147,8 +141,8 @@ const Index = () => {
             <FadeIn direction="up">
               <MentorCard 
                 icon={<Star size={20} className="text-shehub-purple" />}
-                title="Make Impact"
-                description="Empower women in tech while growing your own leadership skills"
+                title="Develop Leadership"
+                description="Develop your coaching, decision-making, and team management skills in a low-risk, high-impact setting"
               />
             </FadeIn>
             
@@ -156,15 +150,15 @@ const Index = () => {
               <MentorCard 
                 icon={<Users size={20} className="text-shehub-purple" />}
                 title="Flexible Commitment"
-                description="Mentor 1-2 hours per week in flexible, remote-first projects"
+                description="Time commitment is flexible — around 1 to 2 hours per week, fully remote"
               />
             </FadeIn>
             
             <FadeIn direction="up" delay={0.2}>
               <MentorCard 
                 icon={<Network size={20} className="text-shehub-purple" />}
-                title="Join a Community"
-                description="Become part of a mission-driven community and expand your network"
+                title="Career Enhancement"
+                description="SheHub experience is something you can proudly list on your LinkedIn or CV"
               />
             </FadeIn>
           </div>
@@ -240,23 +234,27 @@ const Index = () => {
                   <div className="space-y-6">
                     <div>
                       <h4 className="font-bold mb-2">What is SheHub?</h4>
-                      <p className="text-muted-foreground">A collaborative platform where women work on real tech projects in agile teams with mentors. It's not a course — it's a real experience simulator.</p>
+                      <p className="text-muted-foreground">A collaborative platform where women gain job-ready experience by working in agile teams with real mentors.</p>
                     </div>
                     <div>
                       <h4 className="font-bold mb-2">Is it free?</h4>
-                      <p className="text-muted-foreground">Yes! SheHub is 100% free for participants and mentors.</p>
+                      <p className="text-muted-foreground">Yes. SheHub is completely free for contributors and mentors.</p>
                     </div>
                     <div>
                       <h4 className="font-bold mb-2">Who can join?</h4>
-                      <p className="text-muted-foreground">Any woman who has completed a bootcamp or is self-taught and ready to build job-ready experience. Mentors of all genders are welcome if they want to support women in tech.</p>
+                      <p className="text-muted-foreground">Contributors: Women who have completed a bootcamp or are self-taught and want to gain hands-on, team-based experience. Mentors: Women professionals in tech who want to support others while also growing their leadership skills.</p>
                     </div>
                     <div>
-                      <h4 className="font-bold mb-2">What projects do you build?</h4>
-                      <p className="text-muted-foreground">Functional features for SheHub itself and partner initiatives — everything from frontend UX to data insights.</p>
+                      <h4 className="font-bold mb-2">What kind of projects are they?</h4>
+                      <p className="text-muted-foreground">Teams build real features and tools, either for the SheHub platform or partner initiatives. All work is collaborative and relevant.</p>
                     </div>
                     <div>
                       <h4 className="font-bold mb-2">How long are the projects?</h4>
-                      <p className="text-muted-foreground">Typically 4–8 weeks, part-time and flexible.</p>
+                      <p className="text-muted-foreground">Most last 4 to 8 weeks and are designed to be flexible and part-time.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold mb-2">Can I include this on my CV or LinkedIn?</h4>
+                      <p className="text-muted-foreground">Yes. Everything you work on is structured, visible, and can be showcased as real experience.</p>
                     </div>
                   </div>
                 </div>

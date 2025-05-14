@@ -20,46 +20,38 @@ const Features: React.FC<FeaturesProps> = ({ className }) => {
           </FadeIn>
           <FadeIn delay={0.1}>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Because talent is not lacking—opportunity is.
+              Women are not underqualified — they're untapped potential.
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-lg text-muted-foreground">
-              SheHub is the bridge between talent and opportunity.
+              They're learning, pivoting, and showing up with skills — but still hit the same walls.
             </p>
           </FadeIn>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <FadeIn direction="up">
             <FeatureCard 
               icon={<Users className="text-shehub-purple" />}
-              title="74% Struggle Post-Bootcamp"
-              description="Most women face challenges landing tech jobs after completing bootcamps"
+              title="No space to build real-world experience"
+              description="SheHub provides a real place to work, grow, and lead — before the job offer"
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.1}>
             <FeatureCard 
               icon={<Rocket className="text-shehub-purple" />}
-              title="Experience Gap"
-              description="Many lack real-world experience and exposure to cross-functional teamwork"
+              title="No chance to grow within tech environments"
+              description="A career-growth platform, not a course. A real team, not a theoretical project"
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.2}>
             <FeatureCard 
               icon={<Star className="text-shehub-purple" />}
-              title="Companies Need Diversity"
-              description="Businesses seek diverse talent but struggle to find qualified candidates"
-            />
-          </FadeIn>
-          
-          <FadeIn direction="up" delay={0.3}>
-            <FeatureCard 
-              icon={<Network className="text-shehub-purple" />}
-              title="SheHub Bridge"
-              description="We connect talented women with real experience to make them job-ready"
+              title="No visibility in a system that filters CVs, not talent"
+              description="A space where women don't just prepare — they prove it"
             />
           </FadeIn>
         </div>

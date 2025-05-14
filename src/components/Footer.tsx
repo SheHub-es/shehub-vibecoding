@@ -19,9 +19,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               SheHub connects women bootcamp graduates from different roles who want to build a career in tech, guided by expert mentors.
             </p>
             <div className="flex space-x-4">
-              <SocialLink href="#" icon={<Instagram size={20} />} label="Instagram" />
-              <SocialLink href="#" icon={<Linkedin size={20} />} label="LinkedIn" />
-              <SocialLink href="#" icon={<MessageSquare size={20} />} label="Discord" />
+              <SocialLink href="https://www.linkedin.com/company/shehub-es" icon={<Linkedin size={20} />} label="LinkedIn" />
+              <SocialLink href="https://www.instagram.com/shehub.es" icon={<Instagram size={20} />} label="Instagram" />
               <SocialLink href="mailto:info@shehub.es" icon={<Mail size={20} />} label="Email" />
             </div>
           </div>
@@ -54,11 +53,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             &copy; {new Date().getFullYear()} SheHub. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              Terms of Service
+            <a href="https://shehub.es" className="text-muted-foreground hover:text-foreground transition-colors">
+              www.shehub.es
             </a>
           </div>
         </div>

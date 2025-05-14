@@ -50,12 +50,14 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           <NavLink href="#mentorship">For Mentors</NavLink>
           <NavLink href="#vision">Vision & FAQ</NavLink>
           <LanguageToggle className="mr-4" />
-          <a 
-            href="#waitlist" 
-            className="px-5 py-2 rounded-full bg-shehub-gradient text-white font-medium transition-all hover:shadow-glow-purple hover:scale-105"
-          >
-            Join Waitlist
-          </a>
+          <div className="flex space-x-4">
+            <a 
+              href="#waitlist" 
+              className="px-5 py-2 rounded-full bg-shehub-gradient text-white font-medium transition-all hover:shadow-glow-purple hover:scale-105"
+            >
+              Join Waitlist
+            </a>
+          </div>
         </nav>
 
         {/* Mobile menu button and language toggle */}
