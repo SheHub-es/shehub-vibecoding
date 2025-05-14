@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Mail, Instagram, Linkedin, MessageSquare } from 'lucide-react';
+import { Mail, Instagram, Linkedin } from 'lucide-react';
 import PixelLogo from './PixelLogo';
 
 interface FooterProps {
