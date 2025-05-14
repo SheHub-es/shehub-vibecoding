@@ -3,7 +3,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import WhyShehub from '@/components/WhyShehub';
-import WaitlistForm from '@/components/WaitlistForm';
 import HowItWorks from '@/components/HowItWorks';
 import ForMentors from '@/components/ForMentors';
 import OurImpact from '@/components/OurImpact';
