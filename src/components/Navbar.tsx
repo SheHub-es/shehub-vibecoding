@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           <NavLink href="#features">Why SheHub</NavLink>
           <NavLink href="#projects">How It Works</NavLink>
           <NavLink href="#mentorship">For Mentors</NavLink>
-          <NavLink href="#vision">Vision & FAQ</NavLink>
+          <NavLink href="#vision">FAQ</NavLink>
           <LanguageToggle className="mr-4" />
           <div className="flex space-x-4">
             <a 
