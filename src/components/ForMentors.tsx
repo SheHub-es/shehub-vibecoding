@@ -46,7 +46,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
                   <Heart size={18} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold mb-2">Help diverse talent grow — while growing your own impact</h3>
+                  <h3 className="text-lg font-bold mb-2">Help diverse talent grow while growing your own impact</h3>
                 </div>
               </div>
             </div>
@@ -59,7 +59,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
                   <Clock size={18} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold mb-2">Just 1–2 hours/week, fully remote</h3>
+                  <h3 className="text-lg font-bold mb-2">Just a few hours/week, flexible and fully remote</h3>
                 </div>
               </div>
             </div>
