@@ -10,7 +10,7 @@ interface FeaturesProps {
 
 const Features: React.FC<FeaturesProps> = ({ className }) => {
   return (
-    <section id="features" className={cn('py-20 relative overflow-hidden', className)}>
+    <section id="features" className={cn('py-24 relative overflow-hidden', className)}>
       <div className="container max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn>
@@ -68,7 +68,7 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="glass-card p-6 h-full flex flex-col items-center text-center transition-all hover:shadow-md hover:-translate-y-1">
+    <div className="bg-white p-6 rounded-2xl shadow-sm h-full flex flex-col items-center text-center transition-all hover:shadow-md hover:-translate-y-1">
       <div className="w-12 h-12 rounded-full bg-shehub-purple/10 flex items-center justify-center mb-4">
         {icon}
       </div>

@@ -5,7 +5,6 @@ import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import WaitlistForm from '@/components/WaitlistForm';
 import Footer from '@/components/Footer';
-import AnimatedGradient from '@/components/AnimatedGradient';
 import FadeIn from '@/components/FadeIn';
 import { ArrowRight, Rocket, Users, Star } from 'lucide-react';
 import Network from '@/components/Network';
@@ -29,13 +28,20 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen">
-      <AnimatedGradient />
       <Navbar />
-      <Hero />
       
-      <Features />
+      {/* Hero: White */}
+      <div className="bg-white">
+        <Hero />
+      </div>
       
-      <section id="projects" className="py-24 relative overflow-hidden">
+      {/* Features: Soft blush pink */}
+      <div className="bg-[#FFF4F4]">
+        <Features />
+      </div>
+      
+      {/* Projects: Pale peach */}
+      <section id="projects" className="py-24 relative overflow-hidden bg-[#FFF8F0]">
         <div className="container max-w-6xl mx-auto px-6 md:px-8">
           <div className="grid md:grid-cols-5 gap-12 items-center">
             <div className="md:col-span-3">
@@ -114,12 +120,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-        
-        {/* Background decoration */}
-        <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-shehub-orange/10 blur-3xl" />
       </section>
       
-      <section id="mentorship" className="py-20 bg-shehub-purple/5 relative overflow-hidden">
+      {/* Mentorship: Light lavender */}
+      <section id="mentorship" className="py-24 bg-[#F4EDFA] relative overflow-hidden">
         <div className="container max-w-6xl mx-auto px-6 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <FadeIn>
@@ -176,7 +180,8 @@ const Index = () => {
         </div>
       </section>
       
-      <section id="vision" className="py-24 relative overflow-hidden">
+      {/* Vision: White */}
+      <section id="vision" className="py-24 relative overflow-hidden bg-white">
         <div className="container max-w-6xl mx-auto px-6 md:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -262,13 +267,17 @@ const Index = () => {
             </div>
           </div>
         </div>
-        
-        {/* Background decoration */}
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-shehub-purple/10 blur-3xl" />
       </section>
       
-      <WaitlistForm />
-      <Footer />
+      {/* Waitlist: Light blue */}
+      <div className="bg-[#F0F8FF]">
+        <WaitlistForm />
+      </div>
+      
+      {/* Footer: Brand purple */}
+      <div className="bg-shehub-purple text-white">
+        <Footer />
+      </div>
     </div>
   );
 };

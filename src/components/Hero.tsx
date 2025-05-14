@@ -47,10 +47,6 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             </div>
           </FadeIn>
         </div>
-        
-        {/* Abstract shape */}
-        <div className="absolute -right-40 md:-right-20 top-1/4 w-80 h-80 rounded-full bg-shehub-purple/10 blur-3xl animate-pulse-light" />
-        <div className="absolute -left-40 md:-left-20 bottom-1/4 w-80 h-80 rounded-full bg-shehub-orange/10 blur-3xl animate-pulse-light" style={{ animationDelay: '-1.5s' }} />
       </div>
       
       <div className="absolute bottom-8 left-0 right-0 mx-auto flex justify-center animate-float">
