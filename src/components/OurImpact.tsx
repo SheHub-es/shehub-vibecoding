@@ -25,7 +25,7 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
           </FadeIn>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FadeIn direction="up">
             <ImpactStat 
               icon={<Users size={22} />}
