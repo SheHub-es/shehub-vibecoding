@@ -25,7 +25,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
           </FadeIn>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-5">
           <FadeIn direction="up">
             <div className="glass-card p-8 h-full relative overflow-hidden group transition-all hover:shadow-md hover:-translate-y-1">
               <div className="w-12 h-12 rounded-full bg-shehub-purple/10 flex items-center justify-center mb-6">
@@ -58,6 +58,18 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
               <div className="absolute bottom-0 left-0 w-full h-1 bg-shehub-gradient scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </div>
           </FadeIn>
+  
+          <FadeIn direction="up" delay={0.3}>
+            <div className="glass-card p-8 h-full relative overflow-hidden group transition-all hover:shadow-md hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-full bg-shehub-purple/10 flex items-center justify-center mb-6">
+                <Lightbulb size={20} className="text-shehub-purple" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Tools that reflect where tech is going</h3>
+              <p className="text-muted-foreground relative z-10">We include modern workflows — from collaborative platforms to AI tools — so you build experience that’s relevant, not outdated. </p>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-shehub-gradient scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </div>
+          </FadeIn>
+          
         </div>
       </div>
     </section>
