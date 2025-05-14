@@ -26,7 +26,7 @@ const WhyShehub: React.FC<WhyShehubProps> = ({ className }) => {
           </FadeIn>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <FadeIn direction="up">
             <FeatureCard 
               icon={<Briefcase className="text-shehub-light-purple" />}
