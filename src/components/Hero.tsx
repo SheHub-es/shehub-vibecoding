@@ -35,19 +35,15 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           </FadeIn>
           
           <FadeIn delay={0.3}>
-            <div className="flex flex-col sm:flex-row gap-4 items-center">
-              <a 
-                href="#waitlist" 
-                className="px-8 py-3 rounded-full bg-shehub-gradient text-white text-lg font-medium transition-all hover:shadow-glow-orange hover:scale-105 w-full sm:w-auto"
-              >
-                Join as a Contributor
-              </a>
-              <a 
-                href="#mentorship" 
-                className="px-8 py-3 rounded-full border border-shehub-purple text-shehub-purple text-lg font-medium transition-all hover:bg-shehub-purple/10 w-full sm:w-auto"
-              >
-                Become a Mentor
-              </a>
+            <a 
+              href="#waitlist" 
+              className="px-8 py-3 rounded-full bg-shehub-gradient text-white text-lg font-medium transition-all hover:shadow-glow-orange hover:scale-105 w-full sm:w-auto inline-block"
+            >
+              Join the Waitlist
+            </a>
+            
+            <div className="mt-4 text-muted-foreground text-sm max-w-2xl">
+              Whether you're looking to gain real tech experience or grow as a mentor, this is the place to start.
             </div>
           </FadeIn>
         </div>
