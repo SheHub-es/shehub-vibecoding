@@ -15,13 +15,13 @@ const WhyShehub: React.FC<WhyShehubProps> = ({ className }) => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              SheHub is where women turn learning into leadership.
+              SheHub is where women turn learning into opportunities.
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-lg opacity-90">
               We provide the space, the tools, and the mentorship to transform potential into visible, 
-              proven experience — all within real tech teams.
+              proven experience.
             </p>
           </FadeIn>
         </div>
@@ -31,7 +31,7 @@ const WhyShehub: React.FC<WhyShehubProps> = ({ className }) => {
             <FeatureCard 
               icon={<Briefcase className="text-shehub-light-purple" />}
               title="Build experience that matters"
-              description="Work on real features from start to finish — not practice tasks, but product-ready results."
+              description="Work on real features from start to finish. Not practice tasks, but product-ready results."
             />
           </FadeIn>
           
@@ -39,15 +39,15 @@ const WhyShehub: React.FC<WhyShehubProps> = ({ className }) => {
             <FeatureCard 
               icon={<Users className="text-shehub-light-purple" />}
               title="Grow in a real tech environment"
-              description="Collaborate with contributors across product, design, dev, data, and marketing — using agile practices."
+              description="Collaborate with contributors across product, design, dev, data or marketing — using lean practices."
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.2}>
             <FeatureCard 
               icon={<Award className="text-shehub-light-purple" />}
-              title="Be seen, supported, and ready to lead"
-              description="Get mentorship, demos, and outcomes that give your talent visibility — beyond the CV."
+              title="Be seen, supported, and ready to grow"
+              description="Get mentorship, demos, and outcomes that give your talent visibility. We give you the tools to build an attractive portfolio and CV."
             />
           </FadeIn>
         </div>
