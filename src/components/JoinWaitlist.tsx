@@ -10,7 +10,7 @@ interface JoinWaitlistProps {
 
 const JoinWaitlist: React.FC<JoinWaitlistProps> = ({ className }) => {
   return (
-    <section id="join" className={cn("py-24 bg-[#F8F5FF]", className)}>
+    <section id="join" className={cn("py-24 bg-white", className)}>
       <div className="container max-w-4xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <FadeIn>
@@ -32,7 +32,7 @@ const JoinWaitlist: React.FC<JoinWaitlistProps> = ({ className }) => {
             </a>
             
             <p className="text-sm text-muted-foreground mt-4">
-              We'll reach out as new teams and mentor roles open.
+              We'll be in touch as soon as your opportunity opens up.
             </p>
           </FadeIn>
         </div>

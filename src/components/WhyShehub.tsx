@@ -10,7 +10,7 @@ interface WhyShehubProps {
 
 const WhyShehub: React.FC<WhyShehubProps> = ({ className }) => {
   return (
-    <section className={cn('py-20 bg-shehub-purple text-white', className)}>
+    <section id="features" className={cn('py-20 bg-shehub-purple text-white', className)}>
       <div className="container max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn>

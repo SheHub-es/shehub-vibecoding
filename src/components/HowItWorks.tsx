@@ -10,7 +10,7 @@ interface HowItWorksProps {
 
 const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
   return (
-    <section id="how-it-works" className={cn("py-24 bg-[#FFF8F0]", className)}>
+    <section id="how-it-works" className={cn("py-24 bg-white", className)}>
       <div className="container max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn>
@@ -20,7 +20,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-lg text-muted-foreground">
-              We simulate the dynamics of a real tech team so contributors grow through hands-on collaboration, decision-making, and mentorship.
+              SheHub simulates real tech teams — so contributors grow through collaboration, ownership, and mentorship.
             </p>
           </FadeIn>
         </div>
@@ -32,7 +32,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
                 <ClipboardCheck size={20} className="text-shehub-purple" />
               </div>
               <h3 className="text-xl font-bold mb-3">Agile, real-world projects</h3>
-              <p className="text-muted-foreground relative z-10">Contributors work in agile sprints, planning and shipping features together.</p>
+              <p className="text-muted-foreground relative z-10">Contributors work in sprints, planning and shipping features together.</p>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-shehub-gradient scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </div>
           </FadeIn>
@@ -43,7 +43,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
                 <Users size={20} className="text-shehub-purple" />
               </div>
               <h3 className="text-xl font-bold mb-3">Cross-functional collaboration</h3>
-              <p className="text-muted-foreground relative z-10">Teams include UX, Dev, Product, Marketing, and Data — just like in real companies.</p>
+              <p className="text-muted-foreground relative z-10">Teams include UX, Dev, Product, Marketing, and Data — like in real companies.</p>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-shehub-gradient scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </div>
           </FadeIn>
@@ -54,7 +54,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
                 <Lightbulb size={20} className="text-shehub-purple" />
               </div>
               <h3 className="text-xl font-bold mb-3">Mentorship that matters</h3>
-              <p className="text-muted-foreground relative z-10">Mentors support growth with weekly guidance, feedback, and leadership development.</p>
+              <p className="text-muted-foreground relative z-10">Mentors provide weekly guidance, feedback, and leadership development.</p>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-shehub-gradient scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </div>
           </FadeIn>

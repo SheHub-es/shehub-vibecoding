@@ -20,7 +20,7 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-lg text-muted-foreground">
-              In just our first month, SheHub is already helping women grow their skills, portfolios, and confidence — while connecting with mentors from across tech.
+              SheHub is already helping women build confidence, portfolios, and real experience — while mentors grow as leaders and connectors in tech.
             </p>
           </FadeIn>
         </div>
@@ -30,23 +30,23 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
             <ImpactStat 
               icon={<Users size={22} />}
               number="100+"
-              label="women joined the community"
+              label="women joined the community in our first month"
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.1}>
             <ImpactStat 
               icon={<CheckCircle size={22} />}
-              number="5+"
-              label="active teams working across UX, dev, product, and more"
+              number="3+"
+              label="active teams already working across UX, dev, product, and more"
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.2}>
             <ImpactStat 
               icon={<Trophy size={22} />}
-              number="10+"
-              label="real interviews and career progress already happening"
+              number="5+"
+              label="interviews landed by contributors in the first month"
             />
           </FadeIn>
           
@@ -54,10 +54,16 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
             <ImpactStat 
               icon={<BookOpen size={22} />}
               number="4+"
-              label="supported by professional tools like Notion and Genway.ai"
+              label="professional tools supporting the platform — including Notion and Genway.ai"
             />
           </FadeIn>
         </div>
+        
+        <FadeIn delay={0.4}>
+          <p className="text-center text-lg font-medium mt-12">
+            We're just getting started.
+          </p>
+        </FadeIn>
       </div>
     </section>
   );

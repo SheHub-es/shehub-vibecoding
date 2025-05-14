@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   const { t } = useLanguage();
   
   return (
-    <section className={cn('min-h-screen pt-32 pb-20 flex flex-col justify-center relative overflow-hidden', className)}>
+    <section className={cn('min-h-screen pt-32 pb-20 flex flex-col justify-center relative overflow-hidden bg-white', className)}>
       <div className="container max-w-7xl mx-auto px-6 md:px-8">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <FadeIn>
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             </a>
             
             <div className="mt-4 text-muted-foreground text-sm max-w-2xl">
-              Whether you're looking to gain real tech experience or grow as a mentor, this is the place to start.
+              Whether you're here to grow your experience or grow others — SheHub is your next step.
             </div>
           </FadeIn>
         </div>

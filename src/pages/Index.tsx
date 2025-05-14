@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -33,34 +32,32 @@ const Index = () => {
       <Navbar />
       
       {/* Hero: White */}
-      <div className="bg-white">
-        <Hero />
-      </div>
+      <Hero />
 
       {/* Why SheHub: Purple background */}
       <WhyShehub />
       
-      {/* How It Works: Soft peach */}
+      {/* How It Works: White */}
       <HowItWorks />
       
       {/* Our Impact: White */}
       <OurImpact />
       
-      {/* For Mentors: Light lavender */}
+      {/* For Mentors: Brand Purple */}
       <ForMentors />
       
-      {/* FAQ: Light blue */}
+      {/* FAQ: White */}
       <FaqSection />
       
-      {/* Join Waitlist CTA: Light purple */}
+      {/* Join Waitlist CTA: White */}
       <JoinWaitlist />
       
-      {/* Waitlist Form: Light blue */}
+      {/* Waitlist Form: Light blue (keeping as it requires a form) */}
       <div className="bg-[#F0F8FF]">
         <WaitlistForm />
       </div>
       
-      {/* Footer: Brand purple */}
+      {/* Footer: Light lavender (as specified) */}
       <Footer />
     </div>
   );
