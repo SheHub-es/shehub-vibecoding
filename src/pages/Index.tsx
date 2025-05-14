@@ -9,7 +9,6 @@ import ForMentors from '@/components/ForMentors';
 import OurImpact from '@/components/OurImpact';
 import FaqSection from '@/components/FaqSection';
 import JoinWaitlist from '@/components/JoinWaitlist';
-import WaitlistForm from '@/components/WaitlistForm';
 
 const Index = () => {
   useEffect(() => {
@@ -52,11 +51,6 @@ const Index = () => {
       
       {/* Join Waitlist CTA: White */}
       <JoinWaitlist />
-      
-      {/* Waitlist Form: Light blue (keeping as it requires a form) */}
-      <div className="bg-[#F0F8FF]">
-        <WaitlistForm />
-      </div>
       
       {/* Footer: Light lavender (as specified) */}
       <Footer />
