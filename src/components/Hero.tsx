@@ -38,7 +38,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <a 
                 href="#waitlist" 
-                className="px-8 py-3 rounded-full bg-shehub-gradient text-white text-lg font-medium transition-all hover:shadow-glow-purple hover:scale-105 w-full sm:w-auto"
+                className="px-8 py-3 rounded-full bg-shehub-gradient text-white text-lg font-medium transition-all hover:shadow-glow-orange hover:scale-105 w-full sm:w-auto"
               >
                 Join as a Contributor
               </a>
@@ -53,8 +53,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         </div>
         
         {/* Abstract shape */}
-        <div className="absolute -right-40 md:-right-20 top-1/4 w-80 h-80 rounded-full bg-shehub-purple/20 blur-3xl animate-pulse-light" />
-        <div className="absolute -left-40 md:-left-20 bottom-1/4 w-80 h-80 rounded-full bg-shehub-orange/20 blur-3xl animate-pulse-light" style={{ animationDelay: '-1.5s' }} />
+        <div className="absolute -right-40 md:-right-20 top-1/4 w-80 h-80 rounded-full bg-shehub-purple/10 blur-3xl animate-pulse-light" />
+        <div className="absolute -left-40 md:-left-20 bottom-1/4 w-80 h-80 rounded-full bg-shehub-orange/10 blur-3xl animate-pulse-light" style={{ animationDelay: '-1.5s' }} />
       </div>
       
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float">

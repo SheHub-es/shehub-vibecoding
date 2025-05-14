@@ -44,7 +44,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
   };
 
   return (
-    <section id="waitlist" className={cn('py-20 relative overflow-hidden', className)}>
+    <section id="waitlist" className={cn('py-20 relative overflow-hidden bg-gray-50', className)}>
       <div className="container max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto">
           <FadeIn>
@@ -59,7 +59,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                     id="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-indigo focus:ring-1 focus:ring-shehub-indigo transition-all"
                     placeholder="Your name"
                     required
                   />
@@ -72,7 +72,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-indigo focus:ring-1 focus:ring-shehub-indigo transition-all"
                     placeholder="you@example.com"
                     required
                   />
@@ -85,7 +85,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                     id="profession"
                     value={profession}
                     onChange={(e) => setProfession(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-purple focus:ring-1 focus:ring-shehub-purple transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:border-shehub-indigo focus:ring-1 focus:ring-shehub-indigo transition-all"
                     placeholder="e.g. UX/UI Designer, Frontend Developer"
                     required
                   />
@@ -96,7 +96,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                   disabled={submitting || submitted}
                   className={cn(
                     "w-full py-3 rounded-lg font-medium text-white flex items-center justify-center transition-all",
-                    submitting ? "bg-shehub-purple/80" : submitted ? "bg-green-500" : "bg-shehub-gradient hover:shadow-glow-purple"
+                    submitting ? "bg-shehub-indigo/80" : submitted ? "bg-green-500" : "bg-shehub-gradient hover:shadow-glow-orange"
                   )}
                 >
                   {submitting ? (

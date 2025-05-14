@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -86,9 +87,10 @@ export default {
 				mauve: '#D9C6CF',
 				lavender: '#E1D5F5',
 				shehub: {
-					purple: '#9b87f5',
+					orange: '#F45C0D',
+					purple: '#816AFD',
+					indigo: '#6861FF',
 					'light-purple': '#D6BCFA',
-					orange: '#F97316',
 					'soft-orange': '#FEC6A1',
 				},
 			},
@@ -155,11 +157,13 @@ export default {
 			boxShadow: {
 				'soft': '0 10px 25px -3px rgba(0, 0, 0, 0.03)',
 				'glow': '0 0 15px rgba(255, 255, 255, 0.5)',
-				'glow-rose': '0 0 15px rgba(244, 63, 94, 0.25)',
-				'glow-purple': '0 0 15px rgba(155, 135, 245, 0.25)',
+				'glow-orange': '0 0 15px rgba(244, 92, 13, 0.25)',
+				'glow-purple': '0 0 15px rgba(129, 106, 253, 0.25)',
 			},
 			backgroundImage: {
-				'shehub-gradient': 'linear-gradient(135deg, #9b87f5 0%, #F97316 100%)',
+				'shehub-gradient': 'linear-gradient(135deg, #F45C0D 0%, #816AFD 100%)',
+				'shehub-reverse': 'linear-gradient(135deg, #816AFD 0%, #F45C0D 100%)',
+				'text-gradient': 'linear-gradient(135deg, #F45C0D 0%, #6861FF 100%)',
 			}
 		}
 	},
