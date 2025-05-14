@@ -20,7 +20,7 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-lg text-muted-foreground">
-              SheHub is already helping women build confidence, portfolios, and real experience — while mentors grow as leaders and connectors in tech.
+              SheHub is already helping women build confidence, portfolios and real experience.
             </p>
           </FadeIn>
         </div>
@@ -46,17 +46,10 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
             <ImpactStat 
               icon={<Trophy size={22} />}
               number="5+"
-              label="interviews landed by contributors in the first month"
+              label="interviews landed by contributors in our first month"
             />
           </FadeIn>
-          
-          <FadeIn direction="up" delay={0.3}>
-            <ImpactStat 
-              icon={<BookOpen size={22} />}
-              number="4+"
-              label="professional tools supporting the platform — including Notion and Genway.ai"
-            />
-          </FadeIn>
+         
         </div>
         
         <FadeIn delay={0.4}>
