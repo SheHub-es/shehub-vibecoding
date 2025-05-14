@@ -10,90 +10,75 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <footer className={cn('py-16 relative overflow-hidden text-white', className)}>
-      <div className="container max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div className="lg:col-span-2">
-            <PixelLogo className="mb-4" />
-            <p className="text-white/80 mb-6 max-w-md">
-              SheHub connects women bootcamp graduates from different roles who want to build a career in tech, guided by expert mentors.
+    <footer className={cn("py-16 bg-[#C4A7E7] text-white", className)}>
+      <div className="container max-w-6xl mx-auto px-6 md:px-8">
+        <div className="flex flex-col items-center text-center">
+          <div className="mb-8">
+            <PixelLogo className="h-12 text-white" />
+          </div>
+          
+          <div className="mb-8 space-y-2">
+            <p className="flex items-center justify-center">
+              <Mail size={16} className="mr-2" /> 
+              <a href="mailto:info@shehub.es" className="hover:underline">info@shehub.es</a>
             </p>
-            <div className="flex space-x-4">
-              <SocialLink href="https://www.linkedin.com/company/shehub-es" icon={<Linkedin size={20} />} label="LinkedIn" />
-              <SocialLink href="https://www.instagram.com/shehub.es" icon={<Instagram size={20} />} label="Instagram" />
-              <SocialLink href="mailto:info@shehub.es" icon={<Mail size={20} />} label="Email" />
+            <p className="text-sm">Based in Spain — open to all of Europe</p>
+          </div>
+          
+          <div className="mb-8">
+            <p className="mb-3 text-sm">Follow us:</p>
+            <div className="flex items-center space-x-4">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                <Linkedin size={20} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                <Instagram size={20} />
+              </a>
             </div>
           </div>
           
-          <div>
-            <h4 className="font-medium text-lg mb-4">Quick Links</h4>
-            <nav className="flex flex-col space-y-3">
-              <FooterLink href="#features">About Us</FooterLink>
-              <FooterLink href="#projects">How It Works</FooterLink>
-              <FooterLink href="#mentorship">For Mentors</FooterLink>
-              <FooterLink href="#vision">Our Vision</FooterLink>
-              <FooterLink href="#waitlist">Join the Waitlist</FooterLink>
-            </nav>
-          </div>
-          
-          <div>
-            <h4 className="font-medium text-lg mb-4">Contact</h4>
-            <p className="text-white/80 mb-2">Have questions?</p>
-            <a href="mailto:info@shehub.es" className="text-white hover:underline">
-              info@shehub.es
-            </a>
-            <p className="text-white/80 mt-4 mb-1">
-              Based in Spain — Building across Europe
-            </p>
-          </div>
-        </div>
-        
-        <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/80 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} SheHub. All rights reserved.
-          </p>
-          <div className="flex space-x-6 text-sm">
-            <a href="https://shehub.es" className="text-white/80 hover:text-white transition-colors">
+          <div className="mb-8">
+            <a href="https://www.shehub.es" target="_blank" rel="noopener noreferrer" className="text-lg font-medium hover:underline">
               www.shehub.es
             </a>
+          </div>
+          
+          <div className="mt-4">
+            <div className="grid md:grid-cols-4 gap-6 md:gap-12 text-center mb-8">
+              <div className="flex flex-col space-y-2">
+                <h4 className="font-semibold mb-1">Resources</h4>
+                <a href="#faq" className="text-white/80 hover:text-white transition-colors">FAQ</a>
+                <a href="#" className="text-white/80 hover:text-white transition-colors">Blog</a>
+              </div>
+              
+              <div className="flex flex-col space-y-2">
+                <h4 className="font-semibold mb-1">Join</h4>
+                <a href="#waitlist" className="text-white/80 hover:text-white transition-colors">Contributors</a>
+                <a href="#mentorship" className="text-white/80 hover:text-white transition-colors">Mentors</a>
+              </div>
+              
+              <div className="flex flex-col space-y-2">
+                <h4 className="font-semibold mb-1">About</h4>
+                <a href="#projects" className="text-white/80 hover:text-white transition-colors">How it Works</a>
+                <a href="#vision" className="text-white/80 hover:text-white transition-colors">Our Vision</a>
+              </div>
+              
+              <div className="flex flex-col space-y-2">
+                <h4 className="font-semibold mb-1">Connect</h4>
+                <a href="mailto:info@shehub.es" className="text-white/80 hover:text-white transition-colors">Email Us</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-sm text-white/70">
+            <p>&copy; {new Date().getFullYear()} SheHub. All rights reserved.</p>
           </div>
         </div>
       </div>
     </footer>
-  );
-};
-
-interface SocialLinkProps {
-  href: string;
-  icon: React.ReactNode;
-  label: string;
-}
-
-const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => {
-  return (
-    <a 
-      href={href} 
-      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white transition-colors hover:bg-white/20 hover:text-white"
-      aria-label={label}
-    >
-      {icon}
-    </a>
-  );
-};
-
-interface FooterLinkProps {
-  href: string;
-  children: React.ReactNode;
-}
-
-const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => {
-  return (
-    <a 
-      href={href} 
-      className="text-white/80 hover:text-white transition-colors"
-    >
-      {children}
-    </a>
   );
 };
 
