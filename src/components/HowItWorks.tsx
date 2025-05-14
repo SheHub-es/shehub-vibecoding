@@ -20,7 +20,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-lg text-muted-foreground">
-              SheHub simulates real tech teams — so contributors grow through collaboration, ownership, and mentorship.
+              SheHub simulates real tech teams, so contributors grow through collaboration, ownership, and mentorship.
             </p>
           </FadeIn>
         </div>
@@ -31,8 +31,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
               <div className="w-12 h-12 rounded-full bg-shehub-purple/10 flex items-center justify-center mb-6">
                 <ClipboardCheck size={20} className="text-shehub-purple" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Agile, real-world projects</h3>
-              <p className="text-muted-foreground relative z-10">Contributors work in sprints, planning and shipping features together.</p>
+              <h3 className="text-xl font-bold mb-3">Lean, real-world projects</h3>
+              <p className="text-muted-foreground relative z-10">Contributors deliver real features through short and iterative cycles, focusing on learning, value and continuous improvement.</p>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-shehub-gradient scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </div>
           </FadeIn>
@@ -54,7 +54,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
                 <Lightbulb size={20} className="text-shehub-purple" />
               </div>
               <h3 className="text-xl font-bold mb-3">Mentorship that matters</h3>
-              <p className="text-muted-foreground relative z-10">Mentors provide weekly guidance, feedback, and leadership development.</p>
+              <p className="text-muted-foreground relative z-10">Mentors provide guidance, feedback, and leadership development. They help you feel confident and ready to step into your next role. </p>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-shehub-gradient scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </div>
           </FadeIn>
