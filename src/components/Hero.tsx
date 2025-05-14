@@ -29,7 +29,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           
           <FadeIn delay={0.2}>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl">
-              Real tech experience for women ready to grow. Work on real projects. Build in real teams. Guided by real mentors.
+              Real tech experience for women ready to grow. Work on real projects. Build in real teams. Guided mentors.
             </p>
           </FadeIn>
           
