@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -67,7 +66,7 @@ const Index = () => {
                 <div className="space-y-3 mb-8">
                   <div className="flex items-start">
                     <span className="text-shehub-purple font-bold mr-2">✅</span>
-                    <p className="text-muted-foreground">Agile team structure with real roles: UX/UI, Dev, Product, Data, Marketing</p>
+                    <p className="text-muted-foreground">Lean team structure with real roles: UX/UI, Dev, Product, Data, Marketing</p>
                   </div>
                   <div className="flex items-start">
                     <span className="text-shehub-purple font-bold mr-2">✅</span>

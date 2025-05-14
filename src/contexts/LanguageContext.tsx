@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 type Language = 'es' | 'en' | 'ca';
@@ -267,7 +266,7 @@ const translations = {
   'waitlist.description': {
     en: 'We\'re launching soon! Join our waitlist and be the first to know when we open registration for our initial cohort of collaborative tech professionals.',
     es: '¡Pronto lanzamos! Únete a nuestra lista de espera y sé la primera en saber cuándo abrimos la inscripción para nuestra cohorte inicial de profesionales tecnológicas colaborativas.',
-    ca: 'Aviat llancem! Uneix-te a la nostra llista d\'espera i sigues la primera en saber quan obrim la inscripció per a la nostra cohort inicial de professionals tecnològiques col·laboratives.',
+    ca: 'Aviat llancem! Uneix-te a la nostra llista d\'espera i sigues la primera en saber quan obrim la inscripció per a la nostra cohort inicial de professionals tecnològics col·laboratives.',
   },
   'waitlist.benefit1': {
     en: 'Work on real-world projects',
