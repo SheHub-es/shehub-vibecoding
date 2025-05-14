@@ -46,42 +46,13 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
   return (
     <section id="waitlist" className={cn('py-20 relative overflow-hidden', className)}>
       <div className="container max-w-6xl mx-auto px-6 md:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <FadeIn direction="left">
-            <div>
-              <span className="px-4 py-1.5 bg-shehub-purple/20 text-shehub-purple font-pixel text-sm rounded-full font-medium mb-6 inline-block uppercase tracking-wider">
-                📥 Join the Waitlist
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to gain experience or guide others?
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Whether you're pivoting into tech or growing as a leader, SheHub is your space to contribute and thrive. We'll reach out as new teams open.
-              </p>
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <Check size={18} className="text-shehub-purple" />
-                <span>Work on real projects that solve real problems</span>
-              </div>
-              <div className="flex items-center space-x-2 text-muted-foreground mt-3">
-                <Check size={18} className="text-shehub-purple" />
-                <span>Collaborate with cross-functional teams</span>
-              </div>
-              <div className="flex items-center space-x-2 text-muted-foreground mt-3">
-                <Check size={18} className="text-shehub-purple" />
-                <span>Get mentored by industry professionals</span>
-              </div>
-              <div className="flex items-center space-x-2 text-muted-foreground mt-3">
-                <Check size={18} className="text-shehub-purple" />
-                <span>Build your portfolio and network</span>
-              </div>
-            </div>
-          </FadeIn>
-          
-          <FadeIn direction="right">
-            <div className="glass-card p-8 md:p-10">
-              <h3 className="text-2xl font-bold mb-6">Request an Invitation</h3>
-              <form onSubmit={handleSubmit}>
-                <div className="mb-5">
+        <div className="text-center max-w-3xl mx-auto">
+          <FadeIn>
+            <div className="glass-card p-8 md:p-10 max-w-md mx-auto">
+              <form onSubmit={handleSubmit} className="flex flex-col items-center">
+                <h3 className="text-2xl font-bold mb-8">Join Waitlist</h3>
+                
+                <div className="mb-6 w-full">
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name</label>
                   <input
                     type="text"
@@ -94,7 +65,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                   />
                 </div>
                 
-                <div className="mb-5">
+                <div className="mb-6 w-full">
                   <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address</label>
                   <input
                     type="email"
@@ -107,7 +78,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                   />
                 </div>
                 
-                <div className="mb-6">
+                <div className="mb-8 w-full">
                   <label htmlFor="profession" className="block text-sm font-medium mb-2">Your Role/Experience</label>
                   <input
                     type="text"
@@ -141,13 +112,13 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className }) => {
                   ) : (
                     <>
                       <Mail size={20} className="mr-2" />
-                      Join the Waitlist
+                      Join Waitlist
                     </>
                   )}
                 </button>
                 
-                <p className="text-xs text-muted-foreground mt-4 text-center">
-                  By signing up, you agree to our privacy policy and terms of service.
+                <p className="text-sm text-muted-foreground mt-4 text-center">
+                  Whether you're looking to gain real tech experience or grow as a mentor, this is the place to start.
                 </p>
               </form>
             </div>
