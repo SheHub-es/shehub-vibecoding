@@ -27,12 +27,12 @@ const FaqSection: React.FC<FaqSectionProps> = ({ className }) => {
           <Accordion type="single" collapsible className="w-full space-y-4">
             <FaqItem 
               question="What is SheHub?"
-              answer="SheHub is a career growth platform where women gain job-ready experience by working in lean, collaborative tech teams with real mentors. Contributors don't just practice — they deliver. Along the way, they also strengthen leadership, communication, and problem-solving skills that matter in real roles." 
+              answer="SheHub is a career growth platform where women gain job-ready experience by working in lean, collaborative tech teams guided by mentors. Contributors don't just practice — they deliver. Along the way, they also strengthen confidence, communication, and problem-solving skills that matter in real roles." 
             />
             
             <FaqItem 
               question="Who can join?"
-              answer="Contributors: Women pivoting into tech — typically from bootcamps or self-taught backgrounds — who already have the technical or design skills to contribute to a real product team. Mentors: Women in tech who want to support others and grow their own leadership experience as they prepare for their next career move (e.g., management, team lead, strategy roles)." 
+              answer="Contributors: Women pivoting into tech, typically from bootcamps or self-taught backgrounds, who already have the technical or design skills to contribute to a real product team. Mentors: Women in tech who want to give back, support others or grow their own leadership experience as they prepare for their next career move (e.g., management, team lead, strategy roles)." 
             />
             
             <FaqItem 
@@ -42,17 +42,17 @@ const FaqSection: React.FC<FaqSectionProps> = ({ className }) => {
             
             <FaqItem 
               question="How long are the projects?"
-              answer="Most projects last 4 to 8 weeks. Teams meet weekly, and all roles are part-time and designed to fit around work, study, or caregiving responsibilities." 
+              answer="Most projects last 4 to 8 weeks. Teams meet regularly, and all roles are part-time and designed to fit around work, study, or caregiving responsibilities." 
             />
             
             <FaqItem 
               question="Do I need a certain level to join?"
-              answer="Yes — SheHub is not a bootcamp or a course. You should already have the basic skills needed to deliver in your role (design, development, product, data, etc.). If you're not quite there yet, we encourage you to build your skills and come back — we'll still be here." 
+              answer="Yes — SheHub is not a bootcamp or a course. You should already have the basic skills needed to deliver in your desired role (design, development, product, data, etc.)." 
             />
             
             <FaqItem 
               question="Can I list this on my CV?"
-              answer="Absolutely. You'll work on real deliverables, collaborate in a real team environment, and be supported by experienced mentors — all of which is highly valuable and fully LinkedIn/CV-worthy." 
+              answer="Absolutely! You'll work on real deliverables, collaborate in a real team environment, and be supported by experienced mentors — all of which is highly valuable and fully LinkedIn/CV-worthy." 
             />
           </Accordion>
         </FadeIn>
