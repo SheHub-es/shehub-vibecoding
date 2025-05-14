@@ -1,4 +1,4 @@
-import React from 'react';
+ringimport React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
 import { ArrowDown } from 'lucide-react';
@@ -29,7 +29,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           
           <FadeIn delay={0.2}>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl">
-              Real tech experience for women ready to grow. Work on real projects. Build in real teams. Guided mentors.
+              Real tech experience for women ready to grow. Work on real projects. Build in real teams. Guided by mentors.
             </p>
           </FadeIn>
           
@@ -42,7 +42,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             </a>
             
             <div className="mt-4 text-muted-foreground text-sm max-w-2xl">
-              Whether you're here to grow your experience or grow others — SheHub is your next step.
+              Whether you're here to grow your experience or grow mentoring others — SheHub is your next step.
             </div>
           </FadeIn>
         </div>
