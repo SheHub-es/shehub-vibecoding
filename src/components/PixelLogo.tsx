@@ -9,14 +9,18 @@ interface PixelLogoProps {
 
 const PixelLogo: React.FC<PixelLogoProps> = ({ className, size = 'md' }) => {
   const sizeClasses = {
-    sm: 'text-xl',
-    md: 'text-3xl',
-    lg: 'text-5xl',
+    sm: 'h-8',
+    md: 'h-12',
+    lg: 'h-16',
   };
 
   return (
-    <div className={cn('font-pixel text-center', sizeClasses[size], className)}>
-      <span className="bg-shehub-gradient bg-clip-text text-transparent">SHEHUB</span>
+    <div className={cn('flex items-center justify-center', className)}>
+      <img 
+        src="/lovable-uploads/305d5926-1c61-4af1-a2af-de6e605b0301.png" 
+        alt="SheHub Logo" 
+        className={cn(sizeClasses[size])}
+      />
     </div>
   );
 };
