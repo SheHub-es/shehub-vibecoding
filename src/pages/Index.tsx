@@ -1,7 +1,9 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
+import WhyShehub from '@/components/WhyShehub';
 import WaitlistForm from '@/components/WaitlistForm';
 import Footer from '@/components/Footer';
 import FadeIn from '@/components/FadeIn';
@@ -33,6 +35,9 @@ const Index = () => {
       <div className="bg-white">
         <Hero />
       </div>
+
+      {/* Why SheHub: Purple background */}
+      <WhyShehub />
       
       {/* Features: Soft blush pink */}
       <div className="bg-[#FFF4F4]">
