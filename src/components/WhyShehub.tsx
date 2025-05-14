@@ -50,6 +50,14 @@ const WhyShehub: React.FC<WhyShehubProps> = ({ className }) => {
               description="Get mentorship, demos, and outcomes that give your talent visibility. We give you the tools to build an attractive portfolio and CV."
             />
           </FadeIn>
+
+          <FadeIn direction="up" delay={0.3}>
+            <FeatureCard 
+              icon={<Briefcase className="text-shehub-light-purple" />}
+              title="Flexible and Remote-first"
+              description="Every project is fully remote and part-time, designed to fit around your job, studies, or personal life, so you can grow on your terms."
+            />
+          </FadeIn>
         </div>
       </div>
     </section>
