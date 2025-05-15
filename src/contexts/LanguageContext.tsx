@@ -319,266 +319,71 @@ const translations = {
     ca: 'En registrar-te, acceptes la nostra política de privacitat i condicions de servei.',
   },
   
-  // Why SheHub section
-  'whyshehub.title': {
-    en: 'SheHub is where women turn learning into opportunities.',
-    es: 'SheHub es donde las mujeres convierten el aprendizaje en oportunidades.',
-    ca: 'SheHub és on les dones converteixen l\'aprenentatge en oportunitats.',
-  },
-  'whyshehub.subtitle': {
-    en: 'We provide the space, the tools, and the mentorship to transform potential into visible, proven experience.',
-    es: 'Proporcionamos el espacio, las herramientas y la mentoría para transformar el potencial en experiencia visible y probada.',
-    ca: 'Proporcionem l\'espai, les eines i la mentoria per transformar el potencial en experiència visible i comprovada.',
-  },
-  'whyshehub.feature1.title': {
-    en: 'Build experience that matters',
-    es: 'Construye experiencia que importa',
-    ca: 'Construeix experiència que importa',
-  },
-  'whyshehub.feature1.description': {
-    en: 'Work on real features from start to finish. Not practice tasks, but product-ready results.',
-    es: 'Trabaja en características reales de principio a fin. No son tareas de práctica, sino resultados listos para el producto.',
-    ca: 'Treballa en característiques reals de principi a fi. No són tasques de pràctica, sinó resultats preparats per al producte.',
-  },
-  'whyshehub.feature2.title': {
-    en: 'Grow in a real tech environment',
-    es: 'Crece en un entorno tecnológico real',
-    ca: 'Creix en un entorn tecnològic real',
-  },
-  'whyshehub.feature2.description': {
-    en: 'Collaborate with contributors across product, design, dev, data or marketing — using lean practices.',
-    es: 'Colabora con contribuyentes de producto, diseño, desarrollo, datos o marketing, utilizando prácticas lean.',
-    ca: 'Col·labora amb contribuents de producte, disseny, desenvolupament, dades o màrqueting, utilitzant pràctiques lean.',
-  },
-  'whyshehub.feature3.title': {
-    en: 'Be seen, supported, and ready to grow',
-    es: 'Sé vista, apoyada y lista para crecer',
-    ca: 'Sigues vista, recolzada i preparada per créixer',
-  },
-  'whyshehub.feature3.description': {
-    en: 'Get mentorship, demos, and outcomes that give your talent visibility. We give you the tools to build an attractive portfolio and CV.',
-    es: 'Obtén mentoría, demostraciones y resultados que den visibilidad a tu talento. Te damos las herramientas para construir un portafolio y CV atractivos.',
-    ca: 'Obtingues mentoria, demostracions i resultats que donin visibilitat al teu talent. Et donem les eines per construir un portfoli i CV atractius.',
-  },
-  'whyshehub.feature4.title': {
-    en: 'Flexible and Remote-first',
-    es: 'Flexible y remoto principalmente',
-    ca: 'Flexible i principalment remot',
-  },
-  'whyshehub.feature4.description': {
-    en: 'Every project is fully remote and part-time, designed to fit around your job, studies, or personal life, so you can grow on your terms.',
-    es: 'Cada proyecto es completamente remoto y a tiempo parcial, diseñado para adaptarse a tu trabajo, estudios o vida personal, para que puedas crecer en tus propios términos.',
-    ca: 'Cada projecte és completament remot i a temps parcial, dissenyat per adaptar-se a la teva feina, estudis o vida personal, perquè puguis créixer en els teus propis termes.',
-  },
-  
-  // Our Impact section
-  'impact.title': {
-    en: 'Our Impact So Far',
-    es: 'Nuestro Impacto Hasta Ahora',
-    ca: 'El Nostre Impacte Fins Ara',
-  },
-  'impact.subtitle': {
-    en: 'SheHub is already helping women build confidence, portfolios and real experience.',
-    es: 'SheHub ya está ayudando a las mujeres a construir confianza, portfolios y experiencia real.',
-    ca: 'SheHub ja està ajudant a les dones a construir confiança, portfolis i experiència real.',
-  },
-  'impact.stat1.label': {
-    en: 'women joined the community in our first month',
-    es: 'mujeres se unieron a la comunidad en nuestro primer mes',
-    ca: 'dones es van unir a la comunitat en el nostre primer mes',
-  },
-  'impact.stat2.label': {
-    en: 'active teams already working across UX, dev, product, and more',
-    es: 'equipos activos ya trabajando en UX, desarrollo, producto y más',
-    ca: 'equips actius ja treballant en UX, desenvolupament, producte i més',
-  },
-  'impact.stat3.label': {
-    en: 'hours invested by contributors in real workflows',
-    es: 'horas invertidas por colaboradores en flujos de trabajo reales',
-    ca: 'hores invertides per col·laboradors en fluxos de treball reals',
-  },
-  'impact.stat4.label': {
-    en: 'interviews landed by contributors in our first month',
-    es: 'entrevistas conseguidas por colaboradores en nuestro primer mes',
-    ca: 'entrevistes aconseguides per col·laboradors en el nostre primer mes',
-  },
-  'impact.closing': {
-    en: 'We\'re just getting started.',
-    es: 'Apenas estamos comenzando.',
-    ca: 'Tot just estem començant.',
-  },
-  
-  // Join Waitlist section
-  'joinwaitlist.title': {
-    en: 'Ready to grow or give back?',
-    es: '¿Lista para crecer o contribuir?',
-    ca: 'Preparada per créixer o contribuir?',
-  },
-  'joinwaitlist.description': {
-    en: 'Whether you\'re pivoting into tech or growing as a leader, SheHub is your space to contribute and thrive.',
-    es: 'Ya sea que estés cambiando hacia la tecnología o creciendo como líder, SheHub es tu espacio para contribuir y prosperar.',
-    ca: 'Ja sigui que estiguis canviant cap a la tecnologia o creixent com a líder, SheHub és el teu espai per contribuir i prosperar.',
-  },
-  'joinwaitlist.button': {
-    en: 'Join the Waitlist',
-    es: 'Únete a la Lista de Espera',
-    ca: 'Uneix-te a la Llista d\'Espera',
-  },
-  'joinwaitlist.footer': {
-    en: 'We\'ll be in touch as soon as your opportunity opens up.',
-    es: 'Nos pondremos en contacto tan pronto como se abra tu oportunidad.',
-    ca: 'Ens posarem en contacte tan aviat com s\'obri la teva oportunitat.',
-  },
-  
-  // FAQ section
-  'faq.title': {
-    en: 'Got Questions? We\'ve Got You Covered.',
-    es: '¿Tienes Preguntas? Te Ayudamos.',
-    ca: 'Tens Preguntes? T\'Ajudem.',
-  },
-  'faq.q1': {
-    en: 'What is SheHub?',
-    es: '¿Qué es SheHub?',
-    ca: 'Què és SheHub?',
-  },
-  'faq.a1': {
-    en: 'SheHub is a career growth platform where women gain job-ready experience by working in lean, collaborative tech teams guided by mentors. Contributors don\'t just practice — they deliver. Along the way, they also strengthen confidence, communication, and problem-solving skills that matter in real roles.',
-    es: 'SheHub es una plataforma de crecimiento profesional donde las mujeres adquieren experiencia lista para el trabajo al trabajar en equipos tecnológicos colaborativos y ágiles guiados por mentores. Las colaboradoras no sólo practican, sino que entregan. En el camino, también fortalecen la confianza, la comunicación y las habilidades de resolución de problemas que son importantes en roles reales.',
-    ca: 'SheHub és una plataforma de creixement professional on les dones adquireixen experiència preparada per a la feina treballant en equips tecnològics col·laboratius i àgils guiats per mentors. Les col·laboradores no només practiquen, sinó que entreguen. En el camí, també enforteixen la confiança, la comunicació i les habilitats de resolució de problemes que són importants en rols reals.',
-  },
-  'faq.q2': {
-    en: 'Who can join?',
-    es: '¿Quién puede unirse?',
-    ca: 'Qui pot unir-se?',
-  },
-  'faq.a2': {
-    en: 'Contributors: Women pivoting into tech, typically from bootcamps or self-taught backgrounds, who already have the technical or design skills to contribute to a real product team. Mentors: Women in tech who want to give back, support others or grow their own leadership experience as they prepare for their next career move (e.g., management, team lead, strategy roles).',
-    es: 'Colaboradoras: Mujeres que están cambiando hacia la tecnología, típicamente de bootcamps o con formación autodidacta, que ya tienen las habilidades técnicas o de diseño para contribuir a un equipo de producto real. Mentores: Mujeres en tecnología que quieren contribuir, apoyar a otras o desarrollar su propia experiencia de liderazgo mientras se preparan para su próximo movimiento profesional (por ejemplo, gestión, líder de equipo, roles estratégicos).',
-    ca: 'Col·laboradores: Dones que estan canviant cap a la tecnologia, típicament de bootcamps o amb formació autodidacta, que ja tenen les habilitats tècniques o de disseny per contribuir a un equip de producte real. Mentores: Dones en tecnologia que volen contribuir, donar suport a altres o desenvolupar la seva pròpia experiència de lideratge mentre es preparen per al seu proper moviment professional (per exemple, gestió, líder d\'equip, rols estratègics).',
-  },
-  'faq.q3': {
-    en: 'Is it free?',
-    es: '¿Es gratis?',
-    ca: 'És gratuït?',
-  },
-  'faq.a3': {
-    en: 'Yes — SheHub is 100% free for both contributors and mentors. Our mission is to make access to real experience and leadership development more equitable.',
-    es: 'Sí — SheHub es 100% gratuito tanto para colaboradoras como para mentoras. Nuestra misión es hacer que el acceso a experiencia real y desarrollo de liderazgo sea más equitativo.',
-    ca: 'Sí — SheHub és 100% gratuït tant per a col·laboradores com per a mentores. La nostra missió és fer que l\'accés a experiència real i desenvolupament de lideratge sigui més equitatiu.',
-  },
-  'faq.q4': {
-    en: 'How long are the projects?',
-    es: '¿Cuánto duran los proyectos?',
-    ca: 'Quant duren els projectes?',
-  },
-  'faq.a4': {
-    en: 'Most projects last 4 to 8 weeks. Teams meet regularly, and all roles are part-time and designed to fit around work, study, or caregiving responsibilities.',
-    es: 'La mayoría de los proyectos duran de 4 a 8 semanas. Los equipos se reúnen regularmente, y todos los roles son a tiempo parcial y diseñados para adaptarse al trabajo, estudio o responsabilidades de cuidado.',
-    ca: 'La majoria dels projectes duren de 4 a 8 setmanes. Els equips es reuneixen regularment, i tots els rols són a temps parcial i dissenyats per adaptar-se a la feina, estudis o responsabilitats de cura.',
-  },
-  'faq.q5': {
-    en: 'Do I need a certain level to join?',
-    es: '¿Necesito un cierto nivel para unirme?',
-    ca: 'Necessito un cert nivell per unir-me?',
-  },
-  'faq.a5': {
-    en: 'Yes — SheHub is not a bootcamp or a course. You should already have the basic skills needed to deliver in your desired role (design, development, product, data, etc.).',
-    es: 'Sí — SheHub no es un bootcamp o un curso. Ya deberías tener las habilidades básicas necesarias para entregar en tu rol deseado (diseño, desarrollo, producto, datos, etc.).',
-    ca: 'Sí — SheHub no és un bootcamp o un curs. Ja hauries de tenir les habilitats bàsiques necessàries per entregar en el teu rol desitjat (disseny, desenvolupament, producte, dades, etc.).',
-  },
-  'faq.q6': {
-    en: 'Can I list this on my CV?',
-    es: '¿Puedo incluir esto en mi CV?',
-    ca: 'Puc incloure això al meu CV?',
-  },
-  'faq.a6': {
-    en: 'Absolutely! You\'ll work on real deliverables, collaborate in a real team environment, and be supported by experienced mentors — all of which is highly valuable and fully LinkedIn/CV-worthy.',
-    es: '¡Absolutamente! Trabajarás en entregables reales, colaborarás en un entorno de equipo real y serás apoyada por mentores experimentados — todo lo cual es altamente valioso y completamente digno de LinkedIn/CV.',
-    ca: 'Absolutament! Treballaràs en entregables reals, col·laboraràs en un entorn d\'equip real i seràs recolzada per mentors experimentats — tot això és altament valuós i completament digne de LinkedIn/CV.',
-  },
-  
   // Footer translations
   'footer.description': {
     en: 'SheHub connects tech bootcamp graduates from different roles who want to build a career in the tech industry, guided by expert mentors.',
-    es: 'SheHub conecta a graduadas de bootcamps tecnológicos de diferentes roles que quieren construir una carrera en la industria tecnológica, guiadas por mentoras expertas.',
-    ca: 'SheHub connecta graduades de bootcamps tecnològics de diferents rols que volen construir una carrera a la indústria tecnològica, guiades per mentores experts.',
+    es: 'SheHub conecta a graduadas de bootcamps tecnológicos de diferentes roles que quieren construir una carrera en la industria tech, guiadas por mentoras expertas.',
+    ca: 'SheHub connecta graduades de bootcamps tecnològics de diferents rols que volen construir una carrera a la indústria tech, guiades per mentores expertes.',
   },
-  'footer.howworks': {
-    en: 'How it Works',
-    es: 'Cómo Funciona',
-    ca: 'Com Funciona',
+  'footer.quicklinks': {
+    en: 'Quick Links',
+    es: 'Enlaces Rápidos',
+    ca: 'Enllaços Ràpids',
   },
-  'footer.overview': {
-    en: 'Overview',
-    es: 'Visión General',
-    ca: 'Visió General',
+  'footer.about': {
+    en: 'About Us',
+    es: 'Acerca de Nosotras',
+    ca: 'Sobre Nosaltres',
   },
-  'footer.commonquestions': {
-    en: 'Common Questions',
-    es: 'Preguntas Comunes',
-    ca: 'Preguntes Comunes',
+  'footer.projects': {
+    en: 'Projects',
+    es: 'Proyectos',
+    ca: 'Projectes',
   },
-  'footer.whyshehub': {
-    en: 'Why SheHub',
-    es: 'Por Qué SheHub',
-    ca: 'Per Què SheHub',
+  'footer.mentorship': {
+    en: 'Mentorship',
+    es: 'Mentoría',
+    ca: 'Mentoria',
   },
-  'footer.ourmission': {
-    en: 'Our Mission',
-    es: 'Nuestra Misión',
-    ca: 'La Nostra Missió',
+  'footer.waitlist': {
+    en: 'Join the Waitlist',
+    es: 'Unirse a la Lista de Espera',
+    ca: 'Uneix-te a la Llista d\'Espera',
   },
-  'footer.mentors': {
-    en: 'Mentors',
-    es: 'Mentores',
-    ca: 'Mentors',
+  'footer.contact': {
+    en: 'Contact',
+    es: 'Contacto',
+    ca: 'Contacte',
   },
-  'footer.getinvolved': {
-    en: 'Get Involved',
-    es: 'Involúcrate',
-    ca: 'Involucra\'t',
+  'footer.questions': {
+    en: 'Have questions?',
+    es: '¿Tienes preguntas?',
+    ca: 'Tens preguntes?',
   },
-  'footer.copyright': {
+  'footer.rights': {
     en: 'All rights reserved.',
     es: 'Todos los derechos reservados.',
     ca: 'Tots els drets reservats.',
   },
-  'footer.basedin': {
-    en: 'Based in Spain — open to the world',
-    es: 'Con sede en España — abierto al mundo',
-    ca: 'Amb seu a Espanya — obert al món',
+  'footer.privacy': {
+    en: 'Privacy Policy',
+    es: 'Política de Privacidad',
+    ca: 'Política de Privacitat',
   },
-  'footer.followus': {
-    en: 'Follow us:',
-    es: 'Síguenos:',
-    ca: 'Segueix-nos:',
+  'footer.terms': {
+    en: 'Terms of Service',
+    es: 'Términos de Servicio',
+    ca: 'Condicions de Servei',
   },
-  
-  // Navbar translations
-  'navbar.whyshehub': {
-    en: 'Why SheHub',
-    es: 'Por Qué SheHub',
-    ca: 'Per Què SheHub',
+  'toast.success.title': {
+    en: 'Success!',
+    es: '¡Éxito!',
+    ca: 'Èxit!',
   },
-  'navbar.howitworks': {
-    en: 'How It Works',
-    es: 'Cómo Funciona',
-    ca: 'Com Funciona',
-  },
-  'navbar.formentors': {
-    en: 'For Mentors',
-    es: 'Para Mentores',
-    ca: 'Per a Mentors',
-  },
-  'navbar.faq': {
-    en: 'FAQ',
-    es: 'Preguntas Frecuentes',
-    ca: 'Preguntes Freqüents',
-  },
-  'navbar.joinwaitlist': {
-    en: 'Join Waitlist',
-    es: 'Únete a la Lista de Espera',
-    ca: 'Uneix-te a la Llista d\'Espera',
+  'toast.success.description': {
+    en: 'You have been added to our waitlist. We will contact you soon!',
+    es: 'Has sido añadida a nuestra lista de espera. ¡Nos pondremos en contacto pronto!',
+    ca: 'Has estat afegida a la nostra llista d\'espera. Ens posarem en contacte aviat!',
   },
 };
 

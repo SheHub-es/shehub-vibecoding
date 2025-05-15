@@ -3,27 +3,25 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
 import { Briefcase, Users, Award } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 interface WhyShehubProps {
   className?: string;
 }
 
 const WhyShehub: React.FC<WhyShehubProps> = ({ className }) => {
-  const { t } = useLanguage();
-  
   return (
     <section id="features" className={cn('py-20 bg-shehub-purple text-white', className)}>
       <div className="container max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              {t('whyshehub.title')}
+              SheHub is where women turn learning into opportunities.
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-lg opacity-90">
-              {t('whyshehub.subtitle')}
+              We provide the space, the tools, and the mentorship to transform potential into visible, 
+              proven experience.
             </p>
           </FadeIn>
         </div>
@@ -32,32 +30,32 @@ const WhyShehub: React.FC<WhyShehubProps> = ({ className }) => {
           <FadeIn direction="up">
             <FeatureCard 
               icon={<Briefcase className="text-shehub-light-purple" />}
-              title={t('whyshehub.feature1.title')}
-              description={t('whyshehub.feature1.description')}
+              title="Build experience that matters"
+              description="Work on real features from start to finish. Not practice tasks, but product-ready results."
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.1}>
             <FeatureCard 
               icon={<Users className="text-shehub-light-purple" />}
-              title={t('whyshehub.feature2.title')}
-              description={t('whyshehub.feature2.description')}
+              title="Grow in a real tech environment"
+              description="Collaborate with contributors across product, design, dev, data or marketing — using lean practices."
             />
           </FadeIn>
           
           <FadeIn direction="up" delay={0.2}>
             <FeatureCard 
               icon={<Award className="text-shehub-light-purple" />}
-              title={t('whyshehub.feature3.title')}
-              description={t('whyshehub.feature3.description')}
+              title="Be seen, supported, and ready to grow"
+              description="Get mentorship, demos, and outcomes that give your talent visibility. We give you the tools to build an attractive portfolio and CV."
             />
           </FadeIn>
 
           <FadeIn direction="up" delay={0.3}>
             <FeatureCard 
               icon={<Briefcase className="text-shehub-light-purple" />}
-              title={t('whyshehub.feature4.title')}
-              description={t('whyshehub.feature4.description')}
+              title="Flexible and Remote-first"
+              description="Every project is fully remote and part-time, designed to fit around your job, studies, or personal life, so you can grow on your terms."
             />
           </FadeIn>
         </div>
