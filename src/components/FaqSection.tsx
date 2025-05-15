@@ -2,6 +2,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   Accordion,
   AccordionContent,
@@ -14,45 +15,47 @@ interface FaqSectionProps {
 }
 
 const FaqSection: React.FC<FaqSectionProps> = ({ className }) => {
+  const { t } = useLanguage();
+  
   return (
     <section id="faq" className={cn("py-24 bg-white", className)}>
       <div className="container max-w-4xl mx-auto px-6 md:px-8">
         <div className="text-center mb-12">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Got Questions? We've Got You Covered.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('faq.title')}</h2>
           </FadeIn>
         </div>
         
         <FadeIn delay={0.1}>
           <Accordion type="single" collapsible className="w-full space-y-4">
             <FaqItem 
-              question="What is SheHub?"
-              answer="SheHub is a career growth platform where women gain job-ready experience by working in lean, collaborative tech teams guided by mentors. Contributors don't just practice — they deliver. Along the way, they also strengthen confidence, communication, and problem-solving skills that matter in real roles." 
+              question={t('faq.q1')}
+              answer={t('faq.a1')} 
             />
             
             <FaqItem 
-              question="Who can join?"
-              answer="Contributors: Women pivoting into tech, typically from bootcamps or self-taught backgrounds, who already have the technical or design skills to contribute to a real product team. Mentors: Women in tech who want to give back, support others or grow their own leadership experience as they prepare for their next career move (e.g., management, team lead, strategy roles)." 
+              question={t('faq.q2')}
+              answer={t('faq.a2')} 
             />
             
             <FaqItem 
-              question="Is it free?"
-              answer="Yes — SheHub is 100% free for both contributors and mentors. Our mission is to make access to real experience and leadership development more equitable." 
+              question={t('faq.q3')}
+              answer={t('faq.a3')} 
             />
             
             <FaqItem 
-              question="How long are the projects?"
-              answer="Most projects last 4 to 8 weeks. Teams meet regularly, and all roles are part-time and designed to fit around work, study, or caregiving responsibilities." 
+              question={t('faq.q4')}
+              answer={t('faq.a4')} 
             />
             
             <FaqItem 
-              question="Do I need a certain level to join?"
-              answer="Yes — SheHub is not a bootcamp or a course. You should already have the basic skills needed to deliver in your desired role (design, development, product, data, etc.)." 
+              question={t('faq.q5')}
+              answer={t('faq.a5')} 
             />
             
             <FaqItem 
-              question="Can I list this on my CV?"
-              answer="Absolutely! You'll work on real deliverables, collaborate in a real team environment, and be supported by experienced mentors — all of which is highly valuable and fully LinkedIn/CV-worthy." 
+              question={t('faq.q6')}
+              answer={t('faq.a6')} 
             />
           </Accordion>
         </FadeIn>

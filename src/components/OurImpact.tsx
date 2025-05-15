@@ -3,24 +3,27 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
 import { Users, CheckCircle, Trophy, BookOpen } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface OurImpactProps {
   className?: string;
 }
 
 const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
+  const { t } = useLanguage();
+  
   return (
     <section id="impact" className={cn("py-24 bg-white", className)}>
       <div className="container max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our Impact So Far
+              {t('impact.title')}
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-lg text-muted-foreground">
-              SheHub is already helping women build confidence, portfolios and real experience.
+              {t('impact.subtitle')}
             </p>
           </FadeIn>
         </div>
@@ -30,7 +33,7 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
             <ImpactStat 
               icon={<Users size={22} />}
               number="100+"
-              label="women joined the community in our first month"
+              label={t('impact.stat1.label')}
             />
           </FadeIn>
           
@@ -38,7 +41,7 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
             <ImpactStat 
               icon={<CheckCircle size={22} />}
               number="3+"
-              label="active teams already working across UX, dev, product, and more"
+              label={t('impact.stat2.label')}
             />
           </FadeIn>
              
@@ -46,7 +49,7 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
             <ImpactStat 
               icon={<Trophy size={22} />}
               number="760+"
-              label="hours invested by contributors in real workflows"
+              label={t('impact.stat3.label')}
             />
           </FadeIn>
           
@@ -54,7 +57,7 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
             <ImpactStat 
               icon={<Trophy size={22} />}
               number="5+"
-              label="interviews landed by contributors in our first month"
+              label={t('impact.stat4.label')}
             />
           </FadeIn>
          
@@ -62,7 +65,7 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
         
         <FadeIn delay={0.4}>
           <p className="text-center text-lg font-medium mt-12">
-            We're just getting started.
+            {t('impact.closing')}
           </p>
         </FadeIn>
       </div>
