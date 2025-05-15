@@ -36,59 +36,34 @@ const translations = {
   
   // Hero section translations
   'hero.title1': {
-    en: 'Work on',
-    es: 'Trabaja en',
-    ca: 'Treballa en',
+    en: 'Connect.',
+    es: 'Conecta.',
+    ca: 'Connecta.',
   },
   'hero.title2': {
-    en: 'real projects',
-    es: 'proyectos reales',
-    ca: 'projectes reals',
+    en: 'Create.',
+    es: 'Crea.',
+    ca: 'Crea.',
   },
   'hero.title3': {
-    en: 'with diverse teams',
-    es: 'con equipos diversos',
-    ca: 'amb equips diversos',
+    en: 'Break Barriers.',
+    es: 'Rompe Barreras.',
+    ca: 'Trenca Barreres.',
   },
-  'hero.subtitle1': {
-    en: 'SheHub connects',
-    es: 'SheHub conecta a',
-    ca: 'SheHub connecta',
+  'hero.subtitle': {
+    en: 'Real tech experience for women ready to grow. Work on real projects. Build in real teams. Guided by mentors.',
+    es: 'Experiencia tech real para mujeres listas para crecer. Trabaja en proyectos reales. Construye en equipos reales. Guiada por mentores.',
+    ca: 'Experiència tech real per a dones preparades per créixer. Treballa en projectes reals. Construeix en equips reals. Guiada per mentors.',
   },
-  'hero.subtitle2': {
-    en: 'tech bootcamp graduates',
-    es: 'graduadas de bootcamps tecnológicos',
-    ca: 'graduades de bootcamps tecnològics',
-  },
-  'hero.subtitle3': {
-    en: 'from different roles',
-    es: 'de diferentes roles',
-    ca: 'de diferents rols',
-  },
-  'hero.subtitle4': {
-    en: 'who want to build a career',
-    es: 'que quieren construir una carrera',
-    ca: 'que volen construir una carrera',
-  },
-  'hero.subtitle5': {
-    en: 'in the tech industry, guided by',
-    es: 'en la industria tech, guiadas por',
-    ca: 'en la indústria tech, guiades per',
-  },
-  'hero.subtitle6': {
-    en: 'expert mentors',
-    es: 'mentoras expertas',
-    ca: 'mentores expertes',
-  },
-  'hero.question': {
-    en: 'Are you ready to gain experience in projects collaborating with multidisciplinary teams in the tech sector?',
-    es: '¿Estás lista para ganar experiencia en proyectos colaborando con equipos multidisciplinarios en el sector tecnológico?',
-    ca: 'Estàs preparada per guanyar experiència en projectes col·laborant amb equips multidisciplinaris en el sector tecnològic?',
-  },
-  'hero.cta': {
+  'hero.waitlist': {
     en: 'Join the Waitlist',
-    es: 'Unirse a la Lista de Espera',
+    es: 'Únete a la Lista de Espera',
     ca: 'Uneix-te a la Llista d\'Espera',
+  },
+  'hero.tagline': {
+    en: 'Whether you\'re here to grow your experience or grow mentoring others — SheHub is your next step.',
+    es: 'Ya sea que estés aquí para aumentar tu experiencia o crecer mentorando a otras — SheHub es tu próximo paso.',
+    ca: 'Ja sigui que estiguis aquí per augmentar la teva experiència o créixer mentoritzant altres — SheHub és el teu següent pas.',
   },
   'hero.discover': {
     en: 'Discover More',
@@ -150,7 +125,7 @@ const translations = {
   'features.networking.description': {
     en: 'Connect with other professionals and build relationships that can lead to future opportunities',
     es: 'Conecta con otras profesionales y construye relaciones que pueden llevarte a futuras oportunidades',
-    ca: 'Connecta amb altres professionals i construeix relacions que poden portar-te a futures oportunitats',
+    ca: 'Conecta amb altres professionals i construeix relacions que poden portar-te a futures oportunitats',
   },
   
   // Projects section translations
@@ -239,7 +214,7 @@ const translations = {
   'mentorship.guidance.description': {
     en: 'Receive advice on your career path and how to achieve your goals.',
     es: 'Recibe consejos sobre tu trayectoria profesional y cómo alcanzar tus metas.',
-    ca: 'Rep consells sobre la teva trajectòria professional i com assolir els teus objectius.',
+    ca: 'Rep consells sobre la teva trajectòria profesional i com assolir els teus objectius.',
   },
   'mentorship.connections.title': {
     en: 'Industry Connections',
