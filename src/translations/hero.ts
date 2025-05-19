@@ -19,8 +19,8 @@ export const heroTranslations: TranslationObject = {
   },
   'hero.subtitle': {
     en: 'Real tech experience for women ready to grow. Work on real projects. Build in real teams. Guided by mentors.',
-    es: 'Experiencia tech real para mujeres listas para crecer. Trabaja en proyectos reales. Construye en equipos reales. Guiada por mentores.',
-    ca: 'Experiència tech real per a dones preparades per créixer. Treballa en projectes reals. Construeix en equips reals. Guiada per mentors.',
+    es: 'Experiencia real para mujeres listas para dar el siguiente paso en el mundo tech. Trabaja en proyectos reales. Construye en equipos reales. Guiada por mentoras.',
+    ca: 'Experiència real per a dones preparades per fer el següent pas en el món tech. Treballa en projectes reals. Construeix en equips reals. Guiada per mentores.',
   },
   'hero.waitlist': {
     en: 'Join the Waitlist',
@@ -29,8 +29,8 @@ export const heroTranslations: TranslationObject = {
   },
   'hero.tagline': {
     en: 'Whether you\'re here to grow your experience or grow mentoring others — SheHub is your next step.',
-    es: 'Ya sea que estés aquí para aumentar tu experiencia o crecer mentorando a otras — SheHub es tu próximo paso.',
-    ca: 'Ja sigui que estiguis aquí per augmentar la teva experiència o créixer mentoritzant altres — SheHub és el teu següent pas.',
+    es: 'Ya sea que estés aquí para ganar experiencia o crecer acompañando a otras — SheHub es tu próximo paso.',
+    ca: 'Ja sigui que estiguis aquí per guanyar experiència o créixer acompanyant altres — SheHub és el teu següent pas.',
   },
   'hero.discover': {
     en: 'Discover More',
