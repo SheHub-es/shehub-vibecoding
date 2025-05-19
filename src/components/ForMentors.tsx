@@ -3,24 +3,27 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
 import { ArrowRight, Shield, Heart, Clock } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ForMentorsProps {
   className?: string;
 }
 
 const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
+  const { t } = useLanguage();
+  
   return (
     <section id="mentorship" className={cn("py-24 bg-shehub-purple text-white relative overflow-hidden", className)}>
       <div className="container max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              For Mentors — Lead and Grow
+              {t('mentors.title')}
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-lg opacity-90 mb-8">
-              At SheHub, mentors guide real teams — building leadership, coaching, and communication skills that translate directly into your career. It's flexible, impactful, and great for your CV.
+              {t('mentors.description')}
             </p>
           </FadeIn>
         </div>
@@ -33,7 +36,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
                   <Shield size={18} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold mb-2">Practice leadership in a safe, real-world setup</h3>
+                  <h3 className="text-lg font-bold mb-2">{t('mentors.feature1.title')}</h3>
                 </div>
               </div>
             </div>
@@ -46,7 +49,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
                   <Heart size={18} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold mb-2">Help diverse talent grow while growing your own impact</h3>
+                  <h3 className="text-lg font-bold mb-2">{t('mentors.feature2.title')}</h3>
                 </div>
               </div>
             </div>
@@ -59,7 +62,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
                   <Clock size={18} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold mb-2">Just a few hours/week, flexible and fully remote</h3>
+                  <h3 className="text-lg font-bold mb-2">{t('mentors.feature3.title')}</h3>
                 </div>
               </div>
             </div>
@@ -72,7 +75,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
               href="#waitlist" 
               className="inline-flex items-center px-6 py-3 rounded-full bg-white text-shehub-purple text-lg font-medium transition-all hover:shadow-lg hover:scale-105"
             >
-              Become a Mentor <ArrowRight className="ml-2" size={18} />
+              {t('mentors.cta')} <ArrowRight className="ml-2" size={18} />
             </a>
           </div>
         </FadeIn>
