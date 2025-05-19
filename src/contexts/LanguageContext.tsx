@@ -14,24 +14,108 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   // Navbar translations
   'nav.about': {
-    en: 'About',
-    es: 'Acerca de',
-    ca: 'Sobre nosaltres',
+    en: 'Why SheHub',
+    es: 'Por qué SheHub',
+    ca: 'Per què SheHub',
   },
   'nav.projects': {
-    en: 'Projects',
-    es: 'Proyectos',
-    ca: 'Projectes',
+    en: 'How It Works',
+    es: 'Cómo Funciona',
+    ca: 'Com Funciona',
   },
   'nav.mentorship': {
-    en: 'Mentorship',
-    es: 'Mentoría',
-    ca: 'Mentoria',
+    en: 'For Mentors',
+    es: 'Para Mentoras',
+    ca: 'Per a Mentores',
+  },
+  'nav.faq': {
+    en: 'FAQ',
+    es: 'Preguntas Frecuentes',
+    ca: 'Preguntes Freqüents',
   },
   'nav.waitlist': {
     en: 'Join Waitlist',
-    es: 'Unirse a la Lista de Espera',
+    es: 'Únete a la Lista',
+    ca: 'Uneix-te a la Llista',
+  },
+  
+  // Footer translations
+  'footer.based': {
+    en: 'Based in Spain — open to the world',
+    es: 'Basado en España — abierto al mundo',
+    ca: 'Basat a Espanya — obert al món',
+  },
+  'footer.follow': {
+    en: 'Follow us:',
+    es: 'Síguenos:',
+    ca: 'Segueix-nos:',
+  },
+  'footer.how': {
+    en: 'How it Works',
+    es: 'Cómo Funciona',
+    ca: 'Com Funciona',
+  },
+  'footer.overview': {
+    en: 'Overview',
+    es: 'Resumen',
+    ca: 'Resum',
+  },
+  'footer.faq.title': {
+    en: 'FAQ',
+    es: 'Preguntas Frecuentes',
+    ca: 'Preguntes Freqüents',
+  },
+  'footer.faq.questions': {
+    en: 'Common Questions',
+    es: 'Preguntas Comunes',
+    ca: 'Preguntes Comunes',
+  },
+  'footer.why': {
+    en: 'Why SheHub',
+    es: 'Por qué SheHub',
+    ca: 'Per què SheHub',
+  },
+  'footer.mission': {
+    en: 'Our Mission',
+    es: 'Nuestra Misión',
+    ca: 'La Nostra Missió',
+  },
+  'footer.mentors.title': {
+    en: 'Mentors',
+    es: 'Mentoras',
+    ca: 'Mentores',
+  },
+  'footer.mentors.involved': {
+    en: 'Get Involved',
+    es: 'Involúcrate',
+    ca: 'Involucra\'t',
+  },
+  'footer.rights': {
+    en: 'All rights reserved.',
+    es: 'Todos los derechos reservados.',
+    ca: 'Tots els drets reservats.',
+  },
+  
+  // JoinWaitlist translations
+  'waitlist.title': {
+    en: 'Ready to grow or give back?',
+    es: '¿Lista para crecer o contribuir?',
+    ca: 'Preparada per créixer o contribuir?',
+  },
+  'waitlist.subtitle': {
+    en: 'Whether you\'re pivoting into tech or growing as a leader, SheHub is your space to contribute and thrive.',
+    es: 'Ya sea que estés cambiando al sector tecnológico o creciendo como líder, SheHub es tu espacio para contribuir y prosperar.',
+    ca: 'Ja sigui que estiguis canviant al sector tecnològic o creixent com a líder, SheHub és el teu espai per contribuir i prosperar.',
+  },
+  'waitlist.button': {
+    en: 'Join the Waitlist',
+    es: 'Únete a la Lista de Espera',
     ca: 'Uneix-te a la Llista d\'Espera',
+  },
+  'waitlist.promise': {
+    en: 'We\'ll be in touch as soon as your opportunity opens up.',
+    es: 'Nos pondremos en contacto tan pronto como se abra tu oportunidad.',
+    ca: 'Ens posarem en contacte tan aviat com s\'obri la teva oportunitat.',
   },
   
   // Hero section translations

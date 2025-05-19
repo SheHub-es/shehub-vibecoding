@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import PixelLogo from './PixelLogo';
 import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface NavbarProps {
   className?: string;
@@ -12,6 +13,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,17 +47,17 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <NavLink href="#features">Why SheHub</NavLink>
-          <NavLink href="#projects">How It Works</NavLink>
-          <NavLink href="#mentorship">For Mentors</NavLink>
-          <NavLink href="#vision">FAQ</NavLink>
+          <NavLink href="#features">{t('nav.about')}</NavLink>
+          <NavLink href="#projects">{t('nav.projects')}</NavLink>
+          <NavLink href="#mentorship">{t('nav.mentorship')}</NavLink>
+          <NavLink href="#vision">{t('nav.faq')}</NavLink>
           <LanguageToggle className="mr-4" />
           <div className="flex space-x-4">
             <a 
               href="#waitlist" 
               className="px-5 py-2 rounded-full bg-shehub-gradient text-white font-medium transition-all hover:shadow-glow-purple hover:scale-105"
             >
-              Join Waitlist
+              {t('nav.waitlist')}
             </a>
           </div>
         </nav>
@@ -77,16 +79,16 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-0 top-[72px] bg-white/95 backdrop-blur-sm z-40 flex flex-col p-6 animate-fade-in">
           <nav className="flex flex-col space-y-6 pt-6">
-            <MobileNavLink href="#features" onClick={() => setMobileMenuOpen(false)}>Why SheHub</MobileNavLink>
-            <MobileNavLink href="#projects" onClick={() => setMobileMenuOpen(false)}>How It Works</MobileNavLink>
-            <MobileNavLink href="#mentorship" onClick={() => setMobileMenuOpen(false)}>For Mentors</MobileNavLink>
-            <MobileNavLink href="#vision" onClick={() => setMobileMenuOpen(false)}>Vision & FAQ</MobileNavLink>
+            <MobileNavLink href="#features" onClick={() => setMobileMenuOpen(false)}>{t('nav.about')}</MobileNavLink>
+            <MobileNavLink href="#projects" onClick={() => setMobileMenuOpen(false)}>{t('nav.projects')}</MobileNavLink>
+            <MobileNavLink href="#mentorship" onClick={() => setMobileMenuOpen(false)}>{t('nav.mentorship')}</MobileNavLink>
+            <MobileNavLink href="#vision" onClick={() => setMobileMenuOpen(false)}>{t('nav.faq')}</MobileNavLink>
             <a 
               href="#waitlist" 
               className="mt-4 px-5 py-3 rounded-full bg-shehub-gradient text-white font-medium text-center transition-all"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Join Waitlist
+              {t('nav.waitlist')}
             </a>
           </nav>
         </div>
