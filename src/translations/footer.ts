@@ -107,4 +107,9 @@ export const footerTranslations: TranslationObject = {
     es: 'Términos de Servicio',
     ca: 'Condicions de Servei',
   },
+  'footer.impact': {
+    en: 'Our Impact',
+    es: 'Nuestro Impacto',
+    ca: 'El Nostre Impacte',
+  },
 };
