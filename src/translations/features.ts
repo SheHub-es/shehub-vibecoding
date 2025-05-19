@@ -14,8 +14,8 @@ export const featuresTranslations: TranslationObject = {
   },
   'features.description': {
     en: 'Join SheHub and gain real experience working on projects with multidisciplinary teams',
-    es: 'Únete a SheHub y obtén experiencia real trabajando en proyectos con equipos multidisciplinarios',
-    ca: 'Uneix-te a SheHub i obté experiència real treballant en projectes amb equips multidisciplinaris',
+    es: 'Únete a SheHub y obtén experiencia real trabajando en proyectos con equipos multirrol',
+    ca: 'Uneix-te a SheHub i obté experiència real treballant en projectes amb equips multiròl',
   },
   'features.teams.title': {
     en: 'Multidisciplinary Teams',
