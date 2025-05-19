@@ -2,7 +2,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
-import { ClipboardCheck, Users, Lightbulb } from 'lucide-react';
+import { ClipboardCheck, Users, Lightbulb, Wrench } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface HowItWorksProps {
@@ -65,7 +65,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
           <FadeIn direction="up" delay={0.3}>
             <div className="glass-card p-8 h-full relative overflow-hidden group transition-all hover:shadow-md hover:-translate-y-1">
               <div className="w-12 h-12 rounded-full bg-shehub-purple/10 flex items-center justify-center mb-6">
-                <Lightbulb size={20} className="text-shehub-purple" />
+                <Wrench size={20} className="text-shehub-purple" />
               </div>
               <h3 className="text-xl font-bold mb-3">{t('how.feature4.title')}</h3>
               <p className="text-muted-foreground relative z-10">{t('how.feature4.description')}</p>

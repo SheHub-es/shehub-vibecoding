@@ -30,13 +30,13 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <FadeIn direction="up">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 relative overflow-hidden group transition-all hover:bg-white/20">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-7 py-9 relative overflow-hidden group transition-all hover:bg-white/20">
               <div className="flex items-start">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-4 mt-1">
+                <div className="w-12 h-12 p-2 rounded-full bg-white/10 flex items-center justify-center mr-4 mt-1">
                   <Shield size={18} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold mb-2">{t('mentors.feature1.title')}</h3>
+                  <h3 className="text-lg font-bold mb-3">{t('mentors.feature1.title')}</h3>
                 </div>
               </div>
             </div>
@@ -45,7 +45,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
           <FadeIn direction="up" delay={0.1}>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 relative overflow-hidden group transition-all hover:bg-white/20">
               <div className="flex items-start">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-4 mt-1">
+                <div className="w-12 h-12 p-2 rounded-full bg-white/10 flex items-center justify-center mr-4 mt-1">
                   <Heart size={18} className="text-white" />
                 </div>
                 <div>
@@ -58,7 +58,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
           <FadeIn direction="up" delay={0.2}>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 relative overflow-hidden group transition-all hover:bg-white/20">
               <div className="flex items-start">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-4 mt-1">
+                <div className="w-12 h-12 p-2 rounded-full bg-white/10 flex items-center justify-center mr-4 mt-1">
                   <Clock size={18} className="text-white" />
                 </div>
                 <div>
