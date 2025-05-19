@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Mail } from 'lucide-react';
+import { Mail, Linkedin, Instagram } from 'lucide-react';
 import PixelLogo from './PixelLogo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -32,6 +32,29 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               </p>
               <a href="https://www.shehub.es" target="_blank" rel="noopener noreferrer" className="text-lg font-medium hover:underline block text-center md:text-left mt-2">
                 www.shehub.es
+              </a>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="flex space-x-4 mt-2">
+              <p className="mr-2">{t('footer.follow')}</p>
+              <a 
+                href="https://www.linkedin.com/company/shehub-es/about/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-gray-700 hover:text-gray-900 transition-colors"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a 
+                href="https://www.instagram.com/shehub.es/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-gray-700 hover:text-gray-900 transition-colors"
+              >
+                <Instagram size={20} />
               </a>
             </div>
           </div>
