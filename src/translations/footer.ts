@@ -43,9 +43,9 @@ export const footerTranslations: TranslationObject = {
     ca: 'La Nostra Missió',
   },
   'footer.mentors.title': {
-    en: 'Mentors',
-    es: 'Mentoras',
-    ca: 'Mentores',
+    en: 'For Mentors',
+    es: 'Para Mentoras',
+    ca: 'Per a Mentores',
   },
   'footer.mentors.involved': {
     en: 'Get Involved',
