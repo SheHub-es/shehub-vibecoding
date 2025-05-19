@@ -48,9 +48,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <NavLink href="#features">{t('nav.about')}</NavLink>
-          <NavLink href="#projects">{t('nav.projects')}</NavLink>
+          <NavLink href="#how-it-works">{t('nav.projects')}</NavLink>
           <NavLink href="#mentorship">{t('nav.mentorship')}</NavLink>
-          <NavLink href="#vision">{t('nav.faq')}</NavLink>
+          <NavLink href="#faq">{t('nav.faq')}</NavLink>
           <LanguageToggle className="mr-4" />
           <div className="flex space-x-4">
             <a 
@@ -80,9 +80,9 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <div className="md:hidden fixed inset-0 top-[72px] bg-white/95 backdrop-blur-sm z-40 flex flex-col p-6 animate-fade-in">
           <nav className="flex flex-col space-y-6 pt-6">
             <MobileNavLink href="#features" onClick={() => setMobileMenuOpen(false)}>{t('nav.about')}</MobileNavLink>
-            <MobileNavLink href="#projects" onClick={() => setMobileMenuOpen(false)}>{t('nav.projects')}</MobileNavLink>
+            <MobileNavLink href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>{t('nav.projects')}</MobileNavLink>
             <MobileNavLink href="#mentorship" onClick={() => setMobileMenuOpen(false)}>{t('nav.mentorship')}</MobileNavLink>
-            <MobileNavLink href="#vision" onClick={() => setMobileMenuOpen(false)}>{t('nav.faq')}</MobileNavLink>
+            <MobileNavLink href="#faq" onClick={() => setMobileMenuOpen(false)}>{t('nav.faq')}</MobileNavLink>
             <a 
               href="#waitlist" 
               className="mt-4 px-5 py-3 rounded-full bg-shehub-gradient text-white font-medium text-center transition-all"

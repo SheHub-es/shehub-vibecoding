@@ -2,7 +2,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
-import { Users, CheckCircle, Trophy } from 'lucide-react';
+import { Users, CheckCircle, Trophy, Clock } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface OurImpactProps {
@@ -44,10 +44,10 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
               label={t('impact.stat2')}
             />
           </FadeIn>
-             
+          
           <FadeIn direction="up" delay={0.2}>
             <ImpactStat 
-              icon={<Trophy size={22} />}
+              icon={<Clock size={22} />}
               number="760+"
               label={t('impact.stat3')}
             />
@@ -60,7 +60,7 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
               label={t('impact.stat4')}
             />
           </FadeIn>
-         
+        
         </div>
         
         <FadeIn delay={0.4}>

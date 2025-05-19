@@ -62,10 +62,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           {/* Navigation - Aligned Right */}
           <div className="flex flex-col items-center md:items-end">
             <nav className="flex flex-col items-center md:items-end space-y-4">
-              <a href="#why" className="text-gray-700 hover:text-gray-900 transition-colors">
+              <a href="#features" className="text-gray-700 hover:text-gray-900 transition-colors">
                 {t('footer.why')}
               </a>
-              <a href="#how" className="text-gray-700 hover:text-gray-900 transition-colors">
+              <a href="#how-it-works" className="text-gray-700 hover:text-gray-900 transition-colors">
                 {t('footer.how')}
               </a>
               <a href="#impact" className="text-gray-700 hover:text-gray-900 transition-colors">
