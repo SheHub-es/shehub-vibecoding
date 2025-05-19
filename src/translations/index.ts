@@ -11,6 +11,7 @@ import { whyShehubTranslations } from './why_shehub';
 import { howItWorksTranslations } from './how_it_works';
 import { forMentorsTranslations } from './for_mentors';
 import { faqTranslations } from './faq';
+import { impactTranslations } from './impact';
 
 // Combine all translations
 const translations: Record<string, Record<string, string>> = {
@@ -26,6 +27,7 @@ const translations: Record<string, Record<string, string>> = {
   ...howItWorksTranslations,
   ...forMentorsTranslations,
   ...faqTranslations,
+  ...impactTranslations,
 };
 
 export { translations };
