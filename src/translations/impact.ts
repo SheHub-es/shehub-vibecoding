@@ -18,9 +18,9 @@ export const impactTranslations: TranslationObject = {
     ca: 'dones es van unir a la comunitat en el nostre primer mes',
   },
   'impact.stat2': {
-    en: 'active teams already working across UX, dev, product, and more',
-    es: 'equipos activos ya trabajando en UX, desarrollo, producto y más',
-    ca: 'equips actius ja treballant en UX, desenvolupament, producte i més',
+    en: 'active teams already working across design, dev, product, and more',
+    es: 'equipos activos ya trabajando en diseño, desarrollo, producto y más',
+    ca: 'equips actius ja treballant en disseny, desenvolupament, producte i més',
   },
   'impact.stat3': {
     en: 'hours invested by contributors in real workflows',
