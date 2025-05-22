@@ -13,7 +13,7 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
   const { t } = useLanguage();
   
   return (
-    <section id="impact" className={cn("py-24 bg-white", className)}>
+    <section id="impact" className={cn("py-24 bg-background", className)}>
       <div className="container max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn>

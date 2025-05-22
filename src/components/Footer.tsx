@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Mail, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Linkedin, Instagram, Sun, Moon } from 'lucide-react';
 import PixelLogo from './PixelLogo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+
+const STORAGE_KEY = 'theme-preference';
 
 interface FooterProps {
   className?: string;
@@ -14,87 +16,90 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ className }) => {
   const isMobile = useIsMobile();
   const { t } = useLanguage();
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof window === 'undefined') return 'light';
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === 'light' || stored === 'dark') return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem(STORAGE_KEY, theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
   return (
-    <footer className={cn("py-16 md:py-20 bg-[#EAE4F9] text-gray-700", className)}>
+    <footer className={cn('py-16 md:py-20 bg-[#EAE4F9] dark:bg-[#1E1E2A] text-foreground', className)}>
       <div className="container max-w-6xl mx-auto px-6 md:px-8">
-        <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start">
-          
-          {/* Logo + Contact Info - Aligned Left */}
-          <div className="mb-10 md:mb-0 flex flex-col items-center md:items-start">
-            <div className="mb-6">
-              <Link to="/" className="inline-block">
-                <PixelLogo className="h-12 text-gray-700" />
-              </Link>
-            </div>
-
-            <div className="mb-6">
-              <p className="flex items-center justify-center md:justify-start">
-                <Mail size={16} className="mr-2" />
-                <a href="mailto:info@shehub.es" className="hover:underline">info@shehub.es</a>
-              </p>
-              <a
-                href="https://www.shehub.es"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg font-medium hover:underline block text-center md:text-left mt-2"
-              >
-                www.shehub.es
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 items-start">
+          {/* Left Section */}
+          <div className="flex flex-col items-center md:items-start space-y-4">
+            <Link to="/" className="inline-block">
+              <PixelLogo className="h-12 text-foreground" />
+            </Link>
+            <p className="flex items-center text-foreground">
+              <Mail size={16} className="mr-2" />
+              <a href="mailto:info@shehub.es" className="hover:underline">
+                info@shehub.es
               </a>
-            </div>
-
-            {/* Social Media Links */}
-            <div className="flex space-x-4 mt-2">
-              <p className="mr-2">{t('footer.follow')}</p>
+            </p>
+            <a
+              href="https://www.shehub.es"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              www.shehub.es
+            </a>
+            <div className="flex space-x-4 items-center">
+              <span className="text-foreground">{t('footer.follow')}</span>
               <a
                 href="https://www.linkedin.com/company/shehub-es/about/"
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-gray-700 hover:text-gray-900 transition-colors"
+                className="text-foreground hover:text-primary transition"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="https://www.instagram.com/shehub.es/"
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-gray-700 hover:text-gray-900 transition-colors"
+                className="text-foreground hover:text-primary transition"
               >
                 <Instagram size={20} />
               </a>
             </div>
           </div>
 
-          {/* Navigation - Aligned Right */}
-          <div className="flex flex-col items-center md:items-end">
-            <nav className="flex flex-col items-center md:items-end space-y-4">
-              <HashLink smooth to="/#features" className="text-gray-700 hover:text-gray-900 transition-colors">
-                {t('footer.why')}
-              </HashLink>
-              <HashLink smooth to="/#how-it-works" className="text-gray-700 hover:text-gray-900 transition-colors">
-                {t('footer.how')}
-              </HashLink>
-              <HashLink smooth to="/#impact" className="text-gray-700 hover:text-gray-900 transition-colors">
-                {t('footer.impact')}
-              </HashLink>
-              <HashLink smooth to="/#mentorship" className="text-gray-700 hover:text-gray-900 transition-colors">
-                {t('footer.mentors.title')}
-              </HashLink>
-              <HashLink smooth to="/#faq" className="text-gray-700 hover:text-gray-900 transition-colors">
-                {t('footer.faq.title')}
-              </HashLink>
+          {/* Right Section: Nav + Toggle */}
+          <div className="flex flex-col items-center md:items-end space-y-4">
+            <nav className="flex flex-col items-center md:items-end space-y-2">
+              {['features', 'how-it-works', 'impact', 'mentorship', 'faq'].map((href, i) => (
+                <HashLink
+                  key={href}
+                  smooth
+                  to={`/#${href}`}
+                  className="text-foreground hover:text-primary transition"
+                >
+                  {t(`footer.${['why', 'how', 'impact', 'mentors.title', 'faq.title'][i]}`)}
+                </HashLink>
+              ))}
             </nav>
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="mt-2 p-2 rounded-full bg-foreground/10 hover:bg-foreground/20 transition"
+            >
+              {theme === 'dark'
+                ? <Sun size={20} className="text-foreground" />
+                : <Moon size={20} className="text-foreground" />
+              }
+            </button>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className={cn(
-            "mt-12 text-sm text-gray-700/70",
-            isMobile ? "text-center" : "text-left"
-          )}
-        >
+        <div className={cn('mt-2 md:mt-0 text-sm text-foreground/70', isMobile ? 'text-center' : 'text-left')}>
           <p>&copy; {new Date().getFullYear()} SheHub. {t('footer.rights')}</p>
         </div>
       </div>
