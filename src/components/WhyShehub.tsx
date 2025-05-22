@@ -74,11 +74,11 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-md text-foreground h-full flex flex-col transition-all hover:shadow-lg hover:-translate-y-1">
+    <div className="bg-white dark:bg-[#1E1E2A] rounded-2xl p-6 shadow-md text-foreground h-full flex flex-col transition-all hover:shadow-lg hover:-translate-y-1">
       <div className="w-12 h-12 rounded-full bg-shehub-purple/10 flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="text-lg font-bold mb-2 text-gray-800">{title}</h3>
+      <h3 className="text-lg font-bold mb-2 text-foreground">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>
     </div>
   );
