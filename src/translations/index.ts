@@ -6,6 +6,8 @@ import { featuresTranslations } from './features';
 import { projectsTranslations } from './projects';
 import { mentorshipTranslations } from './mentorship';
 import { waitlistTranslations } from './waitlist';
+import { waitlistFormTranslations } from './waitlist_form';
+import { waitlistThanksTranslations } from './waitlist_thanks';
 import { toastTranslations } from './toast';
 import { whyShehubTranslations } from './why_shehub';
 import { howItWorksTranslations } from './how_it_works';
@@ -28,6 +30,8 @@ const translations: Record<string, Record<string, string>> = {
   ...forMentorsTranslations,
   ...faqTranslations,
   ...impactTranslations,
+  ...waitlistFormTranslations,
+  ...waitlistThanksTranslations,
 };
 
 export { translations };
