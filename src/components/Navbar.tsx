@@ -1,10 +1,11 @@
-
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import PixelLogo from './PixelLogo';
 import LanguageToggle from './LanguageToggle';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 interface NavbarProps {
   className?: string;
@@ -33,39 +34,56 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-8',
-        scrolled 
-         ? 'bg-white shadow-sm' // solid background, no transparency or blur
-      : 'bg-transparent',
-    className
+        scrolled
+          ? 'bg-white shadow-sm'
+          : 'bg-transparent',
+        className
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center">
+        <HashLink smooth to="/#hero" className="flex items-center">
           <PixelLogo size="sm" />
-        </a>
+        </HashLink>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <NavLink href="#features">{t('nav.about')}</NavLink>
-          <NavLink href="#how-it-works">{t('nav.projects')}</NavLink>
-          <NavLink href="#mentorship">{t('nav.mentorship')}</NavLink>
-          <NavLink href="#faq">{t('nav.faq')}</NavLink>
+          <HashLink smooth to="/#features" className="text-foreground/80 hover:text-foreground font-medium transition-colors relative group">
+            {t('nav.about')}
+            <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-shehub-purple group-hover:w-full transition-all duration-300" />
+          </HashLink>
+
+          <HashLink smooth to="/#how-it-works" className="text-foreground/80 hover:text-foreground font-medium transition-colors relative group">
+            {t('nav.projects')}
+            <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-shehub-purple group-hover:w-full transition-all duration-300" />
+          </HashLink>
+
+          <HashLink smooth to="/#mentorship" className="text-foreground/80 hover:text-foreground font-medium transition-colors relative group">
+            {t('nav.mentorship')}
+            <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-shehub-purple group-hover:w-full transition-all duration-300" />
+          </HashLink>
+
+          <HashLink smooth to="/#faq" className="text-foreground/80 hover:text-foreground font-medium transition-colors relative group">
+            {t('nav.faq')}
+            <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-shehub-purple group-hover:w-full transition-all duration-300" />
+          </HashLink>
+
           <LanguageToggle className="mr-4" />
+
           <div className="flex space-x-4">
-            <a 
-              href="#waitlist" 
+            <Link
+              to="/waitlist"
               className="px-5 py-2 rounded-full bg-shehub-gradient text-white font-medium transition-all hover:shadow-glow-purple hover:scale-105"
             >
               {t('nav.waitlist')}
-            </a>
+            </Link>
           </div>
         </nav>
 
         {/* Mobile menu button and language toggle */}
         <div className="md:hidden flex items-center space-x-3">
           <LanguageToggle />
-          <button 
+          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-foreground p-2"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
@@ -79,51 +97,33 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-0 top-[72px] bg-white/95 backdrop-blur-sm z-40 flex flex-col p-6 animate-fade-in">
           <nav className="flex flex-col space-y-6 pt-6">
-            <MobileNavLink href="#features" onClick={() => setMobileMenuOpen(false)}>{t('nav.about')}</MobileNavLink>
-            <MobileNavLink href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>{t('nav.projects')}</MobileNavLink>
-            <MobileNavLink href="#mentorship" onClick={() => setMobileMenuOpen(false)}>{t('nav.mentorship')}</MobileNavLink>
-            <MobileNavLink href="#faq" onClick={() => setMobileMenuOpen(false)}>{t('nav.faq')}</MobileNavLink>
-            <a 
-              href="#waitlist" 
-              className="mt-4 px-5 py-3 rounded-full bg-shehub-gradient text-white font-medium text-center transition-all"
+            <HashLink smooth to="/#features" onClick={() => setMobileMenuOpen(false)} className="text-foreground text-lg font-medium py-2 border-b border-muted">
+              {t('nav.about')}
+            </HashLink>
+
+            <HashLink smooth to="/#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-foreground text-lg font-medium py-2 border-b border-muted">
+              {t('nav.projects')}
+            </HashLink>
+
+            <HashLink smooth to="/#mentorship" onClick={() => setMobileMenuOpen(false)} className="text-foreground text-lg font-medium py-2 border-b border-muted">
+              {t('nav.mentorship')}
+            </HashLink>
+
+            <HashLink smooth to="/#faq" onClick={() => setMobileMenuOpen(false)} className="text-foreground text-lg font-medium py-2 border-b border-muted">
+              {t('nav.faq')}
+            </HashLink>
+
+            <Link
+              to="/waitlist"
               onClick={() => setMobileMenuOpen(false)}
+              className="mt-4 px-5 py-3 rounded-full bg-shehub-gradient text-white font-medium text-center transition-all"
             >
               {t('nav.waitlist')}
-            </a>
+            </Link>
           </nav>
         </div>
       )}
     </header>
-  );
-};
-
-interface NavLinkProps {
-  href: string;
-  children: React.ReactNode;
-  onClick?: () => void;
-}
-
-const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
-  return (
-    <a 
-      href={href} 
-      className="text-foreground/80 hover:text-foreground font-medium transition-colors relative group"
-    >
-      {children}
-      <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-shehub-purple group-hover:w-full transition-all duration-300" />
-    </a>
-  );
-};
-
-const MobileNavLink: React.FC<NavLinkProps> = ({ href, children, onClick }) => {
-  return (
-    <a 
-      href={href} 
-      className="text-foreground text-lg font-medium py-2 border-b border-muted"
-      onClick={onClick}
-    >
-      {children}
-    </a>
   );
 };
 

@@ -1,10 +1,11 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Mail, Linkedin, Instagram } from 'lucide-react';
 import PixelLogo from './PixelLogo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 interface FooterProps {
   className?: string;
@@ -22,7 +23,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           {/* Logo + Contact Info - Aligned Left */}
           <div className="mb-10 md:mb-0 flex flex-col items-center md:items-start">
             <div className="mb-6">
-              <PixelLogo className="h-12 text-gray-700" />
+              <Link to="/" className="inline-block">
+                <PixelLogo className="h-12 text-gray-700" />
+              </Link>
             </div>
 
             <div className="mb-6">
@@ -30,7 +33,12 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 <Mail size={16} className="mr-2" />
                 <a href="mailto:info@shehub.es" className="hover:underline">info@shehub.es</a>
               </p>
-              <a href="https://www.shehub.es" target="_blank" rel="noopener noreferrer" className="text-lg font-medium hover:underline block text-center md:text-left mt-2">
+              <a
+                href="https://www.shehub.es"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-medium hover:underline block text-center md:text-left mt-2"
+              >
                 www.shehub.es
               </a>
             </div>
@@ -38,18 +46,18 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             {/* Social Media Links */}
             <div className="flex space-x-4 mt-2">
               <p className="mr-2">{t('footer.follow')}</p>
-              <a 
-                href="https://www.linkedin.com/company/shehub-es/about/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/company/shehub-es/about/"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="text-gray-700 hover:text-gray-900 transition-colors"
               >
                 <Linkedin size={20} />
               </a>
-              <a 
-                href="https://www.instagram.com/shehub.es/" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/shehub.es/"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="text-gray-700 hover:text-gray-900 transition-colors"
@@ -62,27 +70,31 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           {/* Navigation - Aligned Right */}
           <div className="flex flex-col items-center md:items-end">
             <nav className="flex flex-col items-center md:items-end space-y-4">
-              <a href="#features" className="text-gray-700 hover:text-gray-900 transition-colors">
+              <HashLink smooth to="/#features" className="text-gray-700 hover:text-gray-900 transition-colors">
                 {t('footer.why')}
-              </a>
-              <a href="#how-it-works" className="text-gray-700 hover:text-gray-900 transition-colors">
+              </HashLink>
+              <HashLink smooth to="/#how-it-works" className="text-gray-700 hover:text-gray-900 transition-colors">
                 {t('footer.how')}
-              </a>
-              <a href="#impact" className="text-gray-700 hover:text-gray-900 transition-colors">
+              </HashLink>
+              <HashLink smooth to="/#impact" className="text-gray-700 hover:text-gray-900 transition-colors">
                 {t('footer.impact')}
-              </a>
-              <a href="#mentorship" className="text-gray-700 hover:text-gray-900 transition-colors">
+              </HashLink>
+              <HashLink smooth to="/#mentorship" className="text-gray-700 hover:text-gray-900 transition-colors">
                 {t('footer.mentors.title')}
-              </a>
-              <a href="#faq" className="text-gray-700 hover:text-gray-900 transition-colors">
+              </HashLink>
+              <HashLink smooth to="/#faq" className="text-gray-700 hover:text-gray-900 transition-colors">
                 {t('footer.faq.title')}
-              </a>
+              </HashLink>
             </nav>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className={cn("mt-12 text-sm text-gray-700/70", isMobile ? "text-center" : "text-left")}>
+        <div className={cn(
+            "mt-12 text-sm text-gray-700/70",
+            isMobile ? "text-center" : "text-left"
+          )}
+        >
           <p>&copy; {new Date().getFullYear()} SheHub. {t('footer.rights')}</p>
         </div>
       </div>

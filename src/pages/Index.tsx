@@ -1,8 +1,6 @@
 
 import { useEffect } from 'react';
-import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Footer from '@/components/Footer';
 import WhyShehub from '@/components/WhyShehub';
 import HowItWorks from '@/components/HowItWorks';
 import ForMentors from '@/components/ForMentors';
@@ -29,7 +27,6 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen">
-      <Navbar />
       
       {/* Hero: White */}
       <Hero />
@@ -52,8 +49,6 @@ const Index = () => {
       {/* Join Waitlist CTA: White */}
       <JoinWaitlist />
       
-      {/* Footer: Light lavender (as specified) */}
-      <Footer />
     </div>
   );
 };

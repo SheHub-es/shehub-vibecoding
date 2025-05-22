@@ -5,6 +5,7 @@ import FadeIn from './FadeIn';
 import { ArrowDown } from 'lucide-react';
 import PixelLogo from './PixelLogo';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 interface HeroProps {
   className?: string;
@@ -14,7 +15,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
   const { t, language } = useLanguage();
   
   return (
-    <section className={cn('min-h-screen pt-32 pb-20 flex flex-col justify-center relative overflow-hidden bg-white', className)}>
+    <section id="hero" className={cn('min-h-screen pt-32 pb-20 flex flex-col justify-center relative overflow-hidden bg-white', className)}>
       <div className="container max-w-7xl mx-auto px-6 md:px-8">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <FadeIn>
@@ -35,12 +36,12 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           </FadeIn>
           
           <FadeIn delay={0.3}>
-            <a 
-              href="#waitlist" 
+            <Link
+              to="/waitlist"
               className="px-8 py-3 rounded-full bg-shehub-gradient text-white text-lg font-medium transition-all hover:shadow-glow-orange hover:scale-105 w-full sm:w-auto inline-block"
             >
               {t('hero.waitlist')}
-            </a>
+            </Link>
             
             <div className="mt-4 text-muted-foreground text-sm max-w-2xl">
               {t('hero.tagline')}
