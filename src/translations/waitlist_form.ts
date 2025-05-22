@@ -34,7 +34,7 @@ export const waitlistFormTranslations: TranslationObject = {
   },
   'waitlist.form.label.role': {
     en: 'Desired Role',
-    es: 'Role Deseado',
+    es: 'Rol Deseado',
     ca: 'Rol Desitjat',
   },
   'waitlist.form.label.mentor': {

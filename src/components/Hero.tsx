@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
@@ -12,18 +11,29 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ className }) => {
-  const { t, language } = useLanguage();
-  
+  const { t } = useLanguage();
+
   return (
-    <section id="hero" className={cn('min-h-screen pt-32 pb-20 flex flex-col justify-center relative overflow-hidden bg-white', className)}>
+    <section
+      id="hero"
+      className={cn(
+        'min-h-screen pt-32 pb-20 flex flex-col justify-center relative overflow-hidden bg-background',
+        className
+      )}
+    >
       <div className="container max-w-7xl mx-auto px-6 md:px-8">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+          
           <FadeIn>
-            <PixelLogo size="lg" variant="hero" className="mb-8" />
+            <PixelLogo
+              size="lg"
+              variant="hero"
+              className="mb-8 text-foreground"
+            />
           </FadeIn>
           
           <FadeIn delay={0.1}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-foreground text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               {t('hero.title1')} <span className="gradient-text">{t('hero.title2')}</span><br />
               {t('hero.title3')}
             </h1>
@@ -51,7 +61,10 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
       </div>
       
       <div className="absolute bottom-8 left-0 right-0 mx-auto flex justify-center animate-float">
-        <a href="#features" className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors">
+        <a
+          href="#features"
+          className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors"
+        >
           <span className="text-sm font-medium mb-2">{t('hero.discover')}</span>
           <ArrowDown size={20} />
         </a>

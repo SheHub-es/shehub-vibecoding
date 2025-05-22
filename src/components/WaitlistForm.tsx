@@ -52,12 +52,11 @@ const WaitlistForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Validaciones
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.role) {
       toast.error(t('waitlist.form.error.required'));
       return;
     }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast.error(t('waitlist.form.error.email'));
       return;
@@ -91,7 +90,10 @@ const WaitlistForm: React.FC = () => {
   };
 
   return (
-    <section id="waitlist" className="py-24">
+    <section
+      id="waitlist"
+      className="py-24 bg-background text-foreground"
+    >
       <div className="container max-w-3xl mx-auto px-6 md:px-8">
         <div className="text-center mb-12">
           <FadeIn>
@@ -110,7 +112,10 @@ const WaitlistForm: React.FC = () => {
         </div>
 
         <FadeIn delay={0.2}>
-          <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-xl shadow-sm border">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6 bg-background/90 border border-border/30 p-8 rounded-xl shadow-sm"
+          >
             {/* Name and Surname */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -151,7 +156,7 @@ const WaitlistForm: React.FC = () => {
               />
             </div>
 
-            {/* Tooltip */}
+            {/* Role with Tooltip */}
             <div>
               <div className="flex items-center mb-1 space-x-1">
                 <Label htmlFor="role">{t('waitlist.form.label.role')}</Label>
@@ -165,10 +170,7 @@ const WaitlistForm: React.FC = () => {
                       onClick={() => isMobile && setTooltipOpen(o => !o)}
                     />
                   </TooltipTrigger>
-                  <TooltipContent
-                    side="right"
-                    className="bg-shehub-purple text-white rounded-md px-3 py-2 max-w-xs"
-                  >
+                  <TooltipContent side="right" className="bg-shehub-purple text-white rounded-md px-3 py-2 max-w-xs">
                     {t('waitlist.form.tooltip.role')}
                   </TooltipContent>
                 </Tooltip>
@@ -183,6 +185,7 @@ const WaitlistForm: React.FC = () => {
               />
             </div>
 
+            {/* Mentor Checkbox */}
             <div className="flex items-center space-x-2">
               <input
                 id="mentor"
@@ -190,14 +193,14 @@ const WaitlistForm: React.FC = () => {
                 type="checkbox"
                 checked={formData.mentor}
                 onChange={handleChange}
-                className="h-4 w-4 rounded border-gray-300 text-shehub-purple focus:ring-shehub-purple"
+                className="h-4 w-4 rounded border-border text-accent focus:ring-accent"
               />
               <Label htmlFor="mentor">{t('waitlist.form.label.mentor')}</Label>
             </div>
 
             <Button
               type="submit"
-              className="w-full bg-shehub-gradient hover:shadow-glow-purple hover:scale-105 transition-all"
+              className="w-full bg-shehub-gradient text-white hover:shadow-glow-purple hover:scale-105 transition-all"
               disabled={isSubmitting}
             >
               {isSubmitting
