@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -73,20 +74,20 @@ const WaitlistForm: React.FC = () => {
       utmCampaign: search.get('utm_campaign'),
       language: language,
     };
-  try {
-    await setFirebaseApplicant(formData.email, applicant);
-    toast.success(t('waitlist.form.toast.success'));
-    setFormData({ firstName: '', lastName: '', email: '', role: '', mentor: false });
-    sessionStorage.setItem('waitlist_submitted', 'true');
-    navigate('/thank-you');
-  } catch (err: unknown) {
-    const errorMsg = err instanceof Error ? err.message : 'Unknown error';
-    console.error('[Waitlist] Firebase error:', errorMsg, err);
-    toast.error(t('waitlist.form.toast.error') || 'Error al enviar. Inténtalo de nuevo.');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+    try {
+      await setFirebaseApplicant(formData.email, applicant);
+      toast.success(t('waitlist.form.toast.success'));
+      setFormData({ firstName: '', lastName: '', email: '', role: '', mentor: false });
+      sessionStorage.setItem('waitlist_submitted', 'true');
+      navigate('/thank-you');
+    } catch (err: unknown) {
+      const errorMsg = err instanceof Error ? err.message : 'Unknown error';
+      console.error('[Waitlist] Firebase error:', errorMsg, err);
+      toast.error(t('waitlist.form.toast.error') || 'Error al enviar. Inténtalo de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="waitlist" className="py-24 bg-background text-foreground">
@@ -180,9 +181,15 @@ const WaitlistForm: React.FC = () => {
                         onClick={() => isMobile && setTooltipOpen((o) => !o)}
                       />
                     </TooltipTrigger>
-                    <TooltipContent side="right" className="bg-shehub-purple text-white rounded-md px-3 py-2 max-w-xs">
+                    <TooltipContent
+                      side={isMobile ? 'top' : 'right'}
+                      align="center"
+                      sideOffset={isMobile ? 8 : 0}
+                      className="bg-shehub-purple text-white rounded-md px-4 py-3 w-[260px] text-sm text-left"
+                    >
                       {t('waitlist.form.tooltip.role')}
                     </TooltipContent>
+
                   </Tooltip>
                 </div>
                 <Input
