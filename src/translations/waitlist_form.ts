@@ -1,12 +1,17 @@
 import { TranslationObject } from './types';
 
 export const waitlistFormTranslations: TranslationObject = {
+  'waitlist.form.ctabadge': {
+    en: 'Ready to join?',
+    es: '¿Lista para unirte?',
+    ca: 'Preparada per unir-te?',
+  },
   'waitlist.heading.title': {
     en: 'Join Our ',
     es: 'Únete a nuestra ',
     ca: 'Uneix-te a la nostra ',
   },
-    'waitlist.heading.title.gradient': {
+  'waitlist.heading.title.gradient': {
     en: 'Waitlist',
     es: 'Lista de espera',
     ca: 'Llista d’espera',
@@ -22,7 +27,7 @@ export const waitlistFormTranslations: TranslationObject = {
     es: 'Nombre *',
     ca: 'Nom *',
   },
-    'waitlist.form.label.lastname': {
+  'waitlist.form.label.lastname': {
     en: 'Lastname *',
     es: 'Apellidos *',
     ca: 'Cognoms *',
@@ -87,7 +92,7 @@ export const waitlistFormTranslations: TranslationObject = {
     es: '*Al registrarte, aceptas nuestra política de privacidad y términos de servicio.',
     ca: '*En registrar-te, acceptes la nostra política de privacitat i termes de servei.',
   },
-    'waitlist.form.error.required': {
+  'waitlist.form.error.required': {
     en: 'Please fill out all required fields',
     es: 'Por favor, completa todos los campos obligatorios',
     ca: 'Si us plau, completa tots els camps obligatoris',
@@ -97,4 +102,24 @@ export const waitlistFormTranslations: TranslationObject = {
     es: 'Por favor, introduce un correo válido',
     ca: 'Si us plau, introdueix un correu vàlid',
   },
+  'waitlist.form.benefit.realProjects': {
+    en: 'Work on real-world projects',
+    es: 'Trabaja en proyectos del mundo real',
+    ca: 'Treballa en projectes del món real',
+  },
+  'waitlist.form.benefit.collaboration': {
+    en: 'Collaborate with multidisciplinary teams',
+    es: 'Colabora con equipos multidisciplinarios',
+    ca: 'Col·labora amb equips multidisciplinaris',
+  },
+  'waitlist.form.benefit.mentorship': {
+    en: 'Receive mentorship from industry experts',
+    es: 'Recibe mentoría de expertas de la industria',
+    ca: 'Rep mentoratge de professionals del sector',
+  },
+  'waitlist.form.benefit.portfolio': {
+    en: 'Build your portfolio and network',
+    es: 'Construye tu portafolio y red de contactos',
+    ca: 'Construeix el teu portafoli i xarxa de contactes',
+  }
 };

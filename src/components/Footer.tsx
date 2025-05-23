@@ -20,7 +20,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
     if (typeof window === 'undefined') return 'light';
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === 'light' || stored === 'dark') return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'light';
   });
 
   useEffect(() => {
@@ -28,13 +28,12 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
     localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 
-  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
 
   return (
     <footer className={cn('py-16 md:py-20 bg-[#EAE4F9] dark:bg-[#1E1E2A] text-foreground', className)}>
       <div className="container max-w-6xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 items-start">
-          {/* Left Section */}
           <div className="flex flex-col items-center md:items-start space-y-4">
             <Link to="/" className="inline-block">
               <PixelLogo className="h-12 text-foreground" />
@@ -72,7 +71,6 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             </div>
           </div>
 
-          {/* Right Section: Nav + Toggle */}
           <div className="flex flex-col items-center md:items-end space-y-4">
             <nav className="flex flex-col items-center md:items-end space-y-2">
               {['features', 'how-it-works', 'impact', 'mentorship', 'faq'].map((href, i) => (
@@ -89,7 +87,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="mt-2 p-2 rounded-full bg-foreground/10 hover:bg-foreground/20 transition"
+              className="mt-3 p-2 rounded-full bg-foreground/10 hover:bg-foreground/20 transition"
             >
               {theme === 'dark'
                 ? <Sun size={20} className="text-foreground" />
@@ -99,7 +97,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           </div>
         </div>
 
-        <div className={cn('mt-2 md:mt-0 text-sm text-foreground/70', isMobile ? 'text-center' : 'text-left')}>
+        <div className={cn('mt-6 md:mt-0 text-sm text-foreground/70', isMobile ? 'text-center' : 'text-left')}>
           <p>&copy; {new Date().getFullYear()} SheHub. {t('footer.rights')}</p>
         </div>
       </div>

@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import WaitlistPage from "@/pages/WaitlistPage";
+import ThankYouPage from "@/pages/ThankYouPage";
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/waitlist" element={<WaitlistPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/thank-you" element={<ThankYouPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
