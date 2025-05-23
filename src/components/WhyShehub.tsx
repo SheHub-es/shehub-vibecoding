@@ -13,7 +13,7 @@ const WhyShehub: React.FC<WhyShehubProps> = ({ className }) => {
   const { t } = useLanguage();
   
   return (
-    <section id="features" className={cn('py-20 bg-shehub-purple text-white', className)}>
+    <section id="features" className={cn('py-20 bg-primary text-background', className)}>
       <div className="container max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn>
@@ -74,12 +74,12 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="bg-white dark:bg-[#1E1E2A] rounded-2xl p-6 shadow-md text-foreground h-full flex flex-col transition-all hover:shadow-lg hover:-translate-y-1">
-      <div className="w-12 h-12 rounded-full bg-shehub-purple/10 flex items-center justify-center mb-4">
+    <div className="bg-white dark:bg-white/10 rounded-2xl p-6 shadow-md text-foreground h-full flex flex-col transition-all hover:shadow-lg hover:-translate-y-1">
+      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="text-lg font-bold mb-2 text-foreground">{title}</h3>
-      <p className="text-gray-600 text-sm">{description}</p>
+      <h3 className=" text-black text-lg font-bold mb-2">{title}</h3>
+      <p className="text-gray-800 text-sm">{description}</p>
     </div>
   );
 };

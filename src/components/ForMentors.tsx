@@ -16,7 +16,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
     <section
       id="mentorship"
       className={cn(
-        "py-24 bg-shehub-purple text-white relative overflow-hidden",
+        "py-24 bg-primary text-background relative overflow-hidden",
         className
       )}
     >
@@ -41,11 +41,11 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
                 <div className="w-12 h-12 p-2 rounded-full bg-white/10 flex items-center justify-center mr-4 mt-1">
                   <Shield
                     size={18}
-                    className="text-white"
+                    className="text-background"
                   />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold mb-3">
+                  <h3 className="text-lg font-bold mt-3 md:mt-0 ">
                     {t("mentors.feature1.title")}
                   </h3>
                 </div>
@@ -62,7 +62,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
                 <div className="w-12 h-12 p-2 rounded-full bg-white/10 flex items-center justify-center mr-4 mt-1">
                   <Heart
                     size={18}
-                    className="text-white"
+                    className="text-background"
                   />
                 </div>
                 <div>
@@ -83,7 +83,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
                 <div className="w-12 h-12 p-2 rounded-full bg-white/10 flex items-center justify-center mr-4 mt-1">
                   <Clock
                     size={18}
-                    className="text-white"
+                    className="text-background"
                   />
                 </div>
                 <div>
@@ -100,7 +100,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
           <div className="text-center">
             <Link
               to="/waitlist?mentor=true"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-white text-shehub-purple text-lg font-medium transition-all hover:shadow-lg hover:scale-105"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-background text-primary text-lg font-medium transition-all hover:shadow-lg hover:scale-105"
             >
               {t("mentors.cta")}{" "}
               <ArrowRight

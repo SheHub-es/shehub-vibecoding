@@ -4,7 +4,7 @@ import animate from "tailwindcss-animate";
 import forms from "@tailwindcss/forms"  
 
 export default {
-	darkMode: ["class"],
+	darkMode: 'class',
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
