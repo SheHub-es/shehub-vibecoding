@@ -1,69 +1,118 @@
-# Welcome to your Lovable project
+# 💜 SheHub
 
-## Project info
+SheHub is a community-driven initiative created by and for women who have completed a tech bootcamp or training program.  
+Its goal is to highlight female tech talent, support job placement, and build a collaborative and empowering network within the tech industry.
 
-**URL**: https://lovable.dev/projects/e07510f6-9e60-4359-806d-44c03fd8a51c
+This repository contains the main SheHub website, developed with React + Vite, designed as a landing page for the project.  
+It includes information, resources, and contact forms for potential collaborators, partner companies, and new participants.
 
-## How can I edit this code?
+> ✨ The project started with a **vibe coding** approach, generating parts of the code through AI prompts.  
+> Later on, everything was **customized, reviewed, and manually adapted** to fit the real needs of the SheHub team.
 
-There are several ways of editing your application.
+## 📁 Table of Contents
 
-**Use Lovable**
+- [💜 SheHub](#-shehub)
+  - [📁 Table of Contents](#-table-of-contents)
+  - [💼 Tech Stack](#-tech-stack)
+  - [🛠️ Getting Started / Prerequisites](#️-getting-started--prerequisites)
+  - [⚙️ Installation](#️-installation)
+  - [🔐 Environment Variables](#-environment-variables)
+  - [💻 Run the Development Server](#-run-the-development-server)
+  - [📂 Project Structure](#-project-structure)
+  - [🌐 Language Support](#-language-support)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e07510f6-9e60-4359-806d-44c03fd8a51c) and start prompting.
+## 💼 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- React 18
+- Vite
+- Tailwind CSS
+- React Router DOM
+- shadcn/ui
+- TypeScript
+- Firebase
+- Lucide-react
+- Radix UI
 
-**Use your preferred IDE**
+## 🛠️ Getting Started / Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Make sure you have the following installed:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Node.js** ≥ 18.x (tested with 22.14.0)
+- **npm** ≥ 9.x
 
-Follow these steps:
+## ⚙️ Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+git clone https://github.com/SheHub-es/shehub-vibecoding.git
+cd shehub-vibecoding
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🔐 Environment Variables
 
-# Step 3: Install the necessary dependencies.
-npm i
+Environment configuration is managed through `.env` files.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+1. Copy `.env.example` to `.env`:
+
+```bash
+cp .env.example .env
+```
+
+2. Fill in your Firebase credentials:
+
+```env
+# Firebase config (development environment)
+
+VITE_FIREBASE_API_KEY=YOUR_API_KEY_HERE
+VITE_FIREBASE_AUTH_DOMAIN=YOUR_PROJECT.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=YOUR_PROJECT_ID
+VITE_FIREBASE_STORAGE_BUCKET=YOUR_PROJECT.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=YOUR_SENDER_ID
+VITE_FIREBASE_APP_ID=YOUR_APP_ID
+VITE_FIREBASE_MEASUREMENT_ID=YOUR_MEASUREMENT_ID
+VITE_RECAPTCHA_SITE_KEY=TU_SITE_KEY
+```
+
+These are loaded in the `firebase.js` file using `import.meta.env`.
+
+## 💻 Run the Development Server
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📂 Project Structure
 
-**Use GitHub Codespaces**
+```bash
+vibecoding-homepage/
+├── public/
+├── src/
+│ ├── api/
+│ ├── components/
+│ ├── contexts/
+│ ├── hooks/
+│ ├── lib/
+│ ├── pages/
+│ └── translations/
+├── App.tsx
+├── index.css
+├── main.tsx
+├── .env.local
+├── .env.example
+├── index.html
+├── tailwind.config.ts
+├── vite.config.ts
+├── vercel.json 
+├── tsconfig.json 
+├── README.md
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🌐 Language Support
 
-## What technologies are used for this project?
+- This project uses a custom translation system built with React Context and `localStorage`.  
+- Translations are managed manually through a `translations.ts` file with support for multiple languages (`es`, `en`, `ca`).
 
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/e07510f6-9e60-4359-806d-44c03fd8a51c) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+---
+Made with 💜 by the SheHub team.
