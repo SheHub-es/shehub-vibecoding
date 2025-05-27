@@ -79,7 +79,22 @@ const WaitlistForm: React.FC = () => {
       toast.success(t('waitlist.form.toast.success'));
       setFormData({ firstName: '', lastName: '', email: '', role: '', mentor: false });
       sessionStorage.setItem('waitlist_submitted', 'true');
+
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('event', 'waitlist_submission', {
+          event_category: 'engagement',
+          event_label: 'Waitlist Form',
+          value: 1,
+          email: formData.email,
+          utm_source: search.get('utm_source') || undefined,
+          utm_medium: search.get('utm_medium') || undefined,
+          utm_campaign: search.get('utm_campaign') || undefined,
+          language: language,
+        });
+      }
+
       navigate('/thank-you');
+
     } catch (err: unknown) {
       const errorMsg = err instanceof Error ? err.message : 'Unknown error';
       console.error('[Waitlist] Firebase error:', errorMsg, err);

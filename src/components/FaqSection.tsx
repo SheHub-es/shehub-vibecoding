@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
 import {
@@ -55,6 +55,18 @@ interface FaqItemProps {
 }
 
 const FaqItem = ({ question, answer }: FaqItemProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    if (!isOpen && typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'faq_opened', {
+        event_category: 'interaction',
+        event_label: question,
+      });
+    }
+    setIsOpen(!isOpen);
+  };
+
   return (
     <AccordionItem
       value={question}
@@ -64,7 +76,10 @@ const FaqItem = ({ question, answer }: FaqItemProps) => {
         'rounded-lg shadow-sm'
       )}
     >
-      <AccordionTrigger className="px-6 py-4 hover:no-underline">
+      <AccordionTrigger
+        className="px-6 py-4 hover:no-underline"
+        onClick={handleToggle}
+      >
         <span className="font-semibold text-foreground">{question}</span>
       </AccordionTrigger>
       <AccordionContent className="px-6 pb-4 pt-1 text-muted-foreground">

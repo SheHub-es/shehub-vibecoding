@@ -37,10 +37,17 @@ const JoinWaitlist: React.FC<JoinWaitlistProps> = ({ className }) => {
           <FadeIn delay={0.2}>
             <Link
               to="/waitlist"
+              onClick={() => {
+                window.gtag?.('event', 'waitlist_cta_click', {
+                  event_category: 'engagement',
+                  event_label: 'bottom_section_button',
+                });
+              }}
               className="inline-flex items-center px-8 py-4 rounded-full bg-shehub-gradient text-white text-lg font-medium transition-all hover:shadow-glow-purple hover:scale-105"
             >
               {t('waitlist.button')} <ArrowRight className="ml-2" size={18} />
             </Link>
+
 
             <p className="text-sm text-muted-foreground mt-4">
               {t('waitlist.promise')}
