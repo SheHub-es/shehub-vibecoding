@@ -23,7 +23,7 @@ export const forMentorsTranslations: TranslationObject = {
     ca: 'Ajuda a créixer al talent divers mentre creixes el teu propi impacte',
   },
   'mentors.feature3.title': {
-    en: 'Just a few hours/week, flexible and fully remote',
+    en: 'Just a few hours/week, flexible and fully remote, and easy',
     es: 'Solo unas pocas horas/semana, flexible y completamente remoto',
     ca: 'Només unes poques hores/setmana, flexible i completament remot',
   },

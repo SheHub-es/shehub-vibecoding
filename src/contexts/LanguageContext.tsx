@@ -11,36 +11,33 @@ type LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Try to get the language from localStorage, default to Spanish
   const [language, setLanguage] = useState<Language>(() => {
     const storedLanguage = localStorage.getItem('language');
-    return (storedLanguage as Language) || 'es';
+    return (['es', 'en', 'ca'].includes(storedLanguage || '') ? storedLanguage : 'es') as Language;
   });
 
-  // Update localStorage when language changes
   useEffect(() => {
     localStorage.setItem('language', language);
-    // Also update the html lang attribute
     document.documentElement.lang = language;
   }, [language]);
 
-  // Helper function to get translations
-  const t = (key: string): string => {
-    // Type assertion to help TypeScript understand our structure
-    const translationObj = translations as Record<string, Record<string, string>>;
-    
-    if (translationObj[key] && translationObj[key][language]) {
-      return translationObj[key][language];
-    }
-    
-    // Fallback to Spanish if translation is missing
-    if (translationObj[key] && translationObj[key]['es']) {
-      return translationObj[key]['es'];
-    }
-    
-    console.warn(`Translation missing for key: ${key}`);
-    return key;
-  };
+const t = (key: string): string => {
+  const translationObj = translations as Record<string, Record<string, string>>;
+
+  const validLang = ['es', 'en', 'ca'].includes(language) ? language : 'es';
+
+  if (translationObj[key] && translationObj[key][validLang]) {
+    return translationObj[key][validLang];
+  }
+
+  if (translationObj[key] && translationObj[key]['es']) {
+    return translationObj[key]['es'];
+  }
+
+  console.warn(`⚠️ Missing translation for key: "${key}"`);
+  return '';
+};
+
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
