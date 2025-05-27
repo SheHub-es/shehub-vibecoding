@@ -100,6 +100,12 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
           <div className="text-center">
             <Link
               to="/waitlist?mentor=true"
+              onClick={() => {
+                window.gtag?.('event', 'waitlist_cta_click', {
+                  event_category: 'engagement',
+                  event_label: 'mentorship_section_button',
+                });
+              }}
               className="inline-flex items-center px-6 py-3 rounded-full bg-background text-primary text-lg font-medium transition-all hover:shadow-lg hover:scale-105"
             >
               {t("mentors.cta")}{" "}
@@ -108,6 +114,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
                 size={18}
               />
             </Link>
+
           </div>
         </FadeIn>
       </div>

@@ -98,14 +98,19 @@ export const footerTranslations: TranslationObject = {
     ca: 'Tens preguntes?',
   },
   'footer.privacy': {
-    en: 'Privacy Policy',
     es: 'Política de Privacidad',
-    ca: 'Política de Privacitat',
+    en: 'Privacy Policy',
+    ca: 'Política de Privadesa',
   },
-  'footer.terms': {
-    en: 'Terms of Service',
-    es: 'Términos de Servicio',
-    ca: 'Condicions de Servei',
+  'footer.legal': {
+    es: 'Aviso Legal',
+    en: 'Legal Notice',
+    ca: 'Avís Legal',
+  },
+  'footer.cookies': {
+    es: 'Política de Cookies',
+    en: 'Cookies Policy',
+    ca: 'Política de Galetes',
   },
   'footer.impact': {
     en: 'Our Impact',

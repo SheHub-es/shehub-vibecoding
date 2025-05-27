@@ -41,7 +41,6 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
         <HashLink smooth to="/#hero" className="flex items-center">
           <PixelLogo size="sm" />
         </HashLink>
@@ -73,10 +72,17 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
           <div className="flex space-x-4">
             <Link
               to="/waitlist"
+              onClick={() => {
+                window.gtag?.('event', 'waitlist_cta_click', {
+                  event_category: 'engagement',
+                  event_label: 'navbar_button_desktop',
+                });
+              }}
               className="px-5 py-2 rounded-full bg-shehub-gradient text-white font-medium transition-all hover:shadow-glow-purple hover:scale-105"
             >
               {t('nav.waitlist')}
             </Link>
+
           </div>
         </nav>
 
@@ -115,11 +121,18 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
             <Link
               to="/waitlist"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                window.gtag?.('event', 'waitlist_cta_click', {
+                  event_category: 'engagement',
+                  event_label: 'navbar_button_mobile',
+                });
+                setMobileMenuOpen(false);
+              }}
               className="mt-4 px-5 py-3 rounded-full bg-shehub-gradient text-white font-medium text-center transition-all"
             >
               {t('nav.waitlist')}
             </Link>
+
           </nav>
         </div>
       )}
