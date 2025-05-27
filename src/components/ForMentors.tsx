@@ -45,7 +45,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold mt-3 md:mt-0 ">
+                  <h3 className="text-lg font-bold mt-3 md:mt-0 mb-5">
                     {t("mentors.feature1.title")}
                   </h3>
                 </div>
@@ -57,7 +57,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
             direction="up"
             delay={0.1}
           >
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 relative overflow-hidden group transition-all hover:bg-white/20">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-7 relative overflow-hidden group transition-all hover:bg-white/20">
               <div className="flex items-start">
                 <div className="w-12 h-12 p-2 rounded-full bg-white/10 flex items-center justify-center mr-4 mt-1">
                   <Heart
@@ -78,7 +78,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
             direction="up"
             delay={0.2}
           >
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 relative overflow-hidden group transition-all hover:bg-white/20">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-7 relative overflow-hidden group transition-all hover:bg-white/20">
               <div className="flex items-start">
                 <div className="w-12 h-12 p-2 rounded-full bg-white/10 flex items-center justify-center mr-4 mt-1">
                   <Clock

@@ -14,8 +14,8 @@ import { howItWorksTranslations } from './how_it_works';
 import { forMentorsTranslations } from './for_mentors';
 import { faqTranslations } from './faq';
 import { impactTranslations } from './impact';
+import { htmlTranslations } from './htmlContent';
 
-// Combine all translations
 const translations: Record<string, Record<string, string>> = {
   ...navbarTranslations,
   ...footerTranslations,
@@ -32,6 +32,7 @@ const translations: Record<string, Record<string, string>> = {
   ...impactTranslations,
   ...waitlistFormTranslations,
   ...waitlistThanksTranslations,
+  ...htmlTranslations,
 };
 
 export { translations };
