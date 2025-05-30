@@ -19,7 +19,7 @@ export const howItWorksTranslations: TranslationObject = {
   },
   'how.feature1.description': {
     en: 'Contributors deliver real features through short and iterative cycles, focusing on learning, value and continuous improvement.',
-    es: 'Las colaboradoras entregan características reales a través de ciclos cortos e iterativos, centrándose en el aprendizaje, el valor y la mejora continua.',
+    es: 'Las colaboradoras entregan funcionalidades reales a través de ciclos cortos e iterativos, centrándose en el aprendizaje, el valor y la mejora continua.',
     ca: 'Les col·laboradores lliuren funcionalitats reals a través de cicles curts i iteratius, centrant-se en l\'aprenentatge, el valor i la millora contínua.',
   },
   'how.feature2.title': {
