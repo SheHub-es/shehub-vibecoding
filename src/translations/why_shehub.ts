@@ -29,8 +29,8 @@ export const whyShehubTranslations: TranslationObject = {
   },
   'why.feature2.description': {
     en: 'Collaborate with contributors across product, design, dev, data or marketing — using lean practices.',
-    es: 'Colabora con colaboradoras en producto, diseño, desarrollo, datos o marketing — utilizando metodologías lean.',
-    ca: 'Col·labora amb col·laboradores en producte, disseny, desenvolupament, dades o màrqueting — utilitzant pràctiques lean.',
+    es: 'Colabora con perfiles de producto, diseño, desarrollo, datos o marketing — utilizando metodologías lean.',
+    ca: 'Col·labora amb perfils de producte, disseny, desenvolupament, dades o màrqueting — utilitzant pràctiques lean.',
   },
   'why.feature3.title': {
     en: 'Be seen, supported, and ready to grow',
