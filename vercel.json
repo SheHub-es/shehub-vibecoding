@@ -6,11 +6,11 @@
       "dest": "https://shehub-gules.vercel.app/"
     },
     {
-      // Si existe un archivo estático que coincide, servirlo
+     
       "handle": "filesystem"
     },
     {
-      //Cualquier otra ruta "/", "/foo", "/bar/baz" → mandar al index.html de tu SPA
+
       "src": "/(.*)",
       "dest": "/index.html"
     }
