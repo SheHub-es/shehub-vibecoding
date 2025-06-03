@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
-export function RedirectToTeaserPage() {
+export function RedirectToTeaserPage(): JSX.Element {
   useEffect(() => {
-    window.location.href = "https://shehub-gules.vercel.app";
+    window.location.replace("https://shehub-gules.vercel.app");
   }, []);
 
-  return null;
+  return <></>;
 }
