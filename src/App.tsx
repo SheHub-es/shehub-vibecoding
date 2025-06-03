@@ -13,7 +13,9 @@ import LegalNoticePage from "@/pages/LegalNoticePage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import CookiesPolicyPage from "@/pages/CookiesPolicyPage";
 import CookieConsent from "./components/CookieConsent";
-import TeaserPage from '@/pages/closed-projects/TeaserPage';
+import { RedirectToTeaserPage } from "@/pages/closed-projects/RedirectToTeaserPage";
+
+
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { Helmet } from "react-helmet-async";
 
@@ -35,8 +37,7 @@ const AppContent = () => {
 
 <BrowserRouter>
   <Routes>
-    <Route path="/closed-projects/teaser-page" element={<TeaserPage />} />
-
+    <Route path="/closed-projects/teaser-page" element={<RedirectToTeaserPage />} />
     <Route
       path="*"
       element={
