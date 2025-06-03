@@ -3,9 +3,9 @@ import { TranslationObject } from './types';
 
 export const waitlistTranslations: TranslationObject = {
   'waitlist.title': {
-    en: 'Ready to grow or give back?',
-    es: '¿Lista para crecer o contribuir?',
-    ca: 'Preparada per créixer o contribuir?',
+    en: 'Ready to grow and give back?',
+    es: '¿Lista para crecer contribuyendo?',
+    ca: 'Preparada per créixer contribuïnt?',
   },
   'waitlist.subtitle': {
     en: 'Whether you\'re pivoting into tech or growing as a leader, SheHub is your space to contribute and thrive.',
