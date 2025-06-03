@@ -33,20 +33,30 @@ const AppContent = () => {
       <Sonner />
       <CookieConsent />
 
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/waitlist" element={<WaitlistPage />} />
-          <Route path="/thank-you" element={<ThankYouPage />} />
-          <Route path="/privacy" element={<PrivacyPolicyPage />} />
-          <Route path="/cookies" element={<CookiesPolicyPage />} />
-          <Route path="/legal-notice" element={<LegalNoticePage />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/closed-projects/teaser-page" element={<TeaserPage />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+<BrowserRouter>
+  <Routes>
+    <Route path="/closed-projects/teaser-page" element={<TeaserPage />} />
+
+    <Route
+      path="*"
+      element={
+        <>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/waitlist" element={<WaitlistPage />} />
+            <Route path="/thank-you" element={<ThankYouPage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/cookies" element={<CookiesPolicyPage />} />
+            <Route path="/legal-notice" element={<LegalNoticePage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </>
+      }
+    />
+  </Routes>
+</BrowserRouter>
     </>
   );
 };
