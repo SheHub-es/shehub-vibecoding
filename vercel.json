@@ -1,16 +1,9 @@
 {
   "routes": [
     {
-      
-      "src": "/closed-projects/teaser-page",
-      "dest": "https://shehub-gules.vercel.app/"
-    },
-    {
-     
       "handle": "filesystem"
     },
     {
-
       "src": "/(.*)",
       "dest": "/index.html"
     }
