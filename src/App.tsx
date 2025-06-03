@@ -13,6 +13,7 @@ import LegalNoticePage from "@/pages/LegalNoticePage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import CookiesPolicyPage from "@/pages/CookiesPolicyPage";
 import CookieConsent from "./components/CookieConsent";
+import TeaserPage from '@/pages/closed-projects/TeaserPage';
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { Helmet } from "react-helmet-async";
 
@@ -42,6 +43,7 @@ const AppContent = () => {
           <Route path="/cookies" element={<CookiesPolicyPage />} />
           <Route path="/legal-notice" element={<LegalNoticePage />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/closed-projects/teaser-page" element={<TeaserPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
