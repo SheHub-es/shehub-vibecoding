@@ -18,9 +18,9 @@ export const heroTranslations: TranslationObject = {
     ca: 'Trenca Barreres.',
   },
   'hero.subtitle': {
-    en: 'Real tech experience for women ready to grow. Work on real projects. Build in real teams. Guided by mentors.',
-    es: 'Experiencia real para mujeres listas para dar el siguiente paso en el mundo tech. Trabaja en proyectos reales. Construye en equipos reales. Guiada por mentoras.',
-    ca: 'Experiència real per a dones preparades per fer el següent pas en el món tech. Treballa en projectes reals. Construeix en equips reals. Guiada per mentores.',
+    en: 'Real tech experience for women ready to grow. Join real-world projects. Collaborate in cross-functional teams. Guided by mentors.',
+    es: 'Experiencia práctica para mujeres listas para dar el siguiente paso en tecnología. Participa en proyectos reales. Colabora en equipos multidisciplinares. Guiada por mentoras.',
+    ca: 'Experiència pràctica per a dones preparades per fer el següent pas en el món tech. Participa en projectes reals. Col·labora en equips multidisciplinars. Guiada per mentores.',
   },
   'hero.waitlist': {
     en: 'Join the Waitlist',
