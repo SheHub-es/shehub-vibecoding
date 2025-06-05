@@ -14,8 +14,9 @@ import { howItWorksTranslations } from './how_it_works';
 import { forMentorsTranslations } from './for_mentors';
 import { faqTranslations } from './faq';
 import { impactTranslations } from './impact';
-import { htmlTranslations } from './htmlContent';
+import { htmlTranslations } from './html_content';
 import { legalNoticeTranslations } from './legal_notice';
+import { closedProjectsTranslations } from './closed_projects';
 
 const translations: Record<string, Record<string, string>> = {
   ...navbarTranslations,
@@ -35,6 +36,7 @@ const translations: Record<string, Record<string, string>> = {
   ...waitlistThanksTranslations,
   ...htmlTranslations,
   ...legalNoticeTranslations,
+  ...closedProjectsTranslations,
 };
 
 export { translations };

@@ -84,6 +84,26 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 <Instagram size={20} />
               </a>
             </div>
+
+            {/* 
+            🔒 Sección oculta temporalmente del footer.
+            Mostraba un enlace a la página de proyectos cerrados.
+            Mantener comentado hasta que se quiera mostrar públicamente en el footer.
+            */}
+
+          {/*
+          <div className="flex flex-col space-y-1 pt-2">
+            <span className="font-semibold text-foreground">
+              <Link
+                to="/closed-projects"
+                className="font-medium text-foreground hover:underline hover:text-primary transition"
+              >
+                {t("footer.closedProjects")}
+              </Link>
+            </span>
+          </div>
+          */}
+
           </div>
 
           <div className="flex flex-col items-center md:items-end space-y-4">
