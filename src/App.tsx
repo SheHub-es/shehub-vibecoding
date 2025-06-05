@@ -5,7 +5,7 @@ import ThankYouPage from "@/pages/ThankYouPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import CookiesPolicyPage from "@/pages/CookiesPolicyPage";
 import LegalNoticePage from "@/pages/LegalNoticePage";
-import PreviousProjectsPage from "@/pages/ClosedProjectsPage";
+import ClosedProjectsPage from "@/pages/ClosedProjectsPage";
 import NotFound from "@/pages/NotFound";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -42,7 +42,7 @@ const AppContent = () => {
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/cookies" element={<CookiesPolicyPage />} />
           <Route path="/legal-notice" element={<LegalNoticePage />} />
-          <Route path="/closed-projects" element={<PreviousProjectsPage />} />
+          <Route path="/closed-projects" element={<ClosedProjectsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
