@@ -82,6 +82,11 @@ export const footerTranslations: TranslationObject = {
     es: 'Mentoría',
     ca: 'Mentoria',
   },
+  'footer.sponsors': {
+    en: 'Sponsors',
+    es: 'Patrocinadores/as',
+    ca: 'Patrocinadors/es'
+  },
   'footer.waitlist': {
     en: 'Join the Waitlist',
     es: 'Unirse a la Lista de Espera',
@@ -118,8 +123,8 @@ export const footerTranslations: TranslationObject = {
     ca: 'El Nostre Impacte',
   },
   'footer.closedProjects': {
-  en: 'Closed Projects',
-  es: 'Proyectos cerrados',
-  ca: 'Projectes tancats',
-},
+    en: 'Closed Projects',
+    es: 'Proyectos cerrados',
+    ca: 'Projectes tancats',
+  },
 };

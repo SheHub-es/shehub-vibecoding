@@ -17,6 +17,7 @@ import { impactTranslations } from './impact';
 import { htmlTranslations } from './html_content';
 import { legalNoticeTranslations } from './legal_notice';
 import { closedProjectsTranslations } from './closed_projects';
+import { sponsorsTranslations } from './sponsors';
 
 const translations: Record<string, Record<string, string>> = {
   ...navbarTranslations,
@@ -37,6 +38,7 @@ const translations: Record<string, Record<string, string>> = {
   ...htmlTranslations,
   ...legalNoticeTranslations,
   ...closedProjectsTranslations,
+  ...sponsorsTranslations,
 };
 
 export { translations };
