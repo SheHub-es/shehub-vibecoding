@@ -117,4 +117,9 @@ export const footerTranslations: TranslationObject = {
     es: 'Nuestro Impacto',
     ca: 'El Nostre Impacte',
   },
+  'footer.closedProjects': {
+  en: 'Closed Projects',
+  es: 'Proyectos cerrados',
+  ca: 'Projectes tancats',
+},
 };
