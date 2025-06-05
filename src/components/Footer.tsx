@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Mail, Linkedin, Instagram, Sun, Moon } from "lucide-react";
+import { Mail, Instagram, Sun, Moon } from "lucide-react";
+import { FaLinkedinIn } from 'react-icons/fa';
 import PixelLogo from "./PixelLogo";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -74,7 +75,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 aria-label="LinkedIn"
                 className="text-foreground hover:text-primary transition"
               >
-                <Linkedin size={20} />
+                <FaLinkedinIn size={20} />
               </a>
               <a
                 href="https://www.instagram.com/shehub.es/"

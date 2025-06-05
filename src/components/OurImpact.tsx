@@ -71,7 +71,6 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
     </section>
   );
 };
-
 interface ImpactStatProps {
   icon: React.ReactNode;
   number: string;

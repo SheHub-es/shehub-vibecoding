@@ -1,4 +1,3 @@
-import React from "react";
 import { cn } from "@/lib/utils";
 import FadeIn from "./FadeIn";
 import { ArrowRight, Shield, Heart, Clock } from "lucide-react";

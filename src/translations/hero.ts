@@ -1,4 +1,3 @@
-
 import { TranslationObject } from './types';
 
 export const heroTranslations: TranslationObject = {
@@ -27,11 +26,16 @@ export const heroTranslations: TranslationObject = {
     es: 'Únete a la Lista de Espera',
     ca: 'Uneix-te a la Llista d\'Espera',
   },
-  'hero.tagline': {
-    en: 'Whether you\'re here to grow your experience or grow mentoring others — SheHub is your next step.',
-    es: 'Ya sea que estés aquí para ganar experiencia o crecer acompañando a otras — SheHub es tu próximo paso.',
-    ca: 'Ja sigui que estiguis aquí per guanyar experiència o créixer acompanyant altres — SheHub és el teu següent pas.',
-  },
+'hero.tagline.part1': {
+  en: 'Whether you\'re here to grow your experience or grow mentoring others',
+  es: 'Ya sea que estés aquí para ganar experiencia o crecer acompañando a otras',
+  ca: 'Ja sigui que estiguis aquí per guanyar experiència o créixer acompanyant altres'
+},
+'hero.tagline.part2': {
+  en: 'SheHub is your next step.',
+  es: 'SheHub es tu próximo paso.',
+  ca: 'SheHub és el teu següent pas.'
+},
   'hero.discover': {
     en: 'Discover More',
     es: 'Descubre Más',

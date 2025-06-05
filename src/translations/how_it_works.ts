@@ -1,4 +1,3 @@
-
 import { TranslationObject } from './types';
 
 export const howItWorksTranslations: TranslationObject = {
