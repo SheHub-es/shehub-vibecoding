@@ -1,12 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Layout } from "@/components/layout/Layout";
-import { RedirectToTeaserPage } from "@/pages/closed-projects/RedirectToTeaserPage";
 import Index from "@/pages/Index";
 import WaitlistPage from "@/pages/WaitlistPage";
 import ThankYouPage from "@/pages/ThankYouPage";
 import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
 import CookiesPolicyPage from "@/pages/CookiesPolicyPage";
 import LegalNoticePage from "@/pages/LegalNoticePage";
+import PreviousProjectsPage from "@/pages/ClosedProjectsPage";
 import NotFound from "@/pages/NotFound";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -15,6 +14,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { Helmet } from "react-helmet-async";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -33,16 +34,18 @@ const AppContent = () => {
       <CookieConsent />
 
       <BrowserRouter>
+        <Navbar />
         <Routes>
-          <Route path="/closed-projects/teaser-page" element={<RedirectToTeaserPage />} />
-          <Route path="/" element={<Layout><Index /></Layout>} />
-          <Route path="/waitlist" element={<Layout><WaitlistPage /></Layout>} />
-          <Route path="/thank-you" element={<Layout><ThankYouPage /></Layout>} />
-          <Route path="/privacy" element={<Layout><PrivacyPolicyPage /></Layout>} />
-          <Route path="/cookies" element={<Layout><CookiesPolicyPage /></Layout>} />
-          <Route path="/legal-notice" element={<Layout><LegalNoticePage /></Layout>} />
-          <Route path="*" element={<Layout><NotFound /></Layout>} />
+          <Route path="/" element={<Index />} />
+          <Route path="/waitlist" element={<WaitlistPage />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/cookies" element={<CookiesPolicyPage />} />
+          <Route path="/legal-notice" element={<LegalNoticePage />} />
+          <Route path="/closed-projects" element={<PreviousProjectsPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
