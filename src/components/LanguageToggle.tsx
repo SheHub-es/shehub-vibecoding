@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { Languages } from 'lucide-react';

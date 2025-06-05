@@ -31,7 +31,7 @@ const Index = () => {
       {/* Hero: White */}
       <Hero />
 
-      {/* Why SheHub: Purple background */}
+      {/* Why SheHub: Brand Purple */}
       <WhyShehub />
       
       {/* How It Works: White */}

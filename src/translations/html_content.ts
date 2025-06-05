@@ -1,4 +1,6 @@
-export const htmlTranslations = {
+import { TranslationObject } from './types';
+
+export const htmlTranslations: TranslationObject = {
   title: {
     es: 'SheHub | Conecta. Crea. Rompe Barreras.',
     en: 'SheHub | Connect. Create. Break Barriers.',

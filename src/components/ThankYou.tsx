@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import FadeIn from '@/components/FadeIn';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Instagram, Linkedin } from 'lucide-react';
+import { Instagram } from 'lucide-react';
+import { FaLinkedinIn } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -70,7 +71,7 @@ const ThankYou = () => {
                     </a>
                     <a href="https://www.linkedin.com/company/shehub-es/" target="_blank" rel="noopener noreferrer" className="group flex items-center p-6 rounded-2xl bg-white/80 dark:bg-white/5 hover:bg-white transition-all duration-300 hover:scale-105 hover:shadow-glow-purple border border-white/50 dark:border-white/10" aria-label="LinkedIn">
                       <div className="p-4 rounded-xl bg-shehub-gradient mr-6 group-hover:scale-110 transition-transform">
-                        <Linkedin size={24} className="text-white" />
+                        <FaLinkedinIn size={24} className="text-white" />
                       </div>
                       <div>
                         <span className="font-semibold text-gray-800 dark:text-white text-lg">LinkedIn</span>

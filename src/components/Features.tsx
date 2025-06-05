@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
 import { Users, Rocket, Star, Network } from 'lucide-react';
