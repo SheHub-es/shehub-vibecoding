@@ -1,4 +1,3 @@
-import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
 import { ArrowDown } from 'lucide-react';
@@ -59,10 +58,11 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               {t('hero.waitlist')}
             </Link>
 
-
             <div className="mt-4 text-muted-foreground text-sm max-w-2xl">
-              {t('hero.tagline')}
+              <p>{t('hero.tagline.part1')}</p>
+              <p className="font-medium text-foreground mb-4">{t('hero.tagline.part2')}</p>
             </div>
+
           </FadeIn>
         </div>
       </div>
@@ -72,7 +72,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           href="#features"
           className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors"
         >
-          <span className="text-sm font-medium mb-2">{t('hero.discover')}</span>
+          <span className="text-sm font-medium mt-4">{t('hero.discover')}</span>
           <ArrowDown size={20} />
         </a>
       </div>

@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
 import { ClipboardCheck, Users, Lightbulb, Wrench } from 'lucide-react';

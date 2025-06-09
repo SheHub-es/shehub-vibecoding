@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from './FadeIn';
 import { Users, CheckCircle, Trophy, Clock } from 'lucide-react';
@@ -72,7 +71,6 @@ const OurImpact: React.FC<OurImpactProps> = ({ className }) => {
     </section>
   );
 };
-
 interface ImpactStatProps {
   icon: React.ReactNode;
   number: string;

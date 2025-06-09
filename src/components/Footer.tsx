@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Mail, Linkedin, Instagram, Sun, Moon } from "lucide-react";
+import { Mail, Instagram, Sun, Moon } from "lucide-react";
+import { FaLinkedinIn } from 'react-icons/fa';
 import PixelLogo from "./PixelLogo";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -74,7 +75,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 aria-label="LinkedIn"
                 className="text-foreground hover:text-primary transition"
               >
-                <Linkedin size={20} />
+                <FaLinkedinIn size={20} />
               </a>
               <a
                 href="https://www.instagram.com/shehub.es/"
@@ -91,7 +92,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             Mantener comentado hasta que se quiera mostrar públicamente en el footer.
             */}
 
-          {/*
+            {/*
           <div className="flex flex-col space-y-1 pt-2">
             <span className="font-semibold text-foreground">
               <Link
@@ -108,21 +109,25 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
 
           <div className="flex flex-col items-center md:items-end space-y-4">
             <nav className="flex flex-col items-center md:items-end space-y-2">
-              {["features", "how-it-works", "impact", "mentorship", "faq"].map(
-                (href, i) => (
-                  <HashLink
-                    key={href}
-                    smooth
-                    to={`/#${href}`}
-                    className="text-foreground hover:text-primary transition"
-                  >
-                    {t(
-                      `footer.${["why", "how", "impact", "mentors.title", "faq.title"][
-                      i
-                      ]
-                      }`
-                    )}
-                  </HashLink>
+              {["features", "how-it-works", "impact", "mentorship", "sponsors", "faq"].map(
+  (href, i) => (
+    <HashLink
+      key={href}
+      smooth
+      to={`/#${href}`}
+      className="text-foreground hover:text-primary transition"
+    >
+      {t(
+        `footer.${[
+          "why",
+          "how",
+          "impact",
+          "mentors.title",
+          "sponsors",
+          "faq.title"
+        ][i]}`
+      )}
+    </HashLink>
                 )
               )}
             </nav>

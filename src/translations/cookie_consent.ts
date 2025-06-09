@@ -1,4 +1,6 @@
-export const cookieConsentTranslations = {
+import { TranslationObject } from "./types";
+
+export const cookieConsentTranslations: TranslationObject = {
   'cookie.consent.title': {
     en: 'We use cookies',
     es: 'Utilizamos cookies',

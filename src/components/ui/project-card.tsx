@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -14,7 +14,6 @@ import {
   ChevronUp,
   Users,
   Github,
-  Linkedin,
   Globe
 } from 'lucide-react';
 import {
@@ -29,6 +28,7 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog';
+import { FaLinkedinIn } from 'react-icons/fa';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Collaborator {
@@ -146,14 +146,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   {t('closed.card.collaborators')}
                 </Button>
               </DialogTrigger>
-              <DialogContent className="max-w-md">
+              <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                   <DialogTitle className="flex items-center">
                     <Users size={20} className="mr-2 text-shehub-purple" />
                     {t('closed.card.collaborators')}
                   </DialogTitle>
                 </DialogHeader>
-                <div className="space-y-4">
+                <div className="max-h-[700px] overflow-y-auto pr-1 space-y-4">
                   {collaborators.map((c, i) => (
                     <div key={i} className="flex items-center justify-between p-3 bg-accent/50 rounded-lg">
                       <div>
@@ -161,14 +161,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         {c.role && <p className="text-sm text-muted-foreground">{c.role}</p>}
                       </div>
                       <div className="flex space-x-2">
-                        {c.linkedin && (
-                          <a href={c.linkedin} target="_blank" rel="noopener noreferrer" className="p-1 hover:text-[#0077B5] text-muted-foreground">
-                            <Linkedin size={16} />
-                          </a>
-                        )}
                         {c.github && (
                           <a href={c.github} target="_blank" rel="noopener noreferrer" className="p-1 hover:text-foreground text-muted-foreground">
                             <Github size={16} />
+                          </a>
+                        )}
+                        {c.linkedin && (
+                          <a href={c.linkedin} target="_blank" rel="noopener noreferrer" className="p-1 hover:text-[#0077B5] text-muted-foreground">
+                            <FaLinkedinIn className="w-4 h-4" />
                           </a>
                         )}
                         {c.website && (

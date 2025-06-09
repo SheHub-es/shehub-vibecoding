@@ -6,11 +6,11 @@ import HowItWorks from '@/components/HowItWorks';
 import ForMentors from '@/components/ForMentors';
 import OurImpact from '@/components/OurImpact';
 import FaqSection from '@/components/FaqSection';
+import Sponsors from '@/components/Sponsors';
 import JoinWaitlist from '@/components/JoinWaitlist';
 
 const Index = () => {
   useEffect(() => {
-    // Smooth scroll behavior for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -31,7 +31,7 @@ const Index = () => {
       {/* Hero: White */}
       <Hero />
 
-      {/* Why SheHub: Purple background */}
+      {/* Why SheHub: Brand Purple */}
       <WhyShehub />
       
       {/* How It Works: White */}
@@ -42,6 +42,9 @@ const Index = () => {
       
       {/* For Mentors: Brand Purple */}
       <ForMentors />
+
+      {/* Sponsors: Light gray */}
+      <Sponsors />
       
       {/* FAQ: White */}
       <FaqSection />
