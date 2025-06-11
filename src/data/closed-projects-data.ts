@@ -22,18 +22,23 @@ export const getClosedProjects = (t: TranslationFunction) => [
         linkedin: 'https://www.linkedin.com/in/anna-sarria/',
       },
       {
+        name: 'Ludmila Muiña',
+        role: 'Product Manager',
+        linkedin: 'https://www.linkedin.com/in/ludmila-muina/',
+      },
+      {
         name: 'Solange Molina Urrutia',
         role: 'User Experience Mentor',
         linkedin: 'https://www.linkedin.com/in/smolina/',
       },
       {
         name: 'Silvia Anguera Roldán',
-        role: 'UX/UI design',
+        role: 'UX/UI Design',
         linkedin: 'https://www.linkedin.com/in/silvia-anguera-rold%C3%A1n-17320220/',
       },
       {
         name: 'Triana Gracia',
-        role: 'UX/UI design',
+        role: 'UX/UI Design',
         linkedin: 'https://www.linkedin.com/in/triana-gracia/',
       },
       {
