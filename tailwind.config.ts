@@ -92,7 +92,6 @@ export default {
 					orange: '#F45C0D',
 					purple: '#816AFD',
 					indigo: '#6861FF',
-					'light-purple': '#D6BCFA',
 					'soft-orange': '#FEC6A1',
 				},
 			},
