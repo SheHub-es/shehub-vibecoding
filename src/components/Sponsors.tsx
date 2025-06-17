@@ -21,16 +21,19 @@ const Sponsors: React.FC<SponsorsProps> = ({ className }) => {
   }, []);
 
   return (
-    <section id="sponsors" className={cn("py-16 bg-gray-50 dark:bg-gray-300", className)}>
+    <section
+      id="sponsors"
+      className={cn('py-16 bg-muted/30 dark:bg-muted/60', className)}
+    >
       <div className="container max-w-6xl mx-auto px-6 md:px-8 py-4 md:py-12">
         <div className="text-center mb-12">
           <FadeIn>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
               {t('sponsors.title')}
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-muted-foreground">
               {t('sponsors.subtitle')}
             </p>
           </FadeIn>
@@ -46,7 +49,7 @@ const Sponsors: React.FC<SponsorsProps> = ({ className }) => {
 
         <FadeIn delay={0.3}>
           <div className="text-center mt-6">
-            <p className="text-sm text-gray-700 inline">
+            <p className="text-sm text-muted-foreground inline">
               {t('sponsors.interested')}
             </p>
             <button

@@ -16,9 +16,9 @@ const SponsorCard: React.FC<SponsorCardProps> = ({ sponsor }) => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Visit ${sponsor.name}`}
-      className="group transition-all duration-300 hover:scale-105 opacity-70 hover:opacity-100"
+      className="group transition-all duration-300 hover:scale-105 opacity-90 hover:opacity-100"
     >
-      <div className="bg-white rounded-lg p-6 border border-shehub-purple/30 shadow-sm group-hover:shadow-md transition-all max-w-[200px] mx-auto">
+      <div className="bg-violet-300 rounded-lg p-6 border border-shehub-purple/30 shadow-sm group-hover:shadow-md transition-all max-w-[200px] mx-auto">
         <img
           src={sponsor.logo}
           alt={`${sponsor.name} logo`}
