@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /thank-you
+
+Allow: /
+
+Sitemap: https://www.shehub.es/sitemap.xml
