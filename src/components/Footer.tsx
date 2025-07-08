@@ -7,6 +7,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import ClipboardToast from "@/components/ui/clipboard-toast";
 
 const STORAGE_KEY = "theme-preference";
 
@@ -32,6 +33,14 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
   const toggleTheme = () =>
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
+  const [showToast, setShowToast] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("info@shehub.es");
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2500);
+  };
+
   return (
     <footer
       className={cn(
@@ -48,18 +57,18 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             >
               <PixelLogo className="h-12 text-foreground" />
             </Link>
-            <p className="flex items-center text-foreground">
-              <Mail
-                size={16}
-                className="mr-2"
-              />
-              <a
-                href="mailto:info@shehub.es"
-                className="hover:underline"
-              >
-                info@shehub.es
-              </a>
+            <p
+              className="flex items-center text-foreground cursor-pointer"
+              onClick={handleCopyEmail}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && handleCopyEmail()}
+            >
+              <Mail size={16} className="mr-2" />
+              <span className="hover:underline">info@shehub.es</span>
             </p>
+            <ClipboardToast show={showToast} />
+
             <a
               href="https://www.shehub.es"
               target="_blank"
@@ -72,6 +81,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <span className="text-foreground">{t("footer.follow")}</span>
               <a
                 href="https://www.linkedin.com/company/shehub-es/about/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="text-foreground hover:text-primary transition"
               >
@@ -79,6 +90,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               </a>
               <a
                 href="https://www.instagram.com/shehub.es/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="text-foreground hover:text-primary transition"
               >
@@ -87,9 +100,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             </div>
 
             {/* 
-            🔒 Sección oculta temporalmente del footer.
-            Mostraba un enlace a la página de proyectos cerrados.
-            Mantener comentado hasta que se quiera mostrar públicamente en el footer.
+            🔒 Temporarily hidden section of the footer.
+            Displayed a link to the closed projects page.
+            Keep commented until you want to show it publicly in the footer.🔒
             */}
 
             {/*
@@ -110,24 +123,24 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <div className="flex flex-col items-center md:items-end space-y-4">
             <nav className="flex flex-col items-center md:items-end space-y-2">
               {["features", "how-it-works", "impact", "mentorship", "sponsors", "faq"].map(
-  (href, i) => (
-    <HashLink
-      key={href}
-      smooth
-      to={`/#${href}`}
-      className="text-foreground hover:text-primary transition"
-    >
-      {t(
-        `footer.${[
-          "why",
-          "how",
-          "impact",
-          "mentors.title",
-          "sponsors",
-          "faq.title"
-        ][i]}`
-      )}
-    </HashLink>
+                (href, i) => (
+                  <HashLink
+                    key={href}
+                    smooth
+                    to={`/#${href}`}
+                    className="text-foreground hover:text-primary transition"
+                  >
+                    {t(
+                      `footer.${[
+                        "why",
+                        "how",
+                        "impact",
+                        "mentors.title",
+                        "sponsors",
+                        "faq.title"
+                      ][i]}`
+                    )}
+                  </HashLink>
                 )
               )}
             </nav>
