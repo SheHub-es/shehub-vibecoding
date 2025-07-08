@@ -35,4 +35,10 @@ export const sponsors = [
     alt: 'Innolt Logo',
     url: 'https://www.inno-it.es/',
   },
+  {
+    name: 'femCoders Club',
+    logo: '/images/sponsors/femcoders-logo-positive.png',
+    alt: 'femCoders Club Logo',
+    url: 'https://www.femcodersclub.com/',
+  },
 ];
