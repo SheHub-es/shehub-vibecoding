@@ -40,50 +40,55 @@ const PrivacyPolicy = () => {
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 border-b border-border pb-3">
               {getText("privacy.policy.introduction.title")}
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              {getText("privacy.policy.introduction.content")}
+            <p className="text-muted-foreground leading-relaxed text-lg"
+              dangerouslySetInnerHTML={{ __html: getText("privacy.policy.introduction.content") }}
+            ></p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3 border-b border-border pb-3">
+              {getText("privacy.policy.data_collected.title")}
+            </h2>
+            <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 pb-3">
+              {getText("privacy.policy.data_collected.description")}
+            </h3>
+            <ul className="space-y-4 text-muted-foreground text-lg">
+              {[
+                "name",
+                "email",
+                "experience",
+                "city",
+                "linkedin",
+              ].map((item) => (
+                <li key={item} className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-shehub-purple rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                  <span className="leading-relaxed">
+                    {getText(`privacy.policy.data_collected.${item}`)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-muted-foreground leading-relaxed text-lg mt-6">
+              {getText("privacy.policy.data_collected.analytics")}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 border-b border-border pb-3">
-              {getText("privacy.policy.data_collected.title")}
-            </h2>
-            <ul className="space-y-4 text-muted-foreground text-lg">
-              {["name", "email", "city", "linkedin", "experience"].map(
-                (item) => (
-                  <li
-                    key={item}
-                    className="flex items-start"
-                  >
-                    <span className="inline-block w-2 h-2 bg-shehub-purple rounded-full mt-3 mr-4 flex-shrink-0"></span>
-                    <span className="leading-relaxed">
-                      {getText(`privacy.policy.data_collected.${item}`)}
-                    </span>
-                  </li>
-                )
-              )}
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 border-b border-border pb-3">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3 border-b border-border pb-3">
               {getText("privacy.policy.usage.title")}
             </h2>
+            <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 pb-3">
+              {getText("privacy.policy.usage.description")}
+            </h3>
             <ul className="space-y-4 text-muted-foreground text-lg">
-              {["newsletter", "mentorship", "groups", "analytics"].map(
-                (item) => (
-                  <li
-                    key={item}
-                    className="flex items-start"
-                  >
-                    <span className="inline-block w-2 h-2 bg-shehub-purple rounded-full mt-3 mr-4 flex-shrink-0"></span>
-                    <span className="leading-relaxed">
-                      {getText(`privacy.policy.usage.${item}`)}
-                    </span>
-                  </li>
-                )
-              )}
+              {["newsletter", "waitlists", "groups", "mentorship"].map((item) => (
+                <li key={item} className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-shehub-purple rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                  <span className="leading-relaxed">
+                    {getText(`privacy.policy.usage.${item}`)}
+                  </span>
+                </li>
+              ))}
             </ul>
           </section>
 
@@ -91,21 +96,22 @@ const PrivacyPolicy = () => {
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 border-b border-border pb-3">
               {getText("privacy.policy.legal_basis.title")}
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              {getText("privacy.policy.legal_basis.content")}
-            </p>
+            <p className="text-muted-foreground leading-relaxed text-lg"
+              dangerouslySetInnerHTML={{ __html: getText("privacy.policy.legal_basis.content") }}
+            ></p>
+
           </section>
 
           <section>
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 border-b border-border pb-3">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3 border-b border-border pb-3">
               {getText("privacy.policy.sharing.title")}
             </h2>
+            <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 pb-3">
+              {getText("privacy.policy.sharing.description")}
+            </h3>
             <ul className="space-y-4 text-muted-foreground text-lg">
-              {["mentors", "team", "no_third_party"].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start"
-                >
+              {["groups", "mentors", "team"].map((item) => (
+                <li key={item} className="flex items-start">
                   <span className="inline-block w-2 h-2 bg-shehub-purple rounded-full mt-3 mr-4 flex-shrink-0"></span>
                   <span className="leading-relaxed">
                     {getText(`privacy.policy.sharing.${item}`)}
@@ -116,26 +122,24 @@ const PrivacyPolicy = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 border-b border-border pb-3">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-3 border-b border-border pb-3">
               {getText("privacy.policy.rights.title")}
             </h2>
+            <h3 className="text-lg md:text-xl font-semibold text-foreground mb-3 pb-3">
+              {getText("privacy.policy.rights.description")}
+            </h3>
             <ul className="space-y-4 text-muted-foreground text-lg">
-              {["access", "rectification", "deletion", "opposition"].map(
-                (item) => (
-                  <li
-                    key={item}
-                    className="flex items-start"
-                  >
-                    <span className="inline-block w-2 h-2 bg-shehub-purple rounded-full mt-3 mr-4 flex-shrink-0"></span>
-                    <span className="leading-relaxed">
-                      {getText(`privacy.policy.rights.${item}`)}
-                    </span>
-                  </li>
-                )
-              )}
+              {["access", "rectification", "deletion", "opposition"].map((item) => (
+                <li key={item} className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-shehub-purple rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                  <span className="leading-relaxed">
+                    {getText(`privacy.policy.rights.${item}`)}
+                  </span>
+                </li>
+              ))}
             </ul>
             <p className="text-muted-foreground leading-relaxed text-lg mt-6">
-              {getText("privacy.policy.rights.contact")}{" "}
+              {getText("privacy.policy.rights.contact")} {""}
               <button
                 onClick={handleCopyEmail}
                 className="text-shehub-purple hover:text-shehub-orange transition-colors duration-300 font-medium underline"
@@ -150,9 +154,19 @@ const PrivacyPolicy = () => {
               {getText("privacy.policy.security.title")}
             </h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              {getText("privacy.policy.security.content")}
+              {getText("privacy.policy.usage.analytics")}
             </p>
           </section>
+
+          <section>
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 border-b border-border pb-3">
+              {getText("privacy.policy.retention.title")}
+            </h2>
+            <p className="text-muted-foreground leading-relaxed text-lg">
+              {getText("privacy.policy.retention.content")}
+            </p>
+          </section>
+
 
           <section>
             <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 border-b border-border pb-3">
@@ -168,7 +182,7 @@ const PrivacyPolicy = () => {
               {getText("privacy.policy.contact.title")}
             </h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              {getText("privacy.policy.contact.content")}{" "}
+              {getText("privacy.policy.contact.content")} {""}
               <button
                 onClick={handleCopyEmail}
                 className="text-shehub-purple hover:text-shehub-orange transition-colors duration-300 font-medium underline"
@@ -180,7 +194,7 @@ const PrivacyPolicy = () => {
 
           <footer className="pt-8 border-t border-border">
             <p className="text-center text-muted-foreground text-sm">
-              {getText("privacy.policy.last_updated")}:{" "}
+              {getText("privacy.policy.last_updated")}: {""}
               {new Date().toLocaleDateString()}
             </p>
           </footer>
