@@ -41,4 +41,10 @@ export const sponsors = [
     alt: 'femCoders Club Logo',
     url: 'https://www.femcodersclub.com/',
   },
+  {
+    name: 'tecnoempleo.com',
+    logo: '/images/sponsors/logo_tecnoempleo.svg',
+    alt: 'tecnoempleo.com Logo',
+    url: 'https://www.tecnoempleo.com/',
+  },
 ];
