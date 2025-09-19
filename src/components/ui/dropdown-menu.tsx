@@ -37,7 +37,7 @@ const DropdownMenuTriggerButton = React.forwardRef<
           {...props}
           className={cn(
             "inline-flex w-full items-center justify-between gap-2",
-            "h-10 rounded-md border bg-white px-3 text-sm",
+            "h-10 rounded-md border bg-transparent px-3 text-sm",
             "border-border text-foreground",
             "hover:border-primary/80",
             "focus:outline-none focus:ring-3 focus:ring-shehub-purple/60",
