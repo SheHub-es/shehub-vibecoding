@@ -17,9 +17,9 @@ export const waitlistFormTranslations: TranslationObject = {
     ca: 'Llista d’espera',
   },
   'waitlist.heading.subtitle': {
-    en: "Be part of SheHub: tackle real challenges in real projects, collaborate with multidisciplinary teams, and boost your professional profile.",
+    en: 'Be part of SheHub: tackle real challenges in real projects, collaborate with multidisciplinary teams, and boost your professional profile.',
     es: 'Forma parte de SheHub: afronta retos de verdad en proyectos reales, colabora con equipos multidisciplinares y potencia tu perfil profesional.',
-    ca: "Forma part de SheHub: afronta reptes de veritat en projectes reals, col·labora amb equips multidisciplinaris i potencia el teu perfil professional.",
+    ca: 'Forma part de SheHub: afronta reptes de veritat en projectes reals, col·labora amb equips multidisciplinaris i potencia el teu perfil professional.',
   },
 
   'waitlist.form.label.name': {
@@ -87,10 +87,25 @@ export const waitlistFormTranslations: TranslationObject = {
     es: 'Añadiéndote…',
     ca: 'Afegint-te…',
   },
-  'waitlist.form.disclaimer': {
-    en: '*By registering, you accept our privacy policy and terms of service.',
-    es: '*Al registrarte, aceptas nuestra política de privacidad y términos de servicio.',
-    ca: '*En registrar-te, acceptes la nostra política de privacitat i termes de servei.',
+  'waitlist.form.terms.prefix': {
+    en: 'I accept the',
+    es: 'Acepto la',
+    ca: 'Accepto la',
+  },
+  'waitlist.form.terms.privacy': {
+    en: 'Privacy Policy',
+    es: 'Política de Privacidad',
+    ca: 'Política de Privadesa',
+  },
+  'waitlist.form.terms.connector': {
+    en: 'and the',
+    es: 'y los',
+    ca: 'i els',
+  },
+  'waitlist.form.terms.terms': {
+    en: 'Terms of Service',
+    es: 'Términos de Servicio',
+    ca: 'Termes de Servei',
   },
   'waitlist.form.error.required': {
     en: 'Please fill out all required fields',

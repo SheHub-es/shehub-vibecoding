@@ -8,18 +8,15 @@ import { Info, Check } from 'lucide-react';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FadeIn from './FadeIn';
-import { submitWaitlistForm, checkEmailExists } from '@/lib/api.js'; // Importar tus funciones
+import { submitWaitlistForm, checkEmailExists } from '@/lib/api.js'; 
 
 interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  role: string;
+  role: string; // ← Cambiar de roles: string[] a role: string
   mentor: boolean;
 }
-
-// Remove all the API interface definitions and functions since we're using the external lib
-// Just keep the FormData interface
 
 const WaitlistForm: React.FC = () => {
   const { t, language } = useLanguage();
@@ -27,10 +24,10 @@ const WaitlistForm: React.FC = () => {
   const mentorParam = search.get('mentor') === 'true';
   
   const [formData, setFormData] = useState<FormData>({
-    firstName: '',
-    lastName: '',
-    email: '',
-    role: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    role: "", // ← Cambiar de roles: [] a role: ""
     mentor: mentorParam,
   });
   
@@ -44,15 +41,15 @@ const WaitlistForm: React.FC = () => {
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth < 768);
     onResize();
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     }));
 
     // Check email existence when email changes
@@ -105,7 +102,7 @@ const WaitlistForm: React.FC = () => {
       return false;
     }
     
-    if (!formData.role.trim()) {
+    if (!formData.role.trim()) { // ← Corregido: usar role en lugar de roles
       toast.error('El rol deseado es obligatorio');
       return false;
     }
@@ -134,7 +131,7 @@ const WaitlistForm: React.FC = () => {
         firstName: formData.firstName.trim(),
         lastName: formData.lastName.trim(),
         mentor: formData.mentor,
-        role: formData.role.trim(),
+        role: formData.role.trim(), // ← Corregido: usar role
         language: language.toUpperCase(),
         utmSource: search.get('utm_source'),
         utmMedium: search.get('utm_medium'),
@@ -153,7 +150,7 @@ const WaitlistForm: React.FC = () => {
         firstName: '', 
         lastName: '', 
         email: '', 
-        role: '', 
+        role: '', // ← Corregido: usar role
         mentor: false 
       });
       
@@ -168,7 +165,7 @@ const WaitlistForm: React.FC = () => {
           value: 1,
           email: formData.email,
           mentor: formData.mentor,
-          role: formData.role,
+          role: formData.role, // ← Corregido: usar role
           utm_source: search.get('utm_source') || undefined,
           utm_medium: search.get('utm_medium') || undefined,
           utm_campaign: search.get('utm_campaign') || undefined,
@@ -201,37 +198,41 @@ const WaitlistForm: React.FC = () => {
   };
 
   return (
-    <section id="waitlist" className="py-24 bg-background text-foreground">
+    <section
+      id="waitlist"
+      className="bg-background text-foreground py-20 "
+    >
       <div className="container max-w-6xl mx-auto px-6 md:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <FadeIn direction="left">
             <div>
               <span className="px-4 py-1.5 bg-shehub-purple/20 text-shehub-purple font-pixel text-sm rounded-full font-medium mb-6 inline-block uppercase tracking-wider">
-                {t('waitlist.form.ctabadge')}
+                {t("waitlist.form.ctabadge")}
               </span>
               <h2 className="text-3xl md:text-4xl mb-6">
-                <span className="font-bold">{t('waitlist.heading.title')}</span>
-                {' '}
-                <span className="font-bold gradient-text">{t('waitlist.heading.title.gradient')}</span>
+                <span className="font-bold">{t("waitlist.heading.title")}</span>{" "}
+                <span className="font-bold gradient-text">
+                  {t("waitlist.heading.title.gradient")}
+                </span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                {t('waitlist.heading.subtitle')}
+                {t("waitlist.heading.subtitle")}
               </p>
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <Check size={18} className="text-shehub-purple" />
-                <span>{t('waitlist.form.benefit.realProjects')}</span>
+                <span>{t("waitlist.form.benefit.realProjects")}</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground mt-3">
                 <Check size={18} className="text-shehub-purple" />
-                <span>{t('waitlist.form.benefit.collaboration')}</span>
+                <span>{t("waitlist.form.benefit.collaboration")}</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground mt-3">
                 <Check size={18} className="text-shehub-purple" />
-                <span>{t('waitlist.form.benefit.mentorship')}</span>
+                <span>{t("waitlist.form.benefit.mentorship")}</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground mt-3">
                 <Check size={18} className="text-shehub-purple" />
-                <span>{t('waitlist.form.benefit.portfolio')}</span>
+                <span>{t("waitlist.form.benefit.portfolio")}</span>
               </div>
             </div>
           </FadeIn>
@@ -243,25 +244,29 @@ const WaitlistForm: React.FC = () => {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="firstName">{t('waitlist.form.label.name')}</Label>
+                  <Label htmlFor="firstName">
+                    {t("waitlist.form.label.name")}
+                  </Label>
                   <Input
                     id="firstName"
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    placeholder={t('waitlist.form.placeholder.name')}
+                    placeholder={t("waitlist.form.placeholder.name")}
                     required
                     maxLength={80}
                   />
                 </div>
                 <div>
-                  <Label htmlFor="lastName">{t('waitlist.form.label.lastname')}</Label>
+                  <Label htmlFor="lastName">
+                    {t("waitlist.form.label.lastname")}
+                  </Label>
                   <Input
                     id="lastName"
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    placeholder={t('waitlist.form.placeholder.lastname')}
+                    placeholder={t("waitlist.form.placeholder.lastname")}
                     required
                     maxLength={80}
                   />
@@ -269,14 +274,14 @@ const WaitlistForm: React.FC = () => {
               </div>
 
               <div>
-                <Label htmlFor="email">{t('waitlist.form.label.email')}</Label>
+                <Label htmlFor="email">{t("waitlist.form.label.email")}</Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder={t('waitlist.form.placeholder.email')}
+                  placeholder={t("waitlist.form.placeholder.email")}
                   required
                   maxLength={254}
                   className={emailExists ? 'border-red-500' : checkingEmail ? 'border-yellow-500' : ''}
@@ -291,7 +296,9 @@ const WaitlistForm: React.FC = () => {
 
               <div>
                 <div className="flex items-center mb-1 space-x-1">
-                  <Label htmlFor="role">{t('waitlist.form.label.role')}</Label>
+                  <Label htmlFor="role">
+                    {t("waitlist.form.label.role")}
+                  </Label>
                   <Tooltip
                     open={isMobile ? tooltipOpen : undefined}
                     onOpenChange={isMobile ? setTooltipOpen : undefined}
@@ -303,12 +310,12 @@ const WaitlistForm: React.FC = () => {
                       />
                     </TooltipTrigger>
                     <TooltipContent
-                      side={isMobile ? 'top' : 'right'}
+                      side={isMobile ? "top" : "right"}
                       align="center"
                       sideOffset={isMobile ? 8 : 0}
                       className="bg-shehub-purple text-white rounded-md px-4 py-3 w-[260px] text-sm text-left"
                     >
-                      {t('waitlist.form.tooltip.role')}
+                      {t("waitlist.form.tooltip.role")}
                     </TooltipContent>
                   </Tooltip>
                 </div>

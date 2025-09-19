@@ -261,7 +261,7 @@ async function testImport() {
       }
     }
   } catch (error) {
-    console.error('Import test failed:', error);
+    console.error('❌ Error en la conexión:', error);
   }
 }
 
