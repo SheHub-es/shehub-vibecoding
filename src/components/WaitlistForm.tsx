@@ -20,11 +20,7 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
 } from "@/components/ui/dropdown-menu";
-
-import {
-  setFirebaseApplicant,
-  ApplicantData,
-} from "@/api/firebase/setFirebaseApplicant";
+import { submitWaitlistForm } from "@/lib/api";
 
 import { ROLE_OPTIONS, labelForRole } from "@/constants/roles";
 
@@ -32,7 +28,7 @@ interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  role: string;
+  roles: string[];
   mentor: boolean;
   acceptTerms: boolean;
 }
@@ -45,7 +41,7 @@ const WaitlistForm: React.FC = () => {
     firstName: "",
     lastName: "",
     email: "",
-    role: "",
+    roles: [],
     mentor: mentorParam,
     acceptTerms: false,
   });
@@ -53,6 +49,7 @@ const WaitlistForm: React.FC = () => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [tooltipOpen, setTooltipOpen] = useState(false);
+  const [submitAttempted, setSubmitAttempted] = useState(false);
 
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth < 768);
@@ -71,11 +68,12 @@ const WaitlistForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitAttempted(true);
     if (
       !formData.firstName ||
       !formData.lastName ||
       !formData.email ||
-      !formData.role
+      formData.roles.length === 0
     ) {
       toast.error(t("waitlist.form.error.required"));
       return;
@@ -88,34 +86,34 @@ const WaitlistForm: React.FC = () => {
     if (!formData.acceptTerms) {
       toast.error(
         t("waitlist.form.error.terms") ||
-          "Debes aceptar la política de privacidad y los términos de servicio."
+        "Debes aceptar la política de privacidad y los términos de servicio."
       );
       return;
     }
     setIsSubmitting(true);
-    const applicant: ApplicantData = {
+    const payload = {
+      email: formData.email,
       firstName: formData.firstName,
       lastName: formData.lastName,
-      email: formData.email,
-      role: formData.role,
       mentor: formData.mentor,
-      timestamp: new Date(),
-      utmSource: search.get("utm_source"),
-      utmMedium: search.get("utm_medium"),
-      utmCampaign: search.get("utm_campaign"),
-      language: language,
+      roles: formData.roles,
+      language: language || 'ES',
     };
     try {
-      await setFirebaseApplicant(formData.email, applicant);
+      await submitWaitlistForm(payload);
       toast.success(t("waitlist.form.toast.success"));
-      setFormData({
+      setFormData(prev => ({
+        ...prev,
         firstName: "",
         lastName: "",
         email: "",
-        role: "",
+        roles: [],
         mentor: false,
         acceptTerms: false,
-      });
+      }));
+
+      setSubmitAttempted(false);
+
       sessionStorage.setItem("waitlist_submitted", "true");
 
       if (typeof window !== "undefined" && typeof window.gtag === "function") {
@@ -123,7 +121,6 @@ const WaitlistForm: React.FC = () => {
           event_category: "engagement",
           event_label: "Waitlist Form",
           value: 1,
-          email: formData.email,
           utm_source: search.get("utm_source") || undefined,
           utm_medium: search.get("utm_medium") || undefined,
           utm_campaign: search.get("utm_campaign") || undefined,
@@ -134,7 +131,7 @@ const WaitlistForm: React.FC = () => {
       navigate("/thank-you");
     } catch (err: unknown) {
       const errorMsg = err instanceof Error ? err.message : "Unknown error";
-      console.error("[Waitlist] Firebase error:", errorMsg, err);
+      console.error("[Waitlist] Backend error:", errorMsg, err);
       toast.error(
         t("waitlist.form.toast.error") || "Error al enviar. Inténtalo de nuevo."
       );
@@ -143,8 +140,8 @@ const WaitlistForm: React.FC = () => {
     }
   };
 
-  const selectedRoleLabel = formData.role
-    ? labelForRole(formData.role, t)
+  const selectedRoleLabel = formData.roles[0]
+    ? labelForRole(formData.roles[0], t)
     : null;
 
   return (
@@ -248,7 +245,12 @@ const WaitlistForm: React.FC = () => {
 
               <div>
                 <div className="flex items-center mb-1 space-x-1">
-                  <Label id="role-label" htmlFor="role">{t('waitlist.form.label.role')}</Label>
+                  <Label
+                    id="role-label"
+                    htmlFor="role"
+                  >
+                    {t("waitlist.form.label.role")}
+                  </Label>
                   <Tooltip
                     open={isMobile ? tooltipOpen : undefined}
                     onOpenChange={isMobile ? setTooltipOpen : undefined}
@@ -275,6 +277,8 @@ const WaitlistForm: React.FC = () => {
                   <DropdownMenuTriggerButton
                     id="role"
                     aria-labelledby="role-label"
+                    aria-required="true"
+                    aria-invalid={formData.roles.length === 0 ? true : undefined}
                     className="w-full"
                     placeholder={
                       t("waitlist.form.placeholder.role") || "Rol deseado"
@@ -288,10 +292,11 @@ const WaitlistForm: React.FC = () => {
                     avoidCollisions={false}
                   >
                     <DropdownMenuRadioGroup
-                      value={formData.role}
-                      onValueChange={(value) =>
-                        setFormData((prev) => ({ ...prev, role: value }))
-                      }
+                      value={formData.roles[0] ?? ""}
+                      onValueChange={(value) => {
+                        setFormData(prev => ({ ...prev, roles: [value] }));
+                        setSubmitAttempted(false);
+                      }}
                     >
                       {ROLE_OPTIONS.map((opt) => (
                         <DropdownMenuRadioItem

@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://shehub.freeddns.org';
+const API_BASE_URL = import.meta.env.VITE_CORE_API_URL || 'https://shehub.freeddns.org';
 
 export async function submitWaitlistForm(formData) {
   try {
