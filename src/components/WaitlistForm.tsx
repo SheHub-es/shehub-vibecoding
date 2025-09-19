@@ -8,7 +8,7 @@ import { Info, Check } from 'lucide-react';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FadeIn from './FadeIn';
-import { setFirebaseApplicant, ApplicantData } from '@/api/firebase/setFirebaseApplicant';
+import { submitWaitlistForm, checkEmailExists } from '@/lib/api.js'; // Importar tus funciones
 
 interface FormData {
   firstName: string;
@@ -18,10 +18,14 @@ interface FormData {
   mentor: boolean;
 }
 
+// Remove all the API interface definitions and functions since we're using the external lib
+// Just keep the FormData interface
+
 const WaitlistForm: React.FC = () => {
   const { t, language } = useLanguage();
   const [search] = useSearchParams();
   const mentorParam = search.get('mentor') === 'true';
+  
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -29,7 +33,10 @@ const WaitlistForm: React.FC = () => {
     role: '',
     mentor: mentorParam,
   });
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [emailExists, setEmailExists] = useState(false);
+  const [checkingEmail, setCheckingEmail] = useState(false);
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -47,44 +54,121 @@ const WaitlistForm: React.FC = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
     }));
+
+    // Check email existence when email changes
+    if (name === 'email' && value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      checkEmailExistence(value);
+    } else if (name === 'email') {
+      setEmailExists(false);
+    }
+  };
+
+  const checkEmailExistence = async (email: string) => {
+    try {
+      setCheckingEmail(true);
+      const result = await checkEmailExists(email);
+      setEmailExists(result.exists);
+      
+      if (result.exists) {
+        if (result.isDeleted) {
+          toast.info('Este email fue usado anteriormente pero está marcado como eliminado.');
+        } else {
+          toast.warning('Este email ya está registrado en nuestra base de datos.');
+        }
+      }
+    } catch (error) {
+      console.error('Error checking email:', error);
+    } finally {
+      setCheckingEmail(false);
+    }
+  };
+
+  const validateForm = (): boolean => {
+    if (!formData.firstName.trim()) {
+      toast.error('El nombre es obligatorio');
+      return false;
+    }
+    
+    if (!formData.lastName.trim()) {
+      toast.error('El apellido es obligatorio');
+      return false;
+    }
+    
+    if (!formData.email.trim()) {
+      toast.error('El email es obligatorio');
+      return false;
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error('Formato de email inválido');
+      return false;
+    }
+    
+    if (!formData.role.trim()) {
+      toast.error('El rol deseado es obligatorio');
+      return false;
+    }
+
+    if (emailExists) {
+      toast.error('Este email ya está registrado');
+      return false;
+    }
+
+    return true;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.role) {
-      toast.error(t('waitlist.form.error.required'));
+    
+    if (!validateForm()) {
       return;
     }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast.error(t('waitlist.form.error.email'));
-      return;
-    }
-    setIsSubmitting(true);
-    const applicant: ApplicantData = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      role: formData.role,
-      mentor: formData.mentor,
-      timestamp: new Date(),
-      utmSource: search.get('utm_source'),
-      utmMedium: search.get('utm_medium'),
-      utmCampaign: search.get('utm_campaign'),
-      language: language,
-    };
-    try {
-      await setFirebaseApplicant(formData.email, applicant);
-      toast.success(t('waitlist.form.toast.success'));
-      setFormData({ firstName: '', lastName: '', email: '', role: '', mentor: false });
-      sessionStorage.setItem('waitlist_submitted', 'true');
 
+    setIsSubmitting(true);
+
+    try {
+      // Use the external waitlist function
+      const formPayload = {
+        email: formData.email.trim().toLowerCase(),
+        firstName: formData.firstName.trim(),
+        lastName: formData.lastName.trim(),
+        mentor: formData.mentor,
+        role: formData.role.trim(),
+        language: language.toUpperCase(),
+        utmSource: search.get('utm_source'),
+        utmMedium: search.get('utm_medium'),
+        utmCampaign: search.get('utm_campaign')
+      };
+
+      console.log('Submitting waitlist form with data:', formPayload);
+      const result = await submitWaitlistForm(formPayload);
+      console.log('Waitlist submission successful:', result);
+
+      // Success feedback
+      toast.success(t('waitlist.form.toast.success') || '¡Registro exitoso! Te contactaremos pronto.');
+      
+      // Clear form
+      setFormData({ 
+        firstName: '', 
+        lastName: '', 
+        email: '', 
+        role: '', 
+        mentor: false 
+      });
+      
+      sessionStorage.setItem('waitlist_submitted', 'true');
+      sessionStorage.setItem('submitted_email', formData.email);
+
+      // Analytics tracking
       if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
         window.gtag('event', 'waitlist_submission', {
           event_category: 'engagement',
           event_label: 'Waitlist Form',
           value: 1,
           email: formData.email,
+          mentor: formData.mentor,
+          role: formData.role,
           utm_source: search.get('utm_source') || undefined,
           utm_medium: search.get('utm_medium') || undefined,
           utm_campaign: search.get('utm_campaign') || undefined,
@@ -92,12 +176,25 @@ const WaitlistForm: React.FC = () => {
         });
       }
 
+      // Navigate to success page
       navigate('/thank-you');
 
     } catch (err: unknown) {
       const errorMsg = err instanceof Error ? err.message : 'Unknown error';
-      console.error('[Waitlist] Firebase error:', errorMsg, err);
-      toast.error(t('waitlist.form.toast.error') || 'Error al enviar. Inténtalo de nuevo.');
+      console.error('[Waitlist] API error:', errorMsg, err);
+      
+      let userMessage = t('waitlist.form.toast.error') || 'Error al enviar. Inténtalo de nuevo.';
+      
+      // Customize error messages
+      if (errorMsg.includes('email')) {
+        userMessage = 'Error con el email. Verifica que sea correcto.';
+      } else if (errorMsg.includes('validation')) {
+        userMessage = 'Datos inválidos. Revisa los campos requeridos.';
+      } else if (errorMsg.includes('500')) {
+        userMessage = 'Error del servidor. Inténtalo más tarde.';
+      }
+      
+      toast.error(userMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -154,6 +251,7 @@ const WaitlistForm: React.FC = () => {
                     onChange={handleChange}
                     placeholder={t('waitlist.form.placeholder.name')}
                     required
+                    maxLength={80}
                   />
                 </div>
                 <div>
@@ -165,6 +263,7 @@ const WaitlistForm: React.FC = () => {
                     onChange={handleChange}
                     placeholder={t('waitlist.form.placeholder.lastname')}
                     required
+                    maxLength={80}
                   />
                 </div>
               </div>
@@ -179,7 +278,15 @@ const WaitlistForm: React.FC = () => {
                   onChange={handleChange}
                   placeholder={t('waitlist.form.placeholder.email')}
                   required
+                  maxLength={254}
+                  className={emailExists ? 'border-red-500' : checkingEmail ? 'border-yellow-500' : ''}
                 />
+                {checkingEmail && (
+                  <p className="text-sm text-yellow-600 mt-1">Verificando email...</p>
+                )}
+                {emailExists && (
+                  <p className="text-sm text-red-600 mt-1">Este email ya está registrado</p>
+                )}
               </div>
 
               <div>
@@ -203,7 +310,6 @@ const WaitlistForm: React.FC = () => {
                     >
                       {t('waitlist.form.tooltip.role')}
                     </TooltipContent>
-
                   </Tooltip>
                 </div>
                 <Input
@@ -213,6 +319,7 @@ const WaitlistForm: React.FC = () => {
                   onChange={handleChange}
                   placeholder={t('waitlist.form.placeholder.role')}
                   required
+                  maxLength={200}
                 />
               </div>
 
@@ -224,18 +331,27 @@ const WaitlistForm: React.FC = () => {
                   checked={formData.mentor}
                   onChange={handleChange}
                   className="h-4 w-4 rounded border-border text-accent focus:ring-accent"
+                  aria-describedby="mentor-description"
+                  title="Marcar si quieres ser mentora en la comunidad"
                 />
-                <Label htmlFor="mentor">{t('waitlist.form.label.mentor')}</Label>
+                <Label htmlFor="mentor" className="cursor-pointer">
+                  {t('waitlist.form.label.mentor')}
+                </Label>
+                <span id="mentor-description" className="sr-only">
+                  Marcar si quieres ser mentora en la comunidad
+                </span>
               </div>
 
               <Button
                 type="submit"
                 className="w-full bg-shehub-gradient text-white hover:shadow-glow-purple hover:scale-105 transition-all rounded-full"
-                disabled={isSubmitting}
+                disabled={isSubmitting || emailExists || checkingEmail}
               >
-                {isSubmitting ? t('waitlist.form.button.submitting') : t('waitlist.form.button.join')}
+                {isSubmitting 
+                  ? (t('waitlist.form.button.submitting') || 'Enviando...') 
+                  : (t('waitlist.form.button.join') || 'Unirme a la lista')
+                }
               </Button>
-
 
               <p className="text-xs text-center text-muted-foreground pt-4">
                 {t('waitlist.form.disclaimer')}
