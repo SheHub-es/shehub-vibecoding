@@ -1,16 +1,17 @@
+const API_BASE_URL = import.meta.env.PROD 
+  ? (import.meta.env.VITE_API_BASE_URL || "https://shehub.freeddns.org")
+  : "https://shehub.freeddns.org";
+
 export async function submitWaitlistForm(formData) {
   try {
-    // Step 1: Crear Applicant con rol de sistema FIJO
     const applicantData = {
       email: formData.email,
       firstName: formData.firstName,
       lastName: formData.lastName,
       mentor: formData.mentor || false,
-      roles: ["APPLICANT"], // ← SIEMPRE rol fijo del sistema
+      roles: ["APPLICANT"], 
       language: formData.language || 'ES'
     };
-
-    console.log('Creating applicant with data:', applicantData);
     
     const applicantResponse = await fetch(`${API_BASE_URL}/api/applicants`, {
       method: 'POST',
@@ -33,12 +34,10 @@ export async function submitWaitlistForm(formData) {
     }
 
     const createdApplicant = await applicantResponse.json();
-    console.log('Applicant created successfully:', createdApplicant);
-
-    // Step 2: Crear ApplicantProfile con rol deseado del formulario
+  
     const profileData = {
       linkedInProfile: 'https://linkedin.com/in/profile-pendiente',
-      rolDeseado: formData.role, // ← AQUÍ va el rol del formulario
+      rolDeseado: formData.role, 
       motivacion: `Registro desde formulario web - ${formData.language || 'ES'}`,
       experiencia: '',
       disponibilidad: 'LT5',
@@ -50,8 +49,6 @@ export async function submitWaitlistForm(formData) {
         language: formData.language || 'ES'
       }
     };
-
-    console.log('Creating profile for applicant ID:', createdApplicant.id);
     
     const profileResponse = await fetch(`${API_BASE_URL}/api/applicants/${createdApplicant.id}/profile`, {
       method: 'POST',
@@ -74,7 +71,6 @@ export async function submitWaitlistForm(formData) {
     }
 
     const createdProfile = await profileResponse.json();
-    console.log('Profile created successfully:', createdProfile);
 
     return {
       applicant: createdApplicant,
@@ -84,6 +80,21 @@ export async function submitWaitlistForm(formData) {
 
   } catch (error) {
     console.error('Error enviando formulario waitlist:', error);
+    throw error;
+  }
+}
+
+export async function checkEmailExists(email) {
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/applicants/exists?email=${encodeURIComponent(email)}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Error checking email:', error);
     throw error;
   }
 }

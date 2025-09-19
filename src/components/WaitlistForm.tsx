@@ -1,39 +1,45 @@
-import { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
-import { Info, Check } from 'lucide-react';
-import { toast } from 'sonner';
-import { useLanguage } from '@/contexts/LanguageContext';
-import FadeIn from './FadeIn';
-import { submitWaitlistForm, checkEmailExists } from '@/lib/api.js'; 
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from "@/components/ui/tooltip";
+import { Info, Check, ChevronDown } from "lucide-react";
+import { toast } from "sonner";
+import { useLanguage } from "@/contexts/LanguageContext";
+import FadeIn from "./FadeIn";
+import { submitWaitlistForm, checkEmailExists } from "@/lib/api.js";
+import { ROLE_OPTIONS, labelForRole } from "@/constants/roles";
 
 interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  role: string; // ← Cambiar de roles: string[] a role: string
+  role: string;
   mentor: boolean;
 }
 
 const WaitlistForm: React.FC = () => {
   const { t, language } = useLanguage();
   const [search] = useSearchParams();
-  const mentorParam = search.get('mentor') === 'true';
-  
+  const mentorParam = search.get("mentor") === "true";
+
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
     email: "",
-    role: "", // ← Cambiar de roles: [] a role: ""
+    role: "",
     mentor: mentorParam,
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [emailExists, setEmailExists] = useState(false);
   const [checkingEmail, setCheckingEmail] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -52,12 +58,19 @@ const WaitlistForm: React.FC = () => {
       [name]: type === "checkbox" ? checked : value,
     }));
 
-    // Check email existence when email changes
-    if (name === 'email' && value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+    if (name === "email" && value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
       checkEmailExistence(value);
-    } else if (name === 'email') {
+    } else if (name === "email") {
       setEmailExists(false);
     }
+  };
+
+  const handleRoleSelect = (roleValue: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      role: roleValue,
+    }));
+    setDropdownOpen(false);
   };
 
   const checkEmailExistence = async (email: string) => {
@@ -65,16 +78,20 @@ const WaitlistForm: React.FC = () => {
       setCheckingEmail(true);
       const result = await checkEmailExists(email);
       setEmailExists(result.exists);
-      
+
       if (result.exists) {
         if (result.isDeleted) {
-          toast.info('Este email fue usado anteriormente pero está marcado como eliminado.');
+          toast.info(
+            "Este email fue usado anteriormente pero está marcado como eliminado."
+          );
         } else {
-          toast.warning('Este email ya está registrado en nuestra base de datos.');
+          toast.warning(
+            "Este email ya está registrado en nuestra base de datos."
+          );
         }
       }
     } catch (error) {
-      console.error('Error checking email:', error);
+      console.error("Error checking email:", error);
     } finally {
       setCheckingEmail(false);
     }
@@ -82,33 +99,33 @@ const WaitlistForm: React.FC = () => {
 
   const validateForm = (): boolean => {
     if (!formData.firstName.trim()) {
-      toast.error('El nombre es obligatorio');
+      toast.error("El nombre es obligatorio");
       return false;
     }
-    
+
     if (!formData.lastName.trim()) {
-      toast.error('El apellido es obligatorio');
+      toast.error("El apellido es obligatorio");
       return false;
     }
-    
+
     if (!formData.email.trim()) {
-      toast.error('El email es obligatorio');
+      toast.error("El email es obligatorio");
       return false;
     }
-    
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      toast.error('Formato de email inválido');
+      toast.error("Formato de email inválido");
       return false;
     }
-    
-    if (!formData.role.trim()) { // ← Corregido: usar role en lugar de roles
-      toast.error('El rol deseado es obligatorio');
+
+    if (!formData.role.trim()) {
+      toast.error("El rol deseado es obligatorio");
       return false;
     }
 
     if (emailExists) {
-      toast.error('Este email ya está registrado');
+      toast.error("Este email ya está registrado");
       return false;
     }
 
@@ -117,7 +134,7 @@ const WaitlistForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -125,72 +142,67 @@ const WaitlistForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Use the external waitlist function
       const formPayload = {
         email: formData.email.trim().toLowerCase(),
         firstName: formData.firstName.trim(),
         lastName: formData.lastName.trim(),
         mentor: formData.mentor,
-        role: formData.role.trim(), // ← Corregido: usar role
+        role: formData.role.trim(),
         language: language.toUpperCase(),
-        utmSource: search.get('utm_source'),
-        utmMedium: search.get('utm_medium'),
-        utmCampaign: search.get('utm_campaign')
+        utmSource: search.get("utm_source"),
+        utmMedium: search.get("utm_medium"),
+        utmCampaign: search.get("utm_campaign"),
       };
 
-      console.log('Submitting waitlist form with data:', formPayload);
       const result = await submitWaitlistForm(formPayload);
-      console.log('Waitlist submission successful:', result);
 
-      // Success feedback
-      toast.success(t('waitlist.form.toast.success') || '¡Registro exitoso! Te contactaremos pronto.');
-      
-      // Clear form
-      setFormData({ 
-        firstName: '', 
-        lastName: '', 
-        email: '', 
-        role: '', // ← Corregido: usar role
-        mentor: false 
+      toast.success(
+        t("waitlist.form.toast.success") ||
+          "¡Registro exitoso! Te contactaremos pronto."
+      );
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        role: "",
+        mentor: false,
       });
-      
-      sessionStorage.setItem('waitlist_submitted', 'true');
-      sessionStorage.setItem('submitted_email', formData.email);
 
-      // Analytics tracking
-      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-        window.gtag('event', 'waitlist_submission', {
-          event_category: 'engagement',
-          event_label: 'Waitlist Form',
+      sessionStorage.setItem("waitlist_submitted", "true");
+      sessionStorage.setItem("submitted_email", formData.email);
+
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "waitlist_submission", {
+          event_category: "engagement",
+          event_label: "Waitlist Form",
           value: 1,
           email: formData.email,
           mentor: formData.mentor,
-          role: formData.role, // ← Corregido: usar role
-          utm_source: search.get('utm_source') || undefined,
-          utm_medium: search.get('utm_medium') || undefined,
-          utm_campaign: search.get('utm_campaign') || undefined,
+          role: formData.role,
+          utm_source: search.get("utm_source") || undefined,
+          utm_medium: search.get("utm_medium") || undefined,
+          utm_campaign: search.get("utm_campaign") || undefined,
           language: language,
         });
       }
 
-      // Navigate to success page
-      navigate('/thank-you');
-
+      navigate("/thank-you");
     } catch (err: unknown) {
-      const errorMsg = err instanceof Error ? err.message : 'Unknown error';
-      console.error('[Waitlist] API error:', errorMsg, err);
-      
-      let userMessage = t('waitlist.form.toast.error') || 'Error al enviar. Inténtalo de nuevo.';
-      
-      // Customize error messages
-      if (errorMsg.includes('email')) {
-        userMessage = 'Error con el email. Verifica que sea correcto.';
-      } else if (errorMsg.includes('validation')) {
-        userMessage = 'Datos inválidos. Revisa los campos requeridos.';
-      } else if (errorMsg.includes('500')) {
-        userMessage = 'Error del servidor. Inténtalo más tarde.';
+      const errorMsg = err instanceof Error ? err.message : "Unknown error";
+      console.error("[Waitlist] API error:", errorMsg, err);
+
+      let userMessage =
+        t("waitlist.form.toast.error") ||
+        "Error al enviar. Inténtalo de nuevo.";
+
+      if (errorMsg.includes("email")) {
+        userMessage = "Error con el email. Verifica que sea correcto.";
+      } else if (errorMsg.includes("validation")) {
+        userMessage = "Datos inválidos. Revisa los campos requeridos.";
+      } else if (errorMsg.includes("500")) {
+        userMessage = "Error del servidor. Inténtalo más tarde.";
       }
-      
+
       toast.error(userMessage);
     } finally {
       setIsSubmitting(false);
@@ -198,10 +210,7 @@ const WaitlistForm: React.FC = () => {
   };
 
   return (
-    <section
-      id="waitlist"
-      className="bg-background text-foreground py-20 "
-    >
+    <section id="waitlist" className="bg-background text-foreground py-20 ">
       <div className="container max-w-6xl mx-auto px-6 md:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <FadeIn direction="left">
@@ -284,21 +293,29 @@ const WaitlistForm: React.FC = () => {
                   placeholder={t("waitlist.form.placeholder.email")}
                   required
                   maxLength={254}
-                  className={emailExists ? 'border-red-500' : checkingEmail ? 'border-yellow-500' : ''}
+                  className={
+                    emailExists
+                      ? "border-red-500"
+                      : checkingEmail
+                      ? "border-yellow-500"
+                      : ""
+                  }
                 />
                 {checkingEmail && (
-                  <p className="text-sm text-yellow-600 mt-1">Verificando email...</p>
+                  <p className="text-sm text-yellow-600 mt-1">
+                    Verificando email...
+                  </p>
                 )}
                 {emailExists && (
-                  <p className="text-sm text-red-600 mt-1">Este email ya está registrado</p>
+                  <p className="text-sm text-red-600 mt-1">
+                    Este email ya está registrado
+                  </p>
                 )}
               </div>
 
               <div>
                 <div className="flex items-center mb-1 space-x-1">
-                  <Label htmlFor="role">
-                    {t("waitlist.form.label.role")}
-                  </Label>
+                  <Label htmlFor="role">{t("waitlist.form.label.role")}</Label>
                   <Tooltip
                     open={isMobile ? tooltipOpen : undefined}
                     onOpenChange={isMobile ? setTooltipOpen : undefined}
@@ -319,15 +336,42 @@ const WaitlistForm: React.FC = () => {
                     </TooltipContent>
                   </Tooltip>
                 </div>
-                <Input
-                  id="role"
-                  name="role"
-                  value={formData.role}
-                  onChange={handleChange}
-                  placeholder={t('waitlist.form.placeholder.role')}
-                  required
-                  maxLength={200}
-                />
+
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    className="w-full flex items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    <span
+                      className={
+                        formData.role
+                          ? "text-foreground"
+                          : "text-muted-foreground"
+                      }
+                    >
+                      {formData.role
+                        ? labelForRole(formData.role, t)
+                        : t("waitlist.form.placeholder.role")}
+                    </span>
+                    <ChevronDown className="h-4 w-4 opacity-50" />
+                  </button>
+
+                  {dropdownOpen && (
+                    <div className="absolute z-50 w-full mt-1 bg-popover text-popover-foreground rounded-md border shadow-md">
+                      {ROLE_OPTIONS.map((option) => (
+                        <button
+                          key={option.value}
+                          type="button"
+                          onClick={() => handleRoleSelect(option.value)}
+                          className="w-full text-left px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none"
+                        >
+                          {labelForRole(option.value, t)}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -342,7 +386,7 @@ const WaitlistForm: React.FC = () => {
                   title="Marcar si quieres ser mentora en la comunidad"
                 />
                 <Label htmlFor="mentor" className="cursor-pointer">
-                  {t('waitlist.form.label.mentor')}
+                  {t("waitlist.form.label.mentor")}
                 </Label>
                 <span id="mentor-description" className="sr-only">
                   Marcar si quieres ser mentora en la comunidad
@@ -354,14 +398,13 @@ const WaitlistForm: React.FC = () => {
                 className="w-full bg-shehub-gradient text-white hover:shadow-glow-purple hover:scale-105 transition-all rounded-full"
                 disabled={isSubmitting || emailExists || checkingEmail}
               >
-                {isSubmitting 
-                  ? (t('waitlist.form.button.submitting') || 'Enviando...') 
-                  : (t('waitlist.form.button.join') || 'Unirme a la lista')
-                }
+                {isSubmitting
+                  ? t("waitlist.form.button.submitting") || "Enviando..."
+                  : t("waitlist.form.button.join") || "Unirme a la lista"}
               </Button>
 
               <p className="text-xs text-center text-muted-foreground pt-4">
-                {t('waitlist.form.disclaimer')}
+                {t("waitlist.form.disclaimer")}
               </p>
             </form>
           </FadeIn>
