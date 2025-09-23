@@ -1,19 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import RoleDropdown from "@/components/ui/role-dropdown";
+import TermsCheckbox from "@/components/ui/terms-checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from "@/components/ui/tooltip";
-import { Info, Check, ChevronDown } from "lucide-react";
+import { Check } from "lucide-react";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
 import FadeIn from "./FadeIn";
 import { submitWaitlistForm, checkEmailExists } from "@/lib/api.js";
-import { ROLE_OPTIONS, labelForRole } from "@/constants/roles";
 
 interface FormData {
   firstName: string;
@@ -21,6 +17,7 @@ interface FormData {
   email: string;
   role: string;
   mentor: boolean;
+  termsAccepted: boolean;
 }
 
 const WaitlistForm: React.FC = () => {
@@ -34,22 +31,13 @@ const WaitlistForm: React.FC = () => {
     email: "",
     role: "",
     mentor: mentorParam,
+    termsAccepted: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [emailExists, setEmailExists] = useState(false);
   const [checkingEmail, setCheckingEmail] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
-  const [isMobile, setIsMobile] = useState(false);
-  const [tooltipOpen, setTooltipOpen] = useState(false);
-
-  useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth < 768);
-    onResize();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -63,14 +51,6 @@ const WaitlistForm: React.FC = () => {
     } else if (name === "email") {
       setEmailExists(false);
     }
-  };
-
-  const handleRoleSelect = (roleValue: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      role: roleValue,
-    }));
-    setDropdownOpen(false);
   };
 
   const checkEmailExistence = async (email: string) => {
@@ -99,38 +79,48 @@ const WaitlistForm: React.FC = () => {
 
   const validateForm = (): boolean => {
     if (!formData.firstName.trim()) {
-      toast.error("El nombre es obligatorio");
+      toast.error(t("waitlist.form.error.requiredName"));
       return false;
     }
 
     if (!formData.lastName.trim()) {
-      toast.error("El apellido es obligatorio");
+      toast.error(t("waitlist.form.error.requiredLastName"));
       return false;
     }
 
     if (!formData.email.trim()) {
-      toast.error("El email es obligatorio");
+      toast.error(t("waitlist.form.error.requiredEmail"));
       return false;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      toast.error("Formato de email inválido");
+      toast.error(t("waitlist.form.error.invalidEmail"));
       return false;
     }
 
     if (!formData.role.trim()) {
-      toast.error("El rol deseado es obligatorio");
+      toast.error(t("waitlist.form.error.requiredRole"));
       return false;
     }
 
     if (emailExists) {
-      toast.error("Este email ya está registrado");
+      toast.error(t("waitlist.form.error.emailExists"));
+      return false;
+    }
+
+    if (!formData.termsAccepted) {
+      toast.error(t("waitlist.form.error.acceptTerms"));
       return false;
     }
 
     return true;
   };
+
+  const handleRoleSelect = (roleValue: string) => {
+    setFormData((prev) => ({ ...prev, role: roleValue }));
+  };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -158,7 +148,7 @@ const WaitlistForm: React.FC = () => {
 
       toast.success(
         t("waitlist.form.toast.success") ||
-          "¡Registro exitoso! Te contactaremos pronto."
+        "¡Registro exitoso! Te contactaremos pronto."
       );
       setFormData({
         firstName: "",
@@ -166,6 +156,7 @@ const WaitlistForm: React.FC = () => {
         email: "",
         role: "",
         mentor: false,
+        termsAccepted: false,
       });
 
       sessionStorage.setItem("waitlist_submitted", "true");
@@ -210,7 +201,7 @@ const WaitlistForm: React.FC = () => {
   };
 
   return (
-    <section id="waitlist" className="bg-background text-foreground py-20 ">
+    <section id="waitlist" className="bg-background text-foreground py-20">
       <div className="container max-w-6xl mx-auto px-6 md:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <FadeIn direction="left">
@@ -249,6 +240,7 @@ const WaitlistForm: React.FC = () => {
           <FadeIn direction="right">
             <form
               onSubmit={handleSubmit}
+              noValidate
               className="space-y-6 bg-white/60 dark:bg-white/5 border border-border/30 p-8 rounded-3xl shadow-soft backdrop-blur-xl"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -297,8 +289,8 @@ const WaitlistForm: React.FC = () => {
                     emailExists
                       ? "border-red-500"
                       : checkingEmail
-                      ? "border-yellow-500"
-                      : ""
+                        ? "border-yellow-500"
+                        : ""
                   }
                 />
                 {checkingEmail && (
@@ -313,66 +305,14 @@ const WaitlistForm: React.FC = () => {
                 )}
               </div>
 
-              <div>
-                <div className="flex items-center mb-1 space-x-1">
-                  <Label htmlFor="role">{t("waitlist.form.label.role")}</Label>
-                  <Tooltip
-                    open={isMobile ? tooltipOpen : undefined}
-                    onOpenChange={isMobile ? setTooltipOpen : undefined}
-                  >
-                    <TooltipTrigger asChild>
-                      <Info
-                        className="w-4 h-4 text-muted-foreground cursor-pointer"
-                        onClick={() => isMobile && setTooltipOpen((o) => !o)}
-                      />
-                    </TooltipTrigger>
-                    <TooltipContent
-                      side={isMobile ? "top" : "right"}
-                      align="center"
-                      sideOffset={isMobile ? 8 : 0}
-                      className="bg-shehub-purple text-white rounded-md px-4 py-3 w-[260px] text-sm text-left"
-                    >
-                      {t("waitlist.form.tooltip.role")}
-                    </TooltipContent>
-                  </Tooltip>
-                </div>
-
-                <div className="relative">
-                  <button
-                    type="button"
-                    onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="w-full flex items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    <span
-                      className={
-                        formData.role
-                          ? "text-foreground"
-                          : "text-muted-foreground"
-                      }
-                    >
-                      {formData.role
-                        ? labelForRole(formData.role, t)
-                        : t("waitlist.form.placeholder.role")}
-                    </span>
-                    <ChevronDown className="h-4 w-4 opacity-50" />
-                  </button>
-
-                  {dropdownOpen && (
-                    <div className="absolute z-50 w-full mt-1 bg-popover text-popover-foreground rounded-md border shadow-md">
-                      {ROLE_OPTIONS.map((option) => (
-                        <button
-                          key={option.value}
-                          type="button"
-                          onClick={() => handleRoleSelect(option.value)}
-                          className="w-full text-left px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground outline-none"
-                        >
-                          {labelForRole(option.value, t)}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
+              <RoleDropdown
+                selectedRole={formData.role}
+                onSelect={handleRoleSelect}
+                label={t("waitlist.form.label.role")}
+                tooltipText={t("waitlist.form.tooltip.role")}
+                placeholder={t("waitlist.form.placeholder.role")}
+                t={t}
+              />
 
               <div className="flex items-center space-x-2">
                 <input
@@ -403,8 +343,13 @@ const WaitlistForm: React.FC = () => {
                   : t("waitlist.form.button.join") || "Unirme a la lista"}
               </Button>
 
-              <p className="text-xs text-center text-muted-foreground pt-4">
-                {t("waitlist.form.disclaimer")}
+              <TermsCheckbox
+                t={t}
+                checked={formData.termsAccepted}
+                onChange={handleChange}
+              />
+              <p className="text-xs text-muted-foreground text-right mt-2">
+                * {t("waitlist.form.note.required")}
               </p>
             </form>
           </FadeIn>

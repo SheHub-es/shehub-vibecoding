@@ -104,6 +104,16 @@
 }
 
 @layer utilities {
+  .focus-ring-shehub {
+    @apply outline-none focus:outline-none focus-visible:outline-none 
+    focus-visible:ring-2 focus-visible:ring-shehub-purple 
+    focus-visible:ring-offset-0 focus-visible:ring-offset-background;
+  }
+
+  .link-purple {
+  @apply underline text-shehub-purple hover:text-shehub-purple/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-shehub-purple/70 focus-visible:rounded;
+}
+
   .shehub-scroll {
     scrollbar-width: thin; /* Firefox */
     scrollbar-color: var(--color-shehub-purple, #7c4dff) transparent;
@@ -132,10 +142,7 @@
   }
 
   .shehub-scroll::-webkit-scrollbar-thumb:active {
-    background-color: var(
-      --color-shehub-purple,
-      #7c4dff
-    ) !important;
+    background-color: var(--color-shehub-purple, #7c4dff) !important;
     filter: none;
   }
 }

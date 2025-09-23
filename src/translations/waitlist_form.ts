@@ -38,9 +38,9 @@ export const waitlistFormTranslations: TranslationObject = {
     ca: 'Correu electrònic *',
   },
   'waitlist.form.label.role': {
-    en: 'Desired Role',
-    es: 'Rol Deseado',
-    ca: 'Rol Desitjat',
+    en: 'Desired Role *',
+    es: 'Rol Deseado *',
+    ca: 'Rol Desitjat *',
   },
   'waitlist.form.label.mentor': {
     en: 'I want to join as a mentor',
@@ -103,9 +103,9 @@ export const waitlistFormTranslations: TranslationObject = {
     ca: 'i els',
   },
   'waitlist.form.terms.terms': {
-    en: 'Terms of Service',
-    es: 'Términos de Servicio',
-    ca: 'Termes de Servei',
+    en: 'Terms of Service *',
+    es: 'Términos de Servicio *',
+    ca: 'Termes de Servei *',
   },
   'waitlist.form.error.required': {
     en: 'Please fill out all required fields',
@@ -136,5 +136,50 @@ export const waitlistFormTranslations: TranslationObject = {
     en: 'Build your portfolio and network',
     es: 'Construye tu portafolio y red de contactos',
     ca: 'Construeix el teu portafoli i xarxa de contactes',
+  },
+  'waitlist.form.error.requiredName': {
+    en: 'Name is required',
+    es: 'El nombre es obligatorio',
+    ca: 'El nom és obligatori',
+  },
+  'waitlist.form.error.requiredLastName': {
+    en: 'Last name is required',
+    es: 'El apellido es obligatorio',
+    ca: 'Els cognoms són obligatoris',
+  },
+  'waitlist.form.error.requiredEmail': {
+    en: 'Email is required',
+    es: 'El email es obligatorio',
+    ca: 'El correu electrònic és obligatori',
+  },
+  'waitlist.form.error.invalidEmail': {
+    en: 'Invalid email format',
+    es: 'Formato de email inválido',
+    ca: 'Format de correu invàlid',
+  },
+  'waitlist.form.error.requiredRole': {
+    en: 'Desired role is required',
+    es: 'El rol deseado es obligatorio',
+    ca: 'El rol desitjat és obligatori',
+  },
+  'waitlist.form.error.emailExists': {
+    en: 'This email is already registered',
+    es: 'Este email ya está registrado',
+    ca: 'Aquest correu ja està registrat',
+  },
+  'waitlist.form.error.acceptTerms': {
+    en: 'You must accept the privacy policy and legal notice',
+    es: 'Debes aceptar la política de privacidad y el aviso legal',
+    ca: 'Has d\'acceptar la política de privadesa i l\'avís legal',
+  },
+  'waitlist.form.toast.error': {
+    en: 'There was an error while submitting. Please try again later.',
+    es: 'Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo más tarde.',
+    ca: 'S\'ha produït un error en enviar el formulari. Torna-ho a provar més tard.',
+  },
+  'waitlist.form.note.required': {
+    en: 'Required fields',
+    es: 'Campos obligatorios',
+    ca: 'Camps obligatoris',
   }
 };
