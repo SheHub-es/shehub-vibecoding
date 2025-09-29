@@ -10,7 +10,7 @@ const ClipboardToast: React.FC<ClipboardToastProps> = ({ show }) => {
   if (!show) return null;
 
   const message =
-    language === 'ca'
+    language === 'cat'
       ? 'Adreça electrònica copiada al porta-retalls.'
       : language === 'en'
       ? 'Email address copied to clipboard.'

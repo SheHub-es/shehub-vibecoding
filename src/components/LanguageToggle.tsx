@@ -26,7 +26,7 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({
         value={language}
         onValueChange={(value) => {
           if (value) {
-            setLanguage(value as 'es' | 'en' | 'ca');
+            setLanguage(value as 'es' | 'en' | 'cat');
 
             const isMobile = window.innerWidth < 768;
             const label = `${value}_${isMobile ? 'mobile' : 'desktop'}`;
@@ -70,11 +70,11 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({
         </ToggleGroupItem>
 
         <ToggleGroupItem
-          value="ca"
+          value="cat"
           aria-label="Catalan"
           className={cn(
             "text-xs px-2 transition-colors font-medium",
-            language === 'ca'
+            language === 'cat'
               ? "bg-shehub-purple text-white"
               : "hover:text-shehub-purple"
           )}
