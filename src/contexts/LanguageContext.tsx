@@ -13,7 +13,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(() => {
     const storedLanguage = localStorage.getItem('language');
-    return (['es', 'en', 'ca'].includes(storedLanguage || '') ? storedLanguage : 'es') as Language;
+    return (['es', 'en', 'cat'].includes(storedLanguage || '') ? storedLanguage : 'es') as Language;
   });
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 const t = (key: string): string => {
   const translationObj = translations as Record<string, Record<string, string>>;
 
-  const validLang = ['es', 'en', 'ca'].includes(language) ? language : 'es';
+  const validLang = ['es', 'en', 'cat'].includes(language) ? language : 'es';
 
   if (translationObj[key] && translationObj[key][validLang]) {
     return translationObj[key][validLang];
