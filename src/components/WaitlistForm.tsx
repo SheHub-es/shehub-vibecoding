@@ -132,13 +132,18 @@ const WaitlistForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
+       const languageMapping: Record<string, string> = {
+      'es': 'ES',
+      'en': 'EN',
+      'ca': 'CAT'
+    };
       const formPayload = {
         email: formData.email.trim().toLowerCase(),
         firstName: formData.firstName.trim(),
         lastName: formData.lastName.trim(),
         mentor: formData.mentor,
         role: formData.role.trim(),
-        language: language.toUpperCase(),
+        language: languageMapping[language] || 'ES',
         utmSource: search.get("utm_source"),
         utmMedium: search.get("utm_medium"),
         utmCampaign: search.get("utm_campaign"),
