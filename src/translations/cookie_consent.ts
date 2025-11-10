@@ -23,7 +23,7 @@ export const cookieConsentTranslations: TranslationObject = {
   },
   'cookie.consent.types.analytics': {
     en: '• <strong>Analytics cookies:</strong> Google Analytics for anonymous statistics',
-    es: '• <strong>Cookies de análisis:</strong> Google Analytics para estadísticats anónimas',
+    es: '• <strong>Cookies de análisis:</strong> Google Analytics para estadísticas anónimas',
     cat: '• <strong>Cookies d\'anàlisi:</strong> Google Analytics per a estadístiques anònimes',
   },
   'cookie.consent.reject': {
@@ -47,8 +47,8 @@ export const cookieConsentTranslations: TranslationObject = {
     cat: 'Acceptar totes les cookies',
   },
   'cookie.consent.footer': {
-    en: 'You catn change your preferences at any time in your browser settings.',
-    es: 'Puedes catmbiar tus preferencias en cualquier momento en la configuración de tu navegador.',
-    cat: 'Pots catnviar les teves preferències en qualsevol moment a la configuració del teu navegador.',
+    en: 'You can change your preferences at any time in your browser settings.',
+    es: 'Puedes cambiar tus preferencias en cualquier momento en la configuración de tu navegador.',
+    cat: 'Pots canviar les teves preferències en qualsevol moment a la configuració del teu navegador.',
   },
 };

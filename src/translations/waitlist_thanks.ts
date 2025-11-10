@@ -13,8 +13,8 @@ export const waitlistThanksTranslations: TranslationObject = {
   },
   'waitlist_thanks.spamWarning': {
     en: 'Check your spam folder if you do not see it in a few minutes!',
-    es: '¡Revisa tu catrpeta de spam si no lo ves en unos minutos!',
-    cat: 'Revisa la teva catrpeta de correu no desitjat si no el veus en uns minuts!',
+    es: '¡Revisa tu carpeta de spam si no lo ves en unos minutos!',
+    cat: 'Revisa la teva carpeta de correu no desitjat si no el veus en uns minuts!',
   },
   'waitlist_thanks.backToHome': {
     en: 'Back to Home',

@@ -1,4 +1,3 @@
-
 import { cn } from '@/lib/utils';
 
 interface PixelLogoProps {
@@ -13,21 +12,24 @@ const PixelLogo: React.FC<PixelLogoProps> = ({
   variant = 'default' 
 }) => {
   const sizeClasses = {
-    sm: 'h-8',
-    md: 'h-12',
-    lg: 'h-16',
+    sm: 'h-8 w-auto',
+    md: 'h-12 w-auto',
+    lg: 'h-16 w-auto',
   };
 
   const logoSrc = variant === 'hero'
-    ? "/logo/logo-b.png"
-    : "/logo/logo-shehub.png";
+    ? '/logo/logo-b.png'
+    : '/logo/logo-shehub.png';
 
   return (
     <div className={cn('flex items-center justify-center', className)}>
       <img 
         src={logoSrc}
         alt="SheHub Logo" 
-        className={cn(sizeClasses[size])}
+        className={cn(
+          sizeClasses[size],
+          'object-contain object-center select-none'
+        )}
       />
     </div>
   );

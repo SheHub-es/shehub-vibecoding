@@ -94,8 +94,8 @@ export const waitlistFormTranslations: TranslationObject = {
   },
   'waitlist.form.terms.privacy': {
     en: 'Privacy Policy',
-    es: 'Políticat de Privacidad',
-    cat: 'Políticat de Privadesa',
+    es: 'Política de Privacidad',
+    cat: 'Política de Privadesa',
   },
   'waitlist.form.terms.connector': {
     en: 'and the',
@@ -109,8 +109,8 @@ export const waitlistFormTranslations: TranslationObject = {
   },
   'waitlist.form.error.required': {
     en: 'Please fill out all required fields',
-    es: 'Por favor, completa todos los catmpos obligatorios',
-    cat: 'Si us plau, completa tots els catmps obligatoris',
+    es: 'Por favor, completa todos los campos obligatorios',
+    cat: 'Si us plau, completa tots els camps obligatoris',
   },
   'waitlist.form.error.email': {
     en: 'Please enter a valid email address',
@@ -169,8 +169,8 @@ export const waitlistFormTranslations: TranslationObject = {
   },
   'waitlist.form.error.acceptTerms': {
     en: 'You must accept the privacy policy and legal notice',
-    es: 'Debes aceptar la políticat de privacidad y el aviso legal',
-    cat: 'Has d\'acceptar la políticat de privadesa i l\'avís legal',
+    es: 'Debes aceptar la política de privacidad y el aviso legal',
+    cat: 'Has d\'acceptar la política de privadesa i l\'avís legal',
   },
   'waitlist.form.toast.error': {
     en: 'There was an error while submitting. Please try again later.',
@@ -179,7 +179,7 @@ export const waitlistFormTranslations: TranslationObject = {
   },
   'waitlist.form.note.required': {
     en: 'Required fields',
-    es: 'catmpos obligatorios',
-    cat: 'catmps obligatoris',
+    es: 'campos obligatorios',
+    cat: 'camps obligatoris',
   }
 };

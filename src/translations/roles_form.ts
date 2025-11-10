@@ -38,7 +38,7 @@ export const rolesTranslations: TranslationObject = {
   },
   'roles.options.qa': {
     en: 'QA',
-    es: 'QA / catlidad',
+    es: 'QA / calidad',
     cat: 'QA / Qualitat',
   },
   'roles.options.project_manager': {

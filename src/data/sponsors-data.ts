@@ -47,4 +47,17 @@ export const sponsors = [
     alt: 'tecnoempleo.com Logo',
     url: 'https://www.tecnoempleo.com/',
   },
+  {
+  name: 'Figma',
+  logo: '/images/sponsors/figma-logo.png',
+  alt: 'Figma Logo',
+  url: 'https://www.figma.com/',
+},
+{
+  name: 'Barcelona Activa',
+  logo: '/images/sponsors/barcelona-activa-logo-negre.png',
+  alt: 'Barcelona Activa Logo',
+  url: 'https://www.barcelonactiva.cat/',
+},
+
 ];
