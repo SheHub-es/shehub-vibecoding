@@ -40,7 +40,12 @@ const Sponsors: React.FC<SponsorsProps> = ({ className }) => {
         </div>
 
         <FadeIn delay={0.2}>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mt-14">
+          <div
+            className="
+      grid grid-cols-2 gap-8 mt-14
+      sm:flex sm:flex-wrap sm:justify-center sm:items-center sm:gap-10
+    "
+          >
             {sponsors.map((sponsor) => (
               <SponsorCard
                 key={sponsor.name}
