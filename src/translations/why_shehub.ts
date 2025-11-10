@@ -27,9 +27,9 @@ export const whyShehubTranslations: TranslationObject = {
     cat: 'Creix en un entorn tecnològic real',
   },
   'why.feature2.description': {
-    en: 'Collaborate with contributors across product, design, dev, data or marketing — using lean practices.',
-    es: 'Colabora con perfiles de producto, diseño, desarrollo, datos o marketing — utilizando metodologías lean.',
-    cat: 'Col·labora amb perfils de producte, disseny, desenvolupament, dades o màrqueting — utilitzant pràctiques lean.',
+    en: 'Collaborate with contributors across product, design, dev, data or marketing, using lean practices.',
+    es: 'Colabora con perfiles de producto, diseño, desarrollo, datos o marketing, utilizando metodologías lean.',
+    cat: 'Col·labora amb perfils de producte, disseny, desenvolupament, dades o màrqueting, utilitzant pràctiques lean.',
   },
   'why.feature3.title': {
     en: 'Be seen, supported, and ready to grow',
@@ -47,8 +47,8 @@ export const whyShehubTranslations: TranslationObject = {
     cat: 'Flexible i remot per defecte',
   },
   'why.feature4.description': {
-    en: 'Every project is fully remote and part-time, designed to fit around your job, studies, or personal life, so you catn grow on your terms.',
-    es: 'catda proyecto es completamente remoto y a tiempo parcial, diseñado para adaptarse a tu trabajo, estudios o vida personal, para que puedas crecer en tus propios términos.',
-    cat: 'catda projecte és completament remot i a temps parcial, dissenyat per adaptar-se a la teva feina, estudis o vida personal, perquè puguis créixer segons els teus termes.',
+    en: 'Every project is fully remote and part-time, designed to fit around your job, studies, or personal life, so you can grow on your terms.',
+    es: 'cada proyecto es completamente remoto y a tiempo parcial, diseñado para adaptarse a tu trabajo, estudios o vida personal, para que puedas crecer en tus propios términos.',
+    cat: 'Cada projecte és completament remot i a temps parcial, dissenyat per adaptar-se a la teva feina, estudis o vida personal, perquè puguis créixer segons els teus termes.',
   },
 };

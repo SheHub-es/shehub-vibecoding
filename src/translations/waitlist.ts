@@ -8,8 +8,8 @@ export const waitlistTranslations: TranslationObject = {
   },
   'waitlist.subtitle': {
     en: 'Whether you\'re pivoting into tech or growing as a leader, SheHub is your space to contribute and thrive.',
-    es: 'Ya sea que estés catmbiando al sector tecnológico o creciendo como líder, SheHub es tu espacio para contribuir y prosperar.',
-    cat: 'Ja sigui que estiguis catnviant al sector tecnològic o creixent com a líder, SheHub és el teu espai per contribuir i prosperar.',
+    es: 'Ya sea que estés cambiando al sector tecnológico o creciendo como líder, SheHub es tu espacio para contribuir y prosperar.',
+    cat: 'Ja sigui que estiguis canviant al sector tecnològic o creixent com a líder, SheHub és el teu espai per contribuir i prosperar.',
   },
   'waitlist.button': {
     en: 'Join the Waitlist',
@@ -28,7 +28,7 @@ export const waitlistTranslations: TranslationObject = {
   },
   'waitlist.description': {
     en: 'We\'re launching soon! Join our waitlist and be the first to know when we open registration for our initial cohort of collaborative tech professionals.',
-    es: '¡Pronto lanzamos! Únete a nuestra lista de espera y sé la primera en saber cuándo abrimos la inscripción para nuestra cohorte inicial de profesionales tecnológicats colaborativas.',
+    es: '¡Pronto lanzamos! Únete a nuestra lista de espera y sé la primera en saber cuándo abrimos la inscripción para nuestra cohorte inicial de profesionales tecnológicas colaborativas.',
     cat: 'Aviat llancem! Uneix-te a la nostra llista d\'espera i sigues la primera en saber quan obrim la inscripció per a la nostra cohort inicial de professionals tecnològics col·laboratives.',
   },
   'waitlist.benefit1': {
@@ -103,7 +103,7 @@ export const waitlistTranslations: TranslationObject = {
   },
   'waitlist.form.privacy': {
     en: 'By registering, you agree to our privacy policy and terms of service.',
-    es: 'Al registrarte, aceptas nuestra políticat de privacidad y términos de servicio.',
-    cat: 'En registrar-te, acceptes la nostra políticat de privacitat i condicions de servei.',
+    es: 'Al registrarte, aceptas nuestra política de privacidad y términos de servicio.',
+    cat: 'En registrar-te, acceptes la nostra política de privacitat i condicions de servei.',
   },
 };

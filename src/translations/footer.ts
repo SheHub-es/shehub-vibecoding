@@ -57,9 +57,9 @@ export const footerTranslations: TranslationObject = {
     cat: 'Tots els drets reservats.',
   },
   'footer.description': {
-    en: 'SheHub connects tech bootcatmp graduates from different roles who want to build a catreer in the tech industry, guided by expert mentors.',
-    es: 'SheHub conecta a graduadas de bootcatmps tecnológicos de diferentes roles que quieren construir una catrrera en la industria tech, guiadas por mentoras expertas.',
-    cat: 'SheHub connecta graduades de bootcatmps tecnològics de diferents rols que volen construir una catrrera a la indústria tech, guiades per mentores expertes.',
+    en: 'SheHub connects tech bootcamp graduates from different roles who want to build a career in the tech industry, guided by expert mentors.',
+    es: 'SheHub conecta a graduadas de bootcamps tecnológicos de diferentes roles que quieren construir una carrera en la industria tech, guiadas por mentoras expertas.',
+    cat: 'SheHub connecta graduades de bootcamps tecnològics de diferents rols que volen construir una carrera a la indústria tech, guiades per mentores expertes.',
   },
   'footer.quicklinks': {
     en: 'Quick Links',
@@ -68,7 +68,7 @@ export const footerTranslations: TranslationObject = {
   },
   'footer.about': {
     en: 'About Us',
-    es: 'Acercat de Nosotras',
+    es: 'Acerca de Nosotras',
     cat: 'Sobre Nosaltres',
   },
   'footer.projects': {
@@ -102,9 +102,9 @@ export const footerTranslations: TranslationObject = {
     cat: 'Tens preguntes?',
   },
   'footer.privacy': {
-    es: 'Políticat de Privacidad',
+    es: 'Política de Privacidad',
     en: 'Privacy Policy',
-    cat: 'Políticat de Privadesa',
+    cat: 'Política de Privadesa',
   },
   'footer.legal': {
     es: 'Aviso Legal',
@@ -112,9 +112,9 @@ export const footerTranslations: TranslationObject = {
     cat: 'Avís Legal',
   },
   'footer.cookies': {
-    es: 'Políticat de Cookies',
+    es: 'Política de Cookies',
     en: 'Cookies Policy',
-    cat: 'Políticat de Galetes',
+    cat: 'Política de Galetes',
   },
   'footer.impact': {
     en: 'Our Impact',
@@ -124,6 +124,6 @@ export const footerTranslations: TranslationObject = {
   'footer.closedProjects': {
     en: 'Closed Projects',
     es: 'Proyectos cerrados',
-    cat: 'Projectes tancatts',
+    cat: 'Projectes tancats',
   },
 };
