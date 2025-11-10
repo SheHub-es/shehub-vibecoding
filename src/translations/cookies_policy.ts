@@ -3,8 +3,8 @@ import { TranslationObject } from './types';
 export const cookiesPolicyTranslations: TranslationObject = {
   'cookies.policy.title': {
     en: 'Cookie Policy',
-    es: 'Políticat de Cookies',
-    cat: 'Políticat de Galetes',
+    es: 'Política de Cookies',
+    cat: 'Política de Galetes',
   },
   'cookies.policy.what.title': {
     en: 'What are cookies?',
@@ -23,8 +23,8 @@ export const cookiesPolicyTranslations: TranslationObject = {
   },
   'cookies.policy.types.essential': {
     en: 'Essential cookies: Required for the website to function properly, including security and basic functionality',
-    es: 'Cookies esenciales: Necesarias para que el sitio web funcione correctamente, incluyendo seguridad y funcionalidad básicat',
-    cat: 'Galetes essencials: Necessàries perquè el lloc web funcioni correctament, incloent seguretat i funcionalitat bàsicat',
+    es: 'Cookies esenciales: Necesarias para que el sitio web funcione correctamente, incluyendo seguridad y funcionalidad básica',
+    cat: 'Galetes essencials: Necessàries perquè el lloc web funcioni correctament, incloent seguretat i funcionalitat bàsica',
   },
   'cookies.policy.types.analytics': {
     en: 'Analytics cookies: Help us understand how visitors interact with our website through Google Analytics',
@@ -37,9 +37,9 @@ export const cookiesPolicyTranslations: TranslationObject = {
     cat: 'Galetes de preferències: Recorden les teves configuracions i eleccions, com les preferències d\'idioma',
   },
   'cookies.policy.types.firebase': {
-    en: 'Firebase cookies: Used for authenticattion and platform functionality through Firebase services',
-    es: 'Cookies de Firebase: Utilizadas para autenticatción y funcionalidad de la plataforma a través de los servicios de Firebase',
-    cat: 'Galetes de Firebase: Utilitzades per a autenticatció i funcionalitat de la plataforma a través dels serveis de Firebase',
+    en: 'Firebase cookies: Used for authentication and platform functionality through Firebase services',
+    es: 'Cookies de Firebase: Utilizadas para autenticación y funcionalidad de la plataforma a través de los servicios de Firebase',
+    cat: 'Galetes de Firebase: Utilitzades per a autenticació i funcionalitat de la plataforma a través dels serveis de Firebase',
   },
   'cookies.policy.manage.title': {
     en: 'How to manage cookies',
@@ -47,9 +47,9 @@ export const cookiesPolicyTranslations: TranslationObject = {
     cat: 'Com gestionar les galetes',
   },
   'cookies.policy.manage.content': {
-    en: 'You catn control and manage cookies through your browser settings. Most browsers allow you to block or delete cookies, though this may affect your experience on our website. Please note that disabling essential cookies may prevent some features from working properly.',
+    en: 'You can control and manage cookies through your browser settings. Most browsers allow you to block or delete cookies, though this may affect your experience on our website. Please note that disabling essential cookies may prevent some features from working properly.',
     es: 'Puedes controlar y gestionar las cookies a través de la configuración de tu navegador. La mayoría de navegadores te permiten bloquear o eliminar cookies, aunque esto puede afectar tu experiencia en nuestro sitio web. Ten en cuenta que deshabilitar las cookies esenciales puede impedir que algunas funciones trabajen correctamente.',
-    cat: 'Pots controlar i gestionar les galetes a través de la configuració del teu navegador. La majoria de navegadors et permeten bloquejar o eliminar galetes, encatra que això pot afectar la teva experiència al nostre lloc web. Tingues en compte que deshabilitar les galetes essencials pot impedir que algunes funcions funcionin correctament.',
+    cat: 'Pots controlar i gestionar les galetes a través de la configuració del teu navegador. La majoria de navegadors et permeten bloquejar o eliminar galetes, encara que això pot afectar la teva experiència al nostre lloc web. Tingues en compte que deshabilitar les galetes essencials pot impedir que algunes funcions funcionin correctament.',
   },
   'cookies.policy.contact.title': {
     en: 'Contact us',
@@ -58,8 +58,8 @@ export const cookiesPolicyTranslations: TranslationObject = {
   },
   'cookies.policy.contact.content': {
     en: 'If you have any questions about our cookie policy, please contact us at',
-    es: 'Si tienes alguna pregunta sobre nuestra políticat de cookies, por favor contáctanos en',
-    cat: 'Si tens alguna pregunta sobre la nostra políticat de galetes, si us plau contacta\'ns a',
+    es: 'Si tienes alguna pregunta sobre nuestra política de cookies, por favor contáctanos en',
+    cat: 'Si tens alguna pregunta sobre la nostra política de galetes, si us plau contacta\'ns a',
   },
   'cookies.policy.last_updated': {
     en: 'Last updated',

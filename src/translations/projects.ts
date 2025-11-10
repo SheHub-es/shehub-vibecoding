@@ -13,13 +13,13 @@ export const projectsTranslations: TranslationObject = {
   },
   'projects.description1': {
     en: 'At SheHub, you will work on real projects that solve current problems. This hands-on experience is invaluable for your professional growth and portfolio.',
-    es: 'En SheHub, trabajarás en proyectos reales que resuelven problemas actuales. Esta experiencia prácticat es invaluable para tu crecimiento profesional y portafolio.',
+    es: 'En SheHub, trabajarás en proyectos reales que resuelven problemas actuales. Esta experiencia práctica es invaluable para tu crecimiento profesional y portafolio.',
     cat: 'A SheHub, treballaràs en projectes reals que resolen problemes actuals. Aquesta experiència pràcticat és invaluable per al teu creixement professional i portfoli.',
   },
   'projects.description2': {
-    en: 'Collaborate with team members from different disciplines, just like in a real work environment, and learn to communicatte and work together effectively.',
-    es: 'Colabora con miembros del equipo de diferentes disciplinas, igual que en un entorno laboral real, y aprende a comunicatrte y trabajar juntas de manera efectiva.',
-    cat: 'Col·labora amb membres de l\'equip de diferents disciplines, igual que en un entorn laboral real, i aprèn a comunicatr-te i treballar juntes de manera efectiva.',
+    en: 'Collaborate with team members from different disciplines, just like in a real work environment, and learn to communicate and work together effectively.',
+    es: 'Colabora con miembros del equipo de diferentes disciplinas, igual que en un entorno laboral real, y aprende a comunicarte y trabajar juntas de manera efectiva.',
+    cat: 'Col·labora amb membres de l\'equip de diferents disciplines, igual que en un entorn laboral real, i aprèn a comunicar-te i treballar juntes de manera efectiva.',
   },
   'projects.cta': {
     en: 'Join our platform',

@@ -27,9 +27,9 @@ export const legalNoticeTranslations: TranslationObject = {
     cat: 'Propòsit i Missió',
   },
   'legal.notice.purpose.content': {
-    en: 'SheHub is a nonprofit platform dedicatted to supporting women in the technology sector. Our mission is to connect users with collaborative working groups, expert mentors, and quality educattional content to promote professional growth and diversity in the tech industry.',
-    es: 'SheHub es una plataforma sin ánimo de lucro dedicatda a apoyar a las mujeres en el sector tecnológico. Nuestra misión es conectar a las usuarias con grupos de trabajo colaborativos, mentoras expertas y contenido educattivo de catlidad para promover el crecimiento profesional y la diversidad en la industria tecnológicat.',
-    cat: 'SheHub és una plataforma sense ànim de lucre dedicatda a donar suport a les dones en el sector tecnològic. La nostra missió és connectar les usuàries amb grups de treball col·laboratius, mentores expertes i contingut educattiu de qualitat per promoure el creixement professional i la diversitat en la indústria tecnològicat.',
+    en: 'SheHub is a nonprofit platform dedicated to supporting women in the technology sector. Our mission is to connect users with collaborative working groups, expert mentors, and quality educational content to promote professional growth and diversity in the tech industry.',
+    es: 'SheHub es una plataforma sin ánimo de lucro dedicada a apoyar a las mujeres en el sector tecnológico. Nuestra misión es conectar a las usuarias con grupos de trabajo colaborativos, mentoras expertas y contenido educativo de calidad para promover el crecimiento profesional y la diversidad en la industria tecnológica.',
+    cat: 'SheHub és una plataforma sense ànim de lucre dedicada a donar suport a les dones en el sector tecnològic. La nostra missió és connectar les usuàries amb grups de treball col·laboratius, mentores expertes i contingut educatiu de qualitat per promoure el creixement professional i la diversitat en la indústria tecnològica.',
   },
   'legal.notice.intellectual_property.title': {
     en: 'Intellectual Property',
@@ -37,9 +37,9 @@ export const legalNoticeTranslations: TranslationObject = {
     cat: 'Propietat Intel·lectual',
   },
   'legal.notice.intellectual_property.content': {
-    en: 'All content available on this website, including but not limited to texts, logos, images, graphics, and designs, is the exclusive property of SheHub. Any reproduction, distribution, modificattion, or use of this content without express written permission from SheHub is strictly prohibited and may constitute a violation of intellectual property rights.',
-    es: 'Todo el contenido disponible en este sitio web, incluyendo pero no limitándose a textos, logotipos, imágenes, gráficos y diseños, es propiedad exclusiva de SheHub. Cualquier reproducción, distribución, modificatción o uso de este contenido sin permiso expreso y por escrito de SheHub está estrictamente prohibido y puede constituir una violación de los derechos de propiedad intelectual.',
-    cat: 'Tot el contingut disponible en aquest lloc web, incloent però no limitant-se a textos, logotips, imatges, gràfics i dissenys, és propietat exclusiva de SheHub. Qualsevol reproducció, distribució, modificatció o ús d\'aquest contingut sense permís exprés i per escrit de SheHub està estrictament prohibit i pot constituir una violació dels drets de propietat intel·lectual.',
+    en: 'All content available on this website, including but not limited to texts, logos, images, graphics, and designs, is the exclusive property of SheHub. Any reproduction, distribution, modification, or use of this content without express written permission from SheHub is strictly prohibited and may constitute a violation of intellectual property rights.',
+    es: 'Todo el contenido disponible en este sitio web, incluyendo pero no limitándose a textos, logotipos, imágenes, gráficos y diseños, es propiedad exclusiva de SheHub. Cualquier reproducción, distribución, modificación o uso de este contenido sin permiso expreso y por escrito de SheHub está estrictamente prohibido y puede constituir una violación de los derechos de propiedad intelectual.',
+    cat: 'Tot el contingut disponible en aquest lloc web, incloent però no limitant-se a textos, logotips, imatges, gràfics i dissenys, és propietat exclusiva de SheHub. Qualsevol reproducció, distribució, modificació o ús d\'aquest contingut sense permís exprés i per escrit de SheHub està estrictament prohibit i pot constituir una violació dels drets de propietat intel·lectual.',
   },
   'legal.notice.responsibility.title': {
     en: 'Limitation of Responsibility',
@@ -57,9 +57,9 @@ export const legalNoticeTranslations: TranslationObject = {
     cat: 'Condicions d\'Ús',
   },
   'legal.notice.usage.responsible': {
-    en: 'Users must use this website responsibly and ethicatlly, respecting the rights of other users and the platform\'s community guidelines.',
-    es: 'Los usuarios deben utilizar este sitio web de manera responsable y éticat, respetando los derechos de otros usuarios y las pautas de la comunidad de la plataforma.',
-    cat: 'Els usuaris han d\'utilitzar aquest lloc web de manera responsable i èticat, respectant els drets d\'altres usuaris i les pautes de la comunitat de la plataforma.',
+    en: 'Users must use this website responsibly and ethically, respecting the rights of other users and the platform\'s community guidelines.',
+    es: 'Los usuarios deben utilizar este sitio web de manera responsable y ética, respetando los derechos de otros usuarios y las pautas de la comunidad de la plataforma.',
+    cat: 'Els usuaris han d\'utilitzar aquest lloc web de manera responsable i ètica, respectant els drets d\'altres usuaris i les pautes de la comunitat de la plataforma.',
   },
   'legal.notice.usage.prohibited': {
     en: 'Any illegal, harmful, defamatory, or disruptive activities are strictly prohibited and may result in immediate suspension of access to the platform.',
@@ -68,23 +68,23 @@ export const legalNoticeTranslations: TranslationObject = {
   },
   'legal.notice.cookies.title': {
     en: 'Cookie Policy',
-    es: 'Políticat de Cookies',
-    cat: 'Políticat de Galetes',
+    es: 'Política de Cookies',
+    cat: 'Política de Galetes',
   },
   'legal.notice.cookies.content': {
     en: 'This website uses cookies to improve user experience and analyze website traffic through services such as Google Analytics. By continuing to use this site, you consent to the use of cookies in accordance with our cookie policy.',
-    es: 'Este sitio web utiliza cookies para mejorar la experiencia del usuario y analizar el tráfico del sitio web a través de servicios como Google Analytics. Al continuar utilizando este sitio, usted consiente el uso de cookies de acuerdo con nuestra políticat de cookies.',
-    cat: 'Aquest lloc web utilitza galetes per millorar l\'experiència de l\'usuari i analitzar el trànsit del lloc web a través de serveis com Google Analytics. En continuar utilitzant aquest lloc, vostè consent l\'ús de galetes d\'acord amb la nostra políticat de galetes.',
+    es: 'Este sitio web utiliza cookies para mejorar la experiencia del usuario y analizar el tráfico del sitio web a través de servicios como Google Analytics. Al continuar utilizando este sitio, usted consiente el uso de cookies de acuerdo con nuestra política de cookies.',
+    cat: 'Aquest lloc web utilitza galetes per millorar l\'experiència de l\'usuari i analitzar el trànsit del lloc web a través de serveis com Google Analytics. En continuar utilitzant aquest lloc, vostè consent l\'ús de galetes d\'acord amb la nostra política de galetes.',
   },
   'legal.notice.cookies.link': {
     en: 'View our complete Cookie Policy',
-    es: 'Ver nuestra Políticat de Cookies completa',
-    cat: 'Veure la nostra Políticat de Galetes completa',
+    es: 'Ver nuestra Política de Cookies completa',
+    cat: 'Veure la nostra Política de Galetes completa',
   },
   'legal.notice.law.title': {
-    en: 'Applicatble Law and Jurisdiction',
-    es: 'Legislación Aplicatble y Jurisdicción',
-    cat: 'Legislació Aplicatble i Jurisdicció',
+    en: 'Applicable Law and Jurisdiction',
+    es: 'Legislación Aplicable y Jurisdicción',
+    cat: 'Legislació Aplicable i Jurisdicció',
   },
   'legal.notice.law.content': {
     en: 'This legal notice and the use of this website are governed by Spanish law. Any dispute arising from the use of this website will be subject to the exclusive jurisdiction of the courts of Barcelona, Spain.',

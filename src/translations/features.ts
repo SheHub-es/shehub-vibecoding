@@ -7,9 +7,9 @@ export const featuresTranslations: TranslationObject = {
     cat: 'La Nostra Plataforma',
   },
   'features.headline': {
-    en: 'Build your catreer in the tech industry',
-    es: 'Construye tu catrrera en la industria tecnológicat',
-    cat: 'Construeix la teva catrrera a la indústria tecnològicat',
+    en: 'Build your career in the tech industry',
+    es: 'Construye tu carrera en la industria tecnológica',
+    cat: 'Construeix la teva carrera a la indústria tecnològica',
   },
   'features.description': {
     en: 'Join SheHub and gain real experience working on projects with multidisciplinary teams',
@@ -23,8 +23,8 @@ export const featuresTranslations: TranslationObject = {
   },
   'features.teams.description': {
     en: 'Collaborate with professionals from different fields and learn how cross-functional teams operate',
-    es: 'Colabora con profesionales de diferentes catmpos y aprende cómo operan los equipos multifuncionales',
-    cat: 'Col·labora amb professionals de diferents catmps i aprèn com operen els equips multifuncionals',
+    es: 'Colabora con profesionales de diferentes campos y aprende cómo operan los equipos multifuncionales',
+    cat: 'Col·labora amb professionals de diferents camps i aprèn com operen els equips multifuncionals',
   },
   'features.projects.title': {
     en: 'Real Projects',
@@ -52,7 +52,7 @@ export const featuresTranslations: TranslationObject = {
     cat: 'Networking',
   },
   'features.networking.description': {
-    en: 'Connect with other professionals and build relationships that catn lead to future opportunities',
+    en: 'Connect with other professionals and build relationships that can lead to future opportunities',
     es: 'Conecta con otras profesionales y construye relaciones que pueden llevarte a futuras oportunidades',
     cat: 'Conecta amb altres professionals i construeix relacions que poden portar-te a futures oportunitats',
   },

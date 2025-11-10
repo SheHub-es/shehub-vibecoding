@@ -18,8 +18,8 @@ export const heroTranslations: TranslationObject = {
   },
   'hero.subtitle': {
     en: 'Real tech experience for women ready to grow. Join real-world projects. Collaborate in cross-functional teams. Guided by mentors.',
-    es: 'Experiencia prácticat para mujeres listas para dar el siguiente paso en tecnología. Participa en proyectos reales. Colabora en equipos multidisciplinares. Guiada por mentoras.',
-    cat: 'Experiència pràcticat per a dones preparades per fer el següent pas en el món tech. Participa en projectes reals. Col·labora en equips multidisciplinars. Guiada per mentores.',
+    es: 'Experiencia práctica para mujeres listas para dar el siguiente paso en tecnología. Participa en proyectos reales. Colabora en equipos multidisciplinares. Guiada por mentoras.',
+    cat: 'Experiència pràctica per a dones preparades per fer el següent pas en el món tech. Participa en projectes reals. Col·labora en equips multidisciplinars. Guiada per mentores.',
   },
   'hero.waitlist': {
     en: 'Join the Waitlist',

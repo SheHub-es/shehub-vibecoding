@@ -15,7 +15,7 @@ const JoinWaitlist: React.FC<JoinWaitlistProps> = ({ className }) => {
     <section
       id="join"
       className={cn(
-        "py-24 bg-background dark:bg-muted/20 text-foreground",
+        "py-24 bg-muted/30 dark:bg-muted/60 text-foreground",
         className
       )}
     >

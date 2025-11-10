@@ -44,11 +44,11 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
     <footer
       className={cn(
-        "py-16 md:py-20 bg-[#EAE4F9] dark:bg-[#1E1E2A] text-foreground",
+        "py-16 md:py-20 px-6 md:px-8 bg-[#EAE4F9] dark:bg-[#1E1E2A] text-foreground",
         className
       )}
     >
-      <div className="container max-w-6xl mx-auto px-6 md:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 items-start">
           <div className="flex flex-col items-center md:items-start space-y-4">
             <Link
