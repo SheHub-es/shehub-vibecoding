@@ -12,6 +12,7 @@ interface RoleDropdownProps {
   tooltipText: string;
   placeholder: string;
   t: (key: string) => string;
+  disabled?: boolean;
 }
 
 const RoleDropdown: React.FC<RoleDropdownProps> = ({
@@ -21,6 +22,7 @@ const RoleDropdown: React.FC<RoleDropdownProps> = ({
   tooltipText,
   placeholder,
   t,
+  disabled = false,
 }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -87,7 +89,8 @@ const RoleDropdown: React.FC<RoleDropdownProps> = ({
           aria-haspopup="listbox"
           aria-expanded={dropdownOpen}
           aria-controls="role-listbox"
-          onClick={() => setDropdownOpen(!dropdownOpen)}
+          onClick={() => !disabled && setDropdownOpen(!dropdownOpen)}
+          disabled={disabled}
           className={cn(
             "w-full flex items-center justify-between rounded-md border border-input bg-background mb-2 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground hover:border-primary/80 disabled:cursor-not-allowed disabled:opacity-50 transition-colors",
             "focus-ring-shehub"

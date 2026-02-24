@@ -181,5 +181,50 @@ export const waitlistFormTranslations: TranslationObject = {
     en: 'Required fields',
     es: 'campos obligatorios',
     cat: 'camps obligatoris',
+  },
+  'waitlist.form.maintenance.title': {
+    en: 'We are improving our platform',
+    es: 'Estamos mejorando nuestra plataforma',
+    cat: 'Estem millorant la nostra plataforma',
+  },
+  'waitlist.form.maintenance.message': {
+    en: 'We are currently performing maintenance to provide you with a better experience. The registration form will be available again very soon. Thank you for your patience!',
+    es: 'Actualmente estamos realizando tareas de mantenimiento para ofrecerte una mejor experiencia. El formulario de registro estará disponible nuevamente muy pronto. ¡Gracias por tu paciencia!',
+    cat: 'Actualment estem realitzant tasques de manteniment per oferir-te una millor experiència. El formulari de registre estarà disponible de nou molt aviat. Gràcies per la teva paciència!',
+  },
+  'waitlist.form.maintenance.icon': {
+    en: 'Maintenance',
+    es: 'Mantenimiento',
+    cat: 'Manteniment',
+  },
+  'waitlist.form.maintenance.banner': {
+    en: 'We are improving our platform. The form will be available again very soon.',
+    es: 'Estamos mejorando nuestra plataforma. El formulario estará disponible nuevamente muy pronto.',
+    cat: 'Estem millorant la nostra plataforma. El formulari estarà disponible de nou molt aviat.',
+  },
+  'waitlist.form.placeholder.maintenance': {
+    en: 'Currently in maintenance',
+    es: 'En mantenimiento temporalmente',
+    cat: 'En manteniment temporalment',
+  },
+  'waitlist.form.placeholder.name.maintenance': {
+    en: 'Currently in maintenance',
+    es: 'En mantenimiento temporalmente',
+    cat: 'En manteniment temporalment',
+  },
+  'waitlist.form.placeholder.lastname.maintenance': {
+    en: 'Currently in maintenance',
+    es: 'En mantenimiento temporalmente',
+    cat: 'En manteniment temporalment',
+  },
+  'waitlist.form.placeholder.email.maintenance': {
+    en: 'Currently in maintenance',
+    es: 'En mantenimiento temporalmente',
+    cat: 'En manteniment temporalment',
+  },
+  'waitlist.form.placeholder.role.maintenance': {
+    en: 'Currently in maintenance',
+    es: 'En mantenimiento temporalmente',
+    cat: 'En manteniment temporalment',
   }
 };

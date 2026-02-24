@@ -8,6 +8,7 @@ interface TermsCheckboxProps {
   className?: string;
   privacyHref?: string;
   termsHref?: string;
+  disabled?: boolean;
 }
 
 const TermsCheckbox: React.FC<TermsCheckboxProps> = ({
@@ -17,6 +18,7 @@ const TermsCheckbox: React.FC<TermsCheckboxProps> = ({
   className,
   privacyHref = "/privacy",
   termsHref = "/legal-notice",
+  disabled = false,
 }) => {
   return (
     <div className={cn("flex items-start gap-2 text-sm", className)}>
@@ -27,10 +29,11 @@ const TermsCheckbox: React.FC<TermsCheckboxProps> = ({
         type="checkbox"
         checked={checked}
         onChange={onChange}
-        className="h-4 w-4 mt-1 rounded border-border text-accent focus:ring-accent"
+        disabled={disabled}
+        className="h-4 w-4 mt-1 rounded border-border text-accent focus:ring-accent disabled:cursor-not-allowed disabled:opacity-50"
         required
       />
-      <label htmlFor="terms" className="text-muted-foreground cursor-pointer">
+      <label htmlFor="terms" className={cn("text-muted-foreground", disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer")}>
         {t("waitlist.form.terms.prefix")}{" "}
         <a
           href={privacyHref}
