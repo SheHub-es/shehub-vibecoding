@@ -5,11 +5,14 @@ import RoleDropdown from "@/components/ui/role-dropdown";
 import TermsCheckbox from "@/components/ui/terms-checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Check } from "lucide-react";
+import { Check, Wrench } from "lucide-react";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
 import FadeIn from "./FadeIn";
 import { submitWaitlistForm, checkEmailExists } from "@/lib/api.js";
+
+// Activar modo mantenimiento durante la migración
+const MAINTENANCE_MODE = true;
 
 interface FormData {
   firstName: string;
@@ -124,6 +127,10 @@ const WaitlistForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (MAINTENANCE_MODE) {
+      return;
+    }
 
     if (!validateForm()) {
       return;
@@ -248,115 +255,147 @@ const WaitlistForm: React.FC = () => {
               noValidate
               className="space-y-6 bg-white/60 dark:bg-white/5 border border-border/30 p-8 rounded-3xl shadow-soft backdrop-blur-xl"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="firstName">
-                    {t("waitlist.form.label.name")}
-                  </Label>
-                  <Input
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    placeholder={t("waitlist.form.placeholder.name")}
-                    required
-                    maxLength={80}
-                  />
+              {MAINTENANCE_MODE && (
+                <div className="mb-6 p-4 rounded-lg bg-shehub-purple/10 border border-shehub-purple/20">
+                  <div className="flex items-start space-x-3">
+                    <Wrench className="w-5 h-5 text-shehub-purple mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-foreground">
+                      {t("waitlist.form.maintenance.banner")}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <Label htmlFor="lastName">
-                    {t("waitlist.form.label.lastname")}
-                  </Label>
-                  <Input
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    placeholder={t("waitlist.form.placeholder.lastname")}
-                    required
-                    maxLength={80}
-                  />
+              )}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="firstName">
+                      {t("waitlist.form.label.name")}
+                    </Label>
+                    <Input
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      placeholder={
+                        MAINTENANCE_MODE
+                          ? t("waitlist.form.placeholder.name.maintenance")
+                          : t("waitlist.form.placeholder.name")
+                      }
+                      required
+                      maxLength={80}
+                      disabled={MAINTENANCE_MODE}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="lastName">
+                      {t("waitlist.form.label.lastname")}
+                    </Label>
+                    <Input
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      placeholder={
+                        MAINTENANCE_MODE
+                          ? t("waitlist.form.placeholder.lastname.maintenance")
+                          : t("waitlist.form.placeholder.lastname")
+                      }
+                      required
+                      maxLength={80}
+                      disabled={MAINTENANCE_MODE}
+                    />
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <Label htmlFor="email">{t("waitlist.form.label.email")}</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder={t("waitlist.form.placeholder.email")}
-                  required
-                  maxLength={254}
-                  className={
-                    emailExists
-                      ? "border-red-500"
-                      : checkingEmail
-                        ? "border-yellow-500"
-                        : ""
+                <div>
+                  <Label htmlFor="email">{t("waitlist.form.label.email")}</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder={
+                      MAINTENANCE_MODE
+                        ? t("waitlist.form.placeholder.email.maintenance")
+                        : t("waitlist.form.placeholder.email")
+                    }
+                    required
+                    maxLength={254}
+                    disabled={MAINTENANCE_MODE}
+                    className={
+                      emailExists
+                        ? "border-red-500"
+                        : checkingEmail
+                          ? "border-yellow-500"
+                          : ""
+                    }
+                  />
+                  {checkingEmail && (
+                    <p className="text-sm text-yellow-600 mt-1">
+                      Verificando email...
+                    </p>
+                  )}
+                  {emailExists && (
+                    <p className="text-sm text-red-600 mt-1">
+                      Este email ya está registrado
+                    </p>
+                  )}
+                </div>
+
+                <RoleDropdown
+                  selectedRole={formData.role}
+                  onSelect={handleRoleSelect}
+                  label={t("waitlist.form.label.role")}
+                  tooltipText={t("waitlist.form.tooltip.role")}
+                  placeholder={
+                    MAINTENANCE_MODE
+                      ? t("waitlist.form.placeholder.role.maintenance")
+                      : t("waitlist.form.placeholder.role")
                   }
+                  t={t}
+                  disabled={MAINTENANCE_MODE}
                 />
-                {checkingEmail && (
-                  <p className="text-sm text-yellow-600 mt-1">
-                    Verificando email...
-                  </p>
-                )}
-                {emailExists && (
-                  <p className="text-sm text-red-600 mt-1">
-                    Este email ya está registrado
-                  </p>
-                )}
-              </div>
 
-              <RoleDropdown
-                selectedRole={formData.role}
-                onSelect={handleRoleSelect}
-                label={t("waitlist.form.label.role")}
-                tooltipText={t("waitlist.form.tooltip.role")}
-                placeholder={t("waitlist.form.placeholder.role")}
-                t={t}
-              />
+                <div className="flex items-center space-x-2">
+                  <input
+                    id="mentor"
+                    name="mentor"
+                    type="checkbox"
+                    checked={formData.mentor}
+                    onChange={handleChange}
+                    disabled={MAINTENANCE_MODE}
+                    className="h-4 w-4 rounded border-border text-accent focus:ring-accent disabled:cursor-not-allowed disabled:opacity-50"
+                    aria-describedby="mentor-description"
+                    title="Marcar si quieres ser mentora en la comunidad"
+                  />
+                  <Label htmlFor="mentor" className={MAINTENANCE_MODE ? "cursor-not-allowed opacity-50" : "cursor-pointer"}>
+                    {t("waitlist.form.label.mentor")}
+                  </Label>
+                  <span id="mentor-description" className="sr-only">
+                    Marcar si quieres ser mentora en la comunidad
+                  </span>
+                </div>
 
-              <div className="flex items-center space-x-2">
-                <input
-                  id="mentor"
-                  name="mentor"
-                  type="checkbox"
-                  checked={formData.mentor}
+                <Button
+                  type="submit"
+                  className="w-full bg-shehub-gradient text-white hover:shadow-glow-purple hover:scale-105 transition-all rounded-full"
+                  disabled={MAINTENANCE_MODE || isSubmitting || emailExists || checkingEmail}
+                >
+                  {isSubmitting
+                    ? t("waitlist.form.button.submitting") || "Enviando..."
+                    : t("waitlist.form.button.join") || "Unirme a la lista"}
+                </Button>
+
+                <TermsCheckbox
+                  t={t}
+                  checked={formData.termsAccepted}
                   onChange={handleChange}
-                  className="h-4 w-4 rounded border-border text-accent focus:ring-accent"
-                  aria-describedby="mentor-description"
-                  title="Marcar si quieres ser mentora en la comunidad"
+                  disabled={MAINTENANCE_MODE}
                 />
-                <Label htmlFor="mentor" className="cursor-pointer">
-                  {t("waitlist.form.label.mentor")}
-                </Label>
-                <span id="mentor-description" className="sr-only">
-                  Marcar si quieres ser mentora en la comunidad
-                </span>
-              </div>
-
-              <Button
-                type="submit"
-                className="w-full bg-shehub-gradient text-white hover:shadow-glow-purple hover:scale-105 transition-all rounded-full"
-                disabled={isSubmitting || emailExists || checkingEmail}
-              >
-                {isSubmitting
-                  ? t("waitlist.form.button.submitting") || "Enviando..."
-                  : t("waitlist.form.button.join") || "Unirme a la lista"}
-              </Button>
-
-              <TermsCheckbox
-                t={t}
-                checked={formData.termsAccepted}
-                onChange={handleChange}
-              />
-              <p className="text-xs text-muted-foreground text-right mt-2">
-                * {t("waitlist.form.note.required")}
-              </p>
-            </form>
+                <p className="text-xs text-muted-foreground text-right mt-2">
+                  * {t("waitlist.form.note.required")}
+                </p>
+              </form>
           </FadeIn>
         </div>
       </div>
