@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Hero from '@/components/Hero';
 import WhyShehub from '@/components/WhyShehub';
@@ -10,20 +9,8 @@ import Sponsors from '@/components/Sponsors';
 import JoinWaitlist from '@/components/JoinWaitlist';
 
 const Index = () => {
-  useEffect(() => {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href') as string);
-        if (target) {
-          window.scrollTo({
-            top: (target as HTMLElement).offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  }, []);
+  // El scroll es manejado por HashLink con scrollOffset
+  // No necesitamos useEffect aquí
 
   return (
     <div className="relative min-h-screen">

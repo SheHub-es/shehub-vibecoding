@@ -12,7 +12,7 @@ const ClosedProjects = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#EAE4F9] via-white to-sand dark:from-[#1E1E2A] dark:via-background dark:to-slate-900">
-      <main className="pt-24 pb-16">
+      <main className="pt-36 md:pt-40 pb-16">
         <div className="container max-w-7xl mx-auto px-6 md:px-8">
           <FadeIn>
             <div className="text-center mb-12">

@@ -7,7 +7,7 @@ export default function WaitlistPage() {
   }, []);
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-background text-foreground">
+    <main className="min-h-screen flex items-center justify-center bg-background text-foreground pt-36 md:pt-40">
       <WaitlistForm />
     </main>
   );

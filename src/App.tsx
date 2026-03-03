@@ -16,6 +16,7 @@ import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewWebsiteBanner from "@/components/NewWebsiteBanner";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const AppContent = () => {
       <CookieConsent />
 
       <BrowserRouter>
+        <NewWebsiteBanner />
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
