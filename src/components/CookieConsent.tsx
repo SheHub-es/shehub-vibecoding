@@ -60,11 +60,23 @@ const CookieConsent = () => {
     }
   };
 
+  // Prevenir scroll del body cuando el modal está abierto
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showModal]);
+
   if (!showModal) return null;
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-end justify-center p-4 sm:items-center"
+      className="fixed inset-0 z-[70] flex items-end justify-center p-4 sm:items-center overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="cookie-consent-title"
@@ -73,7 +85,7 @@ const CookieConsent = () => {
     >
       <div className="fixed inset-0 bg-black/20 backdrop-blur-sm" />
       
-      <div className="relative w-full max-w-md rounded-2xl border border-border bg-background p-6 shadow-lg sm:max-w-lg">
+      <div className="relative w-full max-w-md rounded-2xl border border-border bg-background p-6 shadow-lg sm:max-w-lg my-auto">
         <div className="mb-4">
           <h2 
             id="cookie-consent-title"
