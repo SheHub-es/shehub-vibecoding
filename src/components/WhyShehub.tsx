@@ -12,7 +12,7 @@ const WhyShehub: React.FC<WhyShehubProps> = ({ className }) => {
   const { t } = useLanguage();
   
   return (
-    <section id="features" className={cn('py-20 bg-primary text-background', className)}>
+    <section id="features" className={cn('py-20 bg-primary text-background scroll-mt-[140px] md:scroll-mt-[130px]', className)}>
       <div className="container max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <FadeIn>

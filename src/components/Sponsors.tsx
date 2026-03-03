@@ -23,7 +23,7 @@ const Sponsors: React.FC<SponsorsProps> = ({ className }) => {
   return (
     <section
       id="sponsors"
-      className={cn("py-16 bg-muted/30 dark:bg-muted/60", className)}
+      className={cn("py-16 bg-muted/30 dark:bg-muted/60 scroll-mt-[140px] md:scroll-mt-[130px]", className)}
     >
       <div className="container max-w-6xl mx-auto px-6 md:px-8 py-4 md:py-12">
         <div className="text-center mb-12">

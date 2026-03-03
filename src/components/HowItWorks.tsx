@@ -15,7 +15,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ className }) => {
     <section
       id="how-it-works"
       className={cn(
-        "py-24 bg-background text-foreground",
+        "py-24 bg-background text-foreground scroll-mt-[140px] md:scroll-mt-[130px]",
         className
       )}
     >

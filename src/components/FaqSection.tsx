@@ -20,7 +20,7 @@ const FaqSection: React.FC<FaqSectionProps> = ({ className }) => {
     <section
       id="faq"
       className={cn(
-        "py-24 bg-background text-foreground",
+        "py-24 bg-background text-foreground scroll-mt-[140px] md:scroll-mt-[130px]",
         className
       )}
     >
