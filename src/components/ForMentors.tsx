@@ -15,7 +15,7 @@ const ForMentors: React.FC<ForMentorsProps> = ({ className }) => {
     <section
       id="mentorship"
       className={cn(
-        "py-24 bg-primary text-background relative overflow-hidden",
+        "py-24 bg-primary text-background relative overflow-hidden scroll-mt-[140px] md:scroll-mt-[130px]",
         className
       )}
     >

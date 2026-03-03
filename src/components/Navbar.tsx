@@ -34,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
     <header
       className={cn(
         'fixed left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-8',
-        'top-16 md:top-20', // Debajo del banner
+        'top-[88px] md:top-20 mt-2 md:mt-0', // Debajo del banner con margin-top adicional
         scrolled
           ? 'bg-background shadow-sm'
           : 'bg-transparent',

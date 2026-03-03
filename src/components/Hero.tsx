@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     <section
       id="hero"
       className={cn(
-        'min-h-screen pt-36 md:pt-40 pb-20 flex flex-col justify-center relative overflow-hidden bg-background',
+        'min-h-screen pt-48 md:pt-44 pb-20 flex flex-col justify-center relative overflow-hidden bg-background',
         className
       )}
     >
