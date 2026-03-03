@@ -27,7 +27,7 @@ const LegalNotice = () => {
   return (
     <main
       lang={language}
-      className="min-h-screen bg-gradient-to-br from-cream via-white to-sand dark:from-background dark:via-background dark:to-background py-16 px-4"
+      className="min-h-screen bg-gradient-to-br from-cream via-white to-sand dark:from-background dark:via-background dark:to-background pt-36 md:pt-40 pb-16 px-4"
     >
       <div className="max-w-4xl mx-auto">
         <header className="text-center mb-12">

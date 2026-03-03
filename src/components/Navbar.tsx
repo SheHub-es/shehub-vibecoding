@@ -33,7 +33,8 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-8',
+        'fixed left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-8',
+        'top-16 md:top-20', // Debajo del banner
         scrolled
           ? 'bg-background shadow-sm'
           : 'bg-transparent',
@@ -101,7 +102,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[72px] bg-background backdrop-blur-sm z-40 flex flex-col p-6 animate-fade-in">
+        <div className="md:hidden fixed inset-0 top-[136px] md:top-[144px] bg-background backdrop-blur-sm z-40 flex flex-col p-6 animate-fade-in">
           <nav className="flex flex-col space-y-6 pt-6">
             <HashLink smooth to="/#features" onClick={() => setMobileMenuOpen(false)} className="text-foreground text-lg font-medium py-2 border-b border-muted">
               {t('nav.about')}

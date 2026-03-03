@@ -23,7 +23,7 @@ const ThankYou = () => {
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-background text-foreground">
-      <main className="flex-1 flex items-center justify-center p-6 relative z-10 mt-20 lg:mt-0">
+      <main className="flex-1 flex items-center justify-center p-6 relative z-10 pt-36 md:pt-40">
         <div className="max-w-6xl w-full mx-auto">
           <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[80vh]">
             <div className="lg:col-span-7 lg:pr-12">

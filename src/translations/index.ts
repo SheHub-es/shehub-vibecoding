@@ -18,6 +18,7 @@ import { legalNoticeTranslations } from "./legal_notice";
 import { closedProjectsTranslations } from "./closed_projects";
 import { sponsorsTranslations } from "./sponsors";
 import { rolesTranslations } from "./roles_form";
+import { newWebsiteBannerTranslations } from "./new_website_banner";
 
 const translations: Record<string, Record<string, string>> = {
   ...navbarTranslations,
@@ -40,6 +41,7 @@ const translations: Record<string, Record<string, string>> = {
   ...closedProjectsTranslations,
   ...sponsorsTranslations,
   ...rolesTranslations,
+  ...newWebsiteBannerTranslations,
 };
 
 export { translations };
